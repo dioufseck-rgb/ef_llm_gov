@@ -1,0 +1,74 @@
+[
+  {
+    "question": "Which option correctly expresses the rule with an exception?",
+    "option_a": "All users must sign in, except service accounts.",
+    "option_b": "All users must sign in, including service accounts.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly captures the exception?",
+    "option_a": "Logs are retained for 30 days, except security logs which are retained for 1 year.",
+    "option_b": "Logs are retained for 30 days, including security logs which are retained for 30 days.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly describes the exception?",
+    "option_a": "All changes require approval, except emergency patches.",
+    "option_b": "All changes require approval, including emergency patches.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly captures the rule?",
+    "option_a": "Access is allowed to employees, except contractors.",
+    "option_b": "Access is allowed to employees, including contractors.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly expresses the exception condition?",
+    "option_a": "Notifications are sent to all teams, except the test team.",
+    "option_b": "Notifications are sent to all teams, including the test team.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly captures the exception?",
+    "option_a": "All datasets must be encrypted, except public sample data.",
+    "option_b": "All datasets must be encrypted, including public sample data.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly expresses the rule?",
+    "option_a": "Meetings are recorded, except 1:1 conversations.",
+    "option_b": "Meetings are recorded, including 1:1 conversations.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly captures the exception?",
+    "option_a": "All API calls are rate-limited, except internal health checks.",
+    "option_b": "All API calls are rate-limited, including internal health checks.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly expresses the exception?",
+    "option_a": "All emails are archived, except those marked confidential.",
+    "option_b": "All emails are archived, including those marked confidential.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly captures the exception?",
+    "option_a": "All incidents require a postmortem, except severity-5 incidents.",
+    "option_b": "All incidents require a postmortem, including severity-5 incidents.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly expresses the rule with an exception?",
+    "option_a": "All requests are processed FIFO, except urgent requests which go first.",
+    "option_b": "All requests are processed FIFO, including urgent requests which go last.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly captures the exception?",
+    "option_a": "All reports are published weekly, except the monthly financial report.",
+    "option_b": "All reports are published weekly, including the monthly financial report.",
+    "expected": "A"
+  }
+]

@@ -1,0 +1,306 @@
+{
+  "schema_version": "0.1.0",
+  "task_header": {
+    "task_type": "grounded_qa",
+    "role": "analyst",
+    "risk": "high",
+    "evidence": "required",
+    "sources": "provided_only",
+    "output_mode": "bullets",
+    "output_schema_id": null,
+    "abstain_policy": "strict",
+    "human_review": "none",
+    "tools_allowed": [
+      "retrieval"
+    ],
+    "domain_tags": [
+      "ops",
+      "compliance"
+    ],
+    "schema_version": "0.1.0"
+  },
+  "role_contract": {
+    "role": "analyst",
+    "allowed_actions": [
+      "summarize",
+      "analyze",
+      "compare",
+      "infer_with_evidence"
+    ],
+    "disallowed_actions": [
+      "recommend_final_in_high_risk_without_human",
+      "make_legal_conclusion"
+    ],
+    "epistemic_limits": [
+      "must_state_assumptions",
+      "no_new_facts_when_sources_restricted"
+    ]
+  },
+  "context_profile": {
+    "risk": "high",
+    "evidence_regime": "required",
+    "sources_regime": "provided_only",
+    "stakes": {
+      "reversibility": "medium",
+      "harm_potential": "medium"
+    },
+    "domain_tags": [
+      "ops",
+      "compliance"
+    ]
+  },
+  "task_signature": {
+    "preserve": [
+      "abstention_reliability",
+      "citation_integrity",
+      "consistency",
+      "evidence_traceability",
+      "exception_handling",
+      "frame_boundary_preservation",
+      "negation_scope",
+      "no_claim_without_evidence",
+      "temporal_order",
+      "topic_relevance",
+      "uncertainty_calibration"
+    ],
+    "relax": [
+      "format_invariance"
+    ],
+    "break_": []
+  },
+  "required_stability_conditions": [
+    {
+      "primitive_id": "abstention_reliability",
+      "threshold": 0.96,
+      "test_profiles": [
+        "ABSTAIN_MISSING_INFO_v1"
+      ],
+      "weight": 1.0,
+      "notes": ""
+    },
+    {
+      "primitive_id": "citation_integrity",
+      "threshold": 0.97,
+      "test_profiles": [
+        "CITATION_INTEGRITY_v1"
+      ],
+      "weight": 1.0,
+      "notes": ""
+    },
+    {
+      "primitive_id": "consistency",
+      "threshold": 0.93,
+      "test_profiles": [
+        "CONSISTENCY_BASIC_v1"
+      ],
+      "weight": 1.0,
+      "notes": ""
+    },
+    {
+      "primitive_id": "evidence_traceability",
+      "threshold": 0.97,
+      "test_profiles": [
+        "EVIDENCE_TRACEABILITY_v1"
+      ],
+      "weight": 1.0,
+      "notes": ""
+    },
+    {
+      "primitive_id": "exception_handling",
+      "threshold": 0.95,
+      "test_profiles": [
+        "EXCEPTION_MINPAIRS_v1"
+      ],
+      "weight": 1.0,
+      "notes": ""
+    },
+    {
+      "primitive_id": "frame_boundary_preservation",
+      "threshold": 0.93,
+      "test_profiles": [
+        "FRAME_BOUNDARY_PRESERVATION_v1"
+      ],
+      "weight": 1.0,
+      "notes": ""
+    },
+    {
+      "primitive_id": "negation_scope",
+      "threshold": 0.95,
+      "test_profiles": [
+        "EXCEPTION_MINPAIRS_v1",
+        "NEGATION_MINPAIRS_v1"
+      ],
+      "weight": 1.0,
+      "notes": ""
+    },
+    {
+      "primitive_id": "no_claim_without_evidence",
+      "threshold": 0.93,
+      "test_profiles": [
+        "NO_CLAIM_WO_EVIDENCE_v1"
+      ],
+      "weight": 1.0,
+      "notes": ""
+    },
+    {
+      "primitive_id": "temporal_order",
+      "threshold": 0.93,
+      "test_profiles": [
+        "TEMPORAL_ORDER_v1"
+      ],
+      "weight": 1.0,
+      "notes": ""
+    },
+    {
+      "primitive_id": "topic_relevance",
+      "threshold": 0.93,
+      "test_profiles": [
+        "TOPIC_RELEVANCE_v1"
+      ],
+      "weight": 1.0,
+      "notes": ""
+    },
+    {
+      "primitive_id": "uncertainty_calibration",
+      "threshold": 0.93,
+      "test_profiles": [
+        "UNCERTAINTY_CALIBRATION_v1"
+      ],
+      "weight": 1.0,
+      "notes": ""
+    }
+  ],
+  "required_controls": [
+    {
+      "control_id": "require_citations",
+      "required": true,
+      "params": {},
+      "notes": "Evidence required by header."
+    },
+    {
+      "control_id": "no_claim_without_evidence",
+      "required": true,
+      "params": {},
+      "notes": "Block unsupported claims. | Implied by preserve set."
+    },
+    {
+      "control_id": "postcheck_citations",
+      "required": true,
+      "params": {},
+      "notes": "Verify citation spans/ids."
+    },
+    {
+      "control_id": "require_rag",
+      "required": true,
+      "params": {
+        "corpus": "provided"
+      },
+      "notes": "Sources restricted to provided docs."
+    },
+    {
+      "control_id": "abstain_on_low_confidence",
+      "required": true,
+      "params": {
+        "min_confidence": 0.6
+      },
+      "notes": "High risk posture."
+    },
+    {
+      "control_id": "abstain_on_missing_inputs",
+      "required": true,
+      "params": {
+        "ask_clarifying_questions": true
+      },
+      "notes": "Strict abstention policy."
+    }
+  ],
+  "threshold_policy": {
+    "risk": "high",
+    "base_thresholds": {
+      "low": 0.75,
+      "medium": 0.85,
+      "high": 0.93
+    },
+    "overrides": [
+      {
+        "primitive_id": "evidence_traceability",
+        "threshold": 0.97,
+        "reason": "primitive_override"
+      },
+      {
+        "primitive_id": "citation_integrity",
+        "threshold": 0.97,
+        "reason": "primitive_override"
+      },
+      {
+        "primitive_id": "abstention_reliability",
+        "threshold": 0.96,
+        "reason": "primitive_override"
+      },
+      {
+        "primitive_id": "exception_handling",
+        "threshold": 0.95,
+        "reason": "primitive_override"
+      },
+      {
+        "primitive_id": "negation_scope",
+        "threshold": 0.95,
+        "reason": "primitive_override"
+      },
+      {
+        "primitive_id": "schema_validity",
+        "threshold": 0.98,
+        "reason": "primitive_override"
+      }
+    ]
+  },
+  "audit": {
+    "compiler_version": "frame-compiler-0.1.0",
+    "rule_hits": [
+      {
+        "rule_id": "H002_evidence_required",
+        "evidence": [
+          "evidence=required"
+        ]
+      },
+      {
+        "rule_id": "H003_sources_provided_only_requires_rag",
+        "evidence": [
+          "sources=provided_only"
+        ]
+      },
+      {
+        "rule_id": "H004_risk_high_abstain_and_human_review",
+        "evidence": [
+          "risk=high"
+        ]
+      },
+      {
+        "rule_id": "H005_abstain_policy_strict",
+        "evidence": [
+          "abstain_policy=strict"
+        ]
+      },
+      {
+        "rule_id": "P001_negation_scope",
+        "evidence": [
+          "\\bnot\\b"
+        ]
+      },
+      {
+        "rule_id": "P002_exceptions",
+        "evidence": [
+          "\\bexcept\\b"
+        ]
+      },
+      {
+        "rule_id": "P003_temporal_markers",
+        "evidence": [
+          "\\bbefore\\b",
+          "\\bafter\\b"
+        ]
+      }
+    ],
+    "timestamp": "2025-12-22T02:24:28.148041Z"
+  }
+}

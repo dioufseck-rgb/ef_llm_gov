@@ -1,0 +1,12 @@
+GENERATION_CONFIGS = {
+    "deterministic": {
+        "temperature": 0.0,
+        "topP": 1.0,
+        "maxOutputTokens": 512
+    },
+    "production_default": {
+        "temperature": 0.7,
+        "topP": 0.95,
+        "maxOutputTokens": 512
+    }
+}

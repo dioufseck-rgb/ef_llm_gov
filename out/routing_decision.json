@@ -1,0 +1,522 @@
+{
+  "schema_version": "0.1.0",
+  "decision": "abstain",
+  "selected_models": [],
+  "applied_controls": [
+    {
+      "control_id": "require_citations",
+      "required": true,
+      "params": {},
+      "notes": "Evidence required by header."
+    },
+    {
+      "control_id": "no_claim_without_evidence",
+      "required": true,
+      "params": {},
+      "notes": "Block unsupported claims. | Implied by preserve set."
+    },
+    {
+      "control_id": "postcheck_citations",
+      "required": true,
+      "params": {},
+      "notes": "Verify citation spans/ids."
+    },
+    {
+      "control_id": "require_rag",
+      "required": true,
+      "params": {
+        "corpus": "provided"
+      },
+      "notes": "Sources restricted to provided docs."
+    },
+    {
+      "control_id": "abstain_on_low_confidence",
+      "required": true,
+      "params": {
+        "min_confidence": 0.6
+      },
+      "notes": "High risk posture."
+    },
+    {
+      "control_id": "abstain_on_missing_inputs",
+      "required": true,
+      "params": {
+        "ask_clarifying_questions": true
+      },
+      "notes": "Strict abstention policy."
+    }
+  ],
+  "reasons": [
+    {
+      "type": "invariance",
+      "message": "No eligible model meets required stability thresholds under CI-lower policy."
+    }
+  ],
+  "failed_requirements": [
+    {
+      "model_id": "model_A",
+      "primitive_id": "citation_integrity",
+      "required_threshold": 0.97,
+      "best_test_profile": "CITATION_INTEGRITY_v1",
+      "best_ci_lower": 0.94,
+      "test_profiles": [
+        "CITATION_INTEGRITY_v1"
+      ]
+    },
+    {
+      "model_id": "model_A",
+      "primitive_id": "consistency",
+      "required_threshold": 0.93,
+      "best_test_profile": "CONSISTENCY_BASIC_v1",
+      "best_ci_lower": 0.9,
+      "test_profiles": [
+        "CONSISTENCY_BASIC_v1"
+      ]
+    },
+    {
+      "model_id": "model_A",
+      "primitive_id": "evidence_traceability",
+      "required_threshold": 0.97,
+      "best_test_profile": "EVIDENCE_TRACEABILITY_v1",
+      "best_ci_lower": 0.93,
+      "test_profiles": [
+        "EVIDENCE_TRACEABILITY_v1"
+      ]
+    },
+    {
+      "model_id": "model_A",
+      "primitive_id": "exception_handling",
+      "required_threshold": 0.95,
+      "best_test_profile": "EXCEPTION_MINPAIRS_v1",
+      "best_ci_lower": 0.86,
+      "test_profiles": [
+        "EXCEPTION_MINPAIRS_v1"
+      ]
+    },
+    {
+      "model_id": "model_A",
+      "primitive_id": "frame_boundary_preservation",
+      "required_threshold": 0.93,
+      "best_test_profile": "FRAME_BOUNDARY_PRESERVATION_v1",
+      "best_ci_lower": 0.88,
+      "test_profiles": [
+        "FRAME_BOUNDARY_PRESERVATION_v1"
+      ]
+    },
+    {
+      "model_id": "model_A",
+      "primitive_id": "negation_scope",
+      "required_threshold": 0.95,
+      "best_test_profile": "NEGATION_MINPAIRS_v1",
+      "best_ci_lower": 0.89,
+      "test_profiles": [
+        "EXCEPTION_MINPAIRS_v1",
+        "NEGATION_MINPAIRS_v1"
+      ]
+    },
+    {
+      "model_id": "model_A",
+      "primitive_id": "no_claim_without_evidence",
+      "required_threshold": 0.93,
+      "best_test_profile": "NO_CLAIM_WO_EVIDENCE_v1",
+      "best_ci_lower": 0.92,
+      "test_profiles": [
+        "NO_CLAIM_WO_EVIDENCE_v1"
+      ]
+    },
+    {
+      "model_id": "model_A",
+      "primitive_id": "temporal_order",
+      "required_threshold": 0.93,
+      "best_test_profile": "TEMPORAL_ORDER_v1",
+      "best_ci_lower": 0.87,
+      "test_profiles": [
+        "TEMPORAL_ORDER_v1"
+      ]
+    },
+    {
+      "model_id": "model_A",
+      "primitive_id": "uncertainty_calibration",
+      "required_threshold": 0.93,
+      "best_test_profile": null,
+      "best_ci_lower": null,
+      "test_profiles": [
+        "UNCERTAINTY_CALIBRATION_v1"
+      ]
+    },
+    {
+      "model_id": "model_B",
+      "primitive_id": "abstention_reliability",
+      "required_threshold": 0.96,
+      "best_test_profile": "ABSTAIN_MISSING_INFO_v1",
+      "best_ci_lower": 0.87,
+      "test_profiles": [
+        "ABSTAIN_MISSING_INFO_v1"
+      ]
+    },
+    {
+      "model_id": "model_B",
+      "primitive_id": "citation_integrity",
+      "required_threshold": 0.97,
+      "best_test_profile": "CITATION_INTEGRITY_v1",
+      "best_ci_lower": 0.9,
+      "test_profiles": [
+        "CITATION_INTEGRITY_v1"
+      ]
+    },
+    {
+      "model_id": "model_B",
+      "primitive_id": "consistency",
+      "required_threshold": 0.93,
+      "best_test_profile": "CONSISTENCY_BASIC_v1",
+      "best_ci_lower": 0.86,
+      "test_profiles": [
+        "CONSISTENCY_BASIC_v1"
+      ]
+    },
+    {
+      "model_id": "model_B",
+      "primitive_id": "evidence_traceability",
+      "required_threshold": 0.97,
+      "best_test_profile": "EVIDENCE_TRACEABILITY_v1",
+      "best_ci_lower": 0.88,
+      "test_profiles": [
+        "EVIDENCE_TRACEABILITY_v1"
+      ]
+    },
+    {
+      "model_id": "model_B",
+      "primitive_id": "exception_handling",
+      "required_threshold": 0.95,
+      "best_test_profile": "EXCEPTION_MINPAIRS_v1",
+      "best_ci_lower": 0.8,
+      "test_profiles": [
+        "EXCEPTION_MINPAIRS_v1"
+      ]
+    },
+    {
+      "model_id": "model_B",
+      "primitive_id": "frame_boundary_preservation",
+      "required_threshold": 0.93,
+      "best_test_profile": "FRAME_BOUNDARY_PRESERVATION_v1",
+      "best_ci_lower": 0.82,
+      "test_profiles": [
+        "FRAME_BOUNDARY_PRESERVATION_v1"
+      ]
+    },
+    {
+      "model_id": "model_B",
+      "primitive_id": "negation_scope",
+      "required_threshold": 0.95,
+      "best_test_profile": "NEGATION_MINPAIRS_v1",
+      "best_ci_lower": 0.83,
+      "test_profiles": [
+        "EXCEPTION_MINPAIRS_v1",
+        "NEGATION_MINPAIRS_v1"
+      ]
+    },
+    {
+      "model_id": "model_B",
+      "primitive_id": "no_claim_without_evidence",
+      "required_threshold": 0.93,
+      "best_test_profile": "NO_CLAIM_WO_EVIDENCE_v1",
+      "best_ci_lower": 0.84,
+      "test_profiles": [
+        "NO_CLAIM_WO_EVIDENCE_v1"
+      ]
+    },
+    {
+      "model_id": "model_B",
+      "primitive_id": "temporal_order",
+      "required_threshold": 0.93,
+      "best_test_profile": "TEMPORAL_ORDER_v1",
+      "best_ci_lower": 0.82,
+      "test_profiles": [
+        "TEMPORAL_ORDER_v1"
+      ]
+    },
+    {
+      "model_id": "model_B",
+      "primitive_id": "topic_relevance",
+      "required_threshold": 0.93,
+      "best_test_profile": "TOPIC_RELEVANCE_v1",
+      "best_ci_lower": 0.9,
+      "test_profiles": [
+        "TOPIC_RELEVANCE_v1"
+      ]
+    },
+    {
+      "model_id": "model_B",
+      "primitive_id": "uncertainty_calibration",
+      "required_threshold": 0.93,
+      "best_test_profile": null,
+      "best_ci_lower": null,
+      "test_profiles": [
+        "UNCERTAINTY_CALIBRATION_v1"
+      ]
+    }
+  ],
+  "decision_id": "rd_20251222_022428Z_f200",
+  "timestamp": "2025-12-22T02:24:28Z",
+  "fallback_models": [],
+  "policy": {
+    "risk": "high",
+    "mode": "conservative_ci_lower",
+    "meets_rule": "ALL_PRIMITIVES_MET_ANY_PROFILE",
+    "tie_breaker": "max_margin_sum"
+  },
+  "requirements_summary": {
+    "required_primitives": [
+      "abstention_reliability",
+      "citation_integrity",
+      "consistency",
+      "evidence_traceability",
+      "exception_handling",
+      "frame_boundary_preservation",
+      "negation_scope",
+      "no_claim_without_evidence",
+      "temporal_order",
+      "topic_relevance",
+      "uncertainty_calibration"
+    ],
+    "controls_required": [
+      "require_citations",
+      "no_claim_without_evidence",
+      "postcheck_citations",
+      "require_rag",
+      "abstain_on_low_confidence",
+      "abstain_on_missing_inputs"
+    ]
+  },
+  "evidence": {
+    "passed": [],
+    "failed": [
+      {
+        "model_id": "model_A",
+        "primitive_id": "citation_integrity",
+        "required_threshold": 0.97,
+        "best_test_profile": "CITATION_INTEGRITY_v1",
+        "best_ci_lower": 0.94,
+        "test_profiles": [
+          "CITATION_INTEGRITY_v1"
+        ]
+      },
+      {
+        "model_id": "model_A",
+        "primitive_id": "consistency",
+        "required_threshold": 0.93,
+        "best_test_profile": "CONSISTENCY_BASIC_v1",
+        "best_ci_lower": 0.9,
+        "test_profiles": [
+          "CONSISTENCY_BASIC_v1"
+        ]
+      },
+      {
+        "model_id": "model_A",
+        "primitive_id": "evidence_traceability",
+        "required_threshold": 0.97,
+        "best_test_profile": "EVIDENCE_TRACEABILITY_v1",
+        "best_ci_lower": 0.93,
+        "test_profiles": [
+          "EVIDENCE_TRACEABILITY_v1"
+        ]
+      },
+      {
+        "model_id": "model_A",
+        "primitive_id": "exception_handling",
+        "required_threshold": 0.95,
+        "best_test_profile": "EXCEPTION_MINPAIRS_v1",
+        "best_ci_lower": 0.86,
+        "test_profiles": [
+          "EXCEPTION_MINPAIRS_v1"
+        ]
+      },
+      {
+        "model_id": "model_A",
+        "primitive_id": "frame_boundary_preservation",
+        "required_threshold": 0.93,
+        "best_test_profile": "FRAME_BOUNDARY_PRESERVATION_v1",
+        "best_ci_lower": 0.88,
+        "test_profiles": [
+          "FRAME_BOUNDARY_PRESERVATION_v1"
+        ]
+      },
+      {
+        "model_id": "model_A",
+        "primitive_id": "negation_scope",
+        "required_threshold": 0.95,
+        "best_test_profile": "NEGATION_MINPAIRS_v1",
+        "best_ci_lower": 0.89,
+        "test_profiles": [
+          "EXCEPTION_MINPAIRS_v1",
+          "NEGATION_MINPAIRS_v1"
+        ]
+      },
+      {
+        "model_id": "model_A",
+        "primitive_id": "no_claim_without_evidence",
+        "required_threshold": 0.93,
+        "best_test_profile": "NO_CLAIM_WO_EVIDENCE_v1",
+        "best_ci_lower": 0.92,
+        "test_profiles": [
+          "NO_CLAIM_WO_EVIDENCE_v1"
+        ]
+      },
+      {
+        "model_id": "model_A",
+        "primitive_id": "temporal_order",
+        "required_threshold": 0.93,
+        "best_test_profile": "TEMPORAL_ORDER_v1",
+        "best_ci_lower": 0.87,
+        "test_profiles": [
+          "TEMPORAL_ORDER_v1"
+        ]
+      },
+      {
+        "model_id": "model_A",
+        "primitive_id": "uncertainty_calibration",
+        "required_threshold": 0.93,
+        "best_test_profile": null,
+        "best_ci_lower": null,
+        "test_profiles": [
+          "UNCERTAINTY_CALIBRATION_v1"
+        ]
+      },
+      {
+        "model_id": "model_B",
+        "primitive_id": "abstention_reliability",
+        "required_threshold": 0.96,
+        "best_test_profile": "ABSTAIN_MISSING_INFO_v1",
+        "best_ci_lower": 0.87,
+        "test_profiles": [
+          "ABSTAIN_MISSING_INFO_v1"
+        ]
+      },
+      {
+        "model_id": "model_B",
+        "primitive_id": "citation_integrity",
+        "required_threshold": 0.97,
+        "best_test_profile": "CITATION_INTEGRITY_v1",
+        "best_ci_lower": 0.9,
+        "test_profiles": [
+          "CITATION_INTEGRITY_v1"
+        ]
+      },
+      {
+        "model_id": "model_B",
+        "primitive_id": "consistency",
+        "required_threshold": 0.93,
+        "best_test_profile": "CONSISTENCY_BASIC_v1",
+        "best_ci_lower": 0.86,
+        "test_profiles": [
+          "CONSISTENCY_BASIC_v1"
+        ]
+      },
+      {
+        "model_id": "model_B",
+        "primitive_id": "evidence_traceability",
+        "required_threshold": 0.97,
+        "best_test_profile": "EVIDENCE_TRACEABILITY_v1",
+        "best_ci_lower": 0.88,
+        "test_profiles": [
+          "EVIDENCE_TRACEABILITY_v1"
+        ]
+      },
+      {
+        "model_id": "model_B",
+        "primitive_id": "exception_handling",
+        "required_threshold": 0.95,
+        "best_test_profile": "EXCEPTION_MINPAIRS_v1",
+        "best_ci_lower": 0.8,
+        "test_profiles": [
+          "EXCEPTION_MINPAIRS_v1"
+        ]
+      },
+      {
+        "model_id": "model_B",
+        "primitive_id": "frame_boundary_preservation",
+        "required_threshold": 0.93,
+        "best_test_profile": "FRAME_BOUNDARY_PRESERVATION_v1",
+        "best_ci_lower": 0.82,
+        "test_profiles": [
+          "FRAME_BOUNDARY_PRESERVATION_v1"
+        ]
+      },
+      {
+        "model_id": "model_B",
+        "primitive_id": "negation_scope",
+        "required_threshold": 0.95,
+        "best_test_profile": "NEGATION_MINPAIRS_v1",
+        "best_ci_lower": 0.83,
+        "test_profiles": [
+          "EXCEPTION_MINPAIRS_v1",
+          "NEGATION_MINPAIRS_v1"
+        ]
+      },
+      {
+        "model_id": "model_B",
+        "primitive_id": "no_claim_without_evidence",
+        "required_threshold": 0.93,
+        "best_test_profile": "NO_CLAIM_WO_EVIDENCE_v1",
+        "best_ci_lower": 0.84,
+        "test_profiles": [
+          "NO_CLAIM_WO_EVIDENCE_v1"
+        ]
+      },
+      {
+        "model_id": "model_B",
+        "primitive_id": "temporal_order",
+        "required_threshold": 0.93,
+        "best_test_profile": "TEMPORAL_ORDER_v1",
+        "best_ci_lower": 0.82,
+        "test_profiles": [
+          "TEMPORAL_ORDER_v1"
+        ]
+      },
+      {
+        "model_id": "model_B",
+        "primitive_id": "topic_relevance",
+        "required_threshold": 0.93,
+        "best_test_profile": "TOPIC_RELEVANCE_v1",
+        "best_ci_lower": 0.9,
+        "test_profiles": [
+          "TOPIC_RELEVANCE_v1"
+        ]
+      },
+      {
+        "model_id": "model_B",
+        "primitive_id": "uncertainty_calibration",
+        "required_threshold": 0.93,
+        "best_test_profile": null,
+        "best_ci_lower": null,
+        "test_profiles": [
+          "UNCERTAINTY_CALIBRATION_v1"
+        ]
+      }
+    ],
+    "scorecard": {}
+  },
+  "actions": [
+    {
+      "action_id": "REQUEST_HUMAN",
+      "params": {
+        "queue": "high_risk_review"
+      }
+    },
+    {
+      "action_id": "ASK_CLARIFYING_QUESTIONS",
+      "params": {
+        "questions": [
+          "Provide admissible sources/evidence.",
+          "Confirm role authority and desired output format."
+        ]
+      }
+    }
+  ],
+  "audit": {
+    "task_contract_hash": "",
+    "ledger_version": "",
+    "harness_version": "",
+    "notes": ""
+  }
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "question": "Which option correctly captures the time-window exception?",
+    "option_a": "Deployments are blocked after 5pm, except for critical security patches.",
+    "option_b": "Deployments are allowed after 5pm, except for critical security patches.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly expresses the rule?",
+    "option_a": "Access is denied on weekends, except for on-call engineers.",
+    "option_b": "Access is granted on weekends, except for on-call engineers.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly applies the exception to the time condition?",
+    "option_a": "Tickets are processed in 2 days, except urgent tickets which are processed within 2 hours.",
+    "option_b": "Tickets are processed in 2 days, except urgent tickets which are processed in 2 days.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly captures the time-based exception?",
+    "option_a": "Reports are generated nightly, except on the first day of the month.",
+    "option_b": "Reports are generated nightly, including on the first day of the month.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly expresses the rule?",
+    "option_a": "No maintenance is allowed during business hours, except during declared emergencies.",
+    "option_b": "Maintenance is allowed during business hours, except during declared emergencies.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly captures the exception timing?",
+    "option_a": "Emails are sent immediately, except digest emails which are sent at 9am daily.",
+    "option_b": "Emails are sent at 9am daily, except digest emails which are sent immediately.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly expresses the time-window exception?",
+    "option_a": "Backups run every night, except Sundays.",
+    "option_b": "Backups run every night, including Sundays only.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly applies the exception?",
+    "option_a": "Changes must be submitted 24 hours in advance, except emergency changes.",
+    "option_b": "Changes may be submitted at any time, except emergency changes.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly captures the time-based exception?",
+    "option_a": "The service is read-only during upgrades, except for admin operations.",
+    "option_b": "The service is writable during upgrades, except for admin operations.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly expresses the exception?",
+    "option_a": "No alerts are sent at night, except paging alerts.",
+    "option_b": "Alerts are sent at night, except paging alerts.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly captures the timing rule and exception?",
+    "option_a": "Keys must be rotated quarterly, except temporary keys which expire in 7 days.",
+    "option_b": "Keys must be rotated quarterly, except temporary keys which rotate quarterly.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly expresses the rule?",
+    "option_a": "Meetings are scheduled on weekdays, except public holidays.",
+    "option_b": "Meetings are scheduled on weekdays, including public holidays only.",
+    "expected": "A"
+  }
+]

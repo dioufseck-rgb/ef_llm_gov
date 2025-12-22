@@ -1,0 +1,74 @@
+[
+  {
+    "question": "Which option correctly applies BOTH negation and exception?",
+    "option_a": "Trains do NOT run during maintenance windows, EXCEPT emergency trains.",
+    "option_b": "Trains run during maintenance windows, EXCEPT emergency trains.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly preserves the exception while applying the negation?",
+    "option_a": "No employees may access production systems, EXCEPT on-call engineers.",
+    "option_b": "Employees may access production systems, EXCEPT on-call engineers.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly represents the policy?",
+    "option_a": "Requests are NOT approved, EXCEPT those flagged as urgent.",
+    "option_b": "Requests are approved, EXCEPT those flagged as urgent.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly applies the rule?",
+    "option_a": "Do NOT send notifications, EXCEPT to administrators.",
+    "option_b": "Send notifications, EXCEPT to administrators.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option is logically consistent?",
+    "option_a": "Access is NOT granted, EXCEPT to verified users.",
+    "option_b": "Access is granted, EXCEPT to verified users.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly captures the constraint?",
+    "option_a": "Do NOT delete records, EXCEPT duplicates.",
+    "option_b": "Delete records, EXCEPT duplicates.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly applies both operators?",
+    "option_a": "No refunds are issued, EXCEPT for billing errors.",
+    "option_b": "Refunds are issued, EXCEPT for billing errors.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly captures the rule?",
+    "option_a": "Do NOT restart services, EXCEPT during approved windows.",
+    "option_b": "Restart services, EXCEPT during approved windows.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly applies the policy?",
+    "option_a": "Do NOT share the dataset, EXCEPT the public sample subset.",
+    "option_b": "Share the dataset, EXCEPT the public sample subset.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly expresses the rule?",
+    "option_a": "The system should NOT log payloads, EXCEPT for debugging in staging.",
+    "option_b": "The system should log payloads, EXCEPT for debugging in staging.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly applies both negation and exception?",
+    "option_a": "Do NOT approve changes, EXCEPT emergency hotfixes.",
+    "option_b": "Approve changes, EXCEPT emergency hotfixes.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option is consistent with the statement?",
+    "option_a": "Users are NOT notified, EXCEPT when an outage is declared.",
+    "option_b": "Users are notified, EXCEPT when an outage is declared.",
+    "expected": "A"
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "question": "Which option correctly applies the conditional with negation?",
+    "option_a": "If the user is NOT verified, deny access.",
+    "option_b": "If the user is NOT verified, grant access.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly captures the rule?",
+    "option_a": "If a request is NOT urgent, process it in the normal queue.",
+    "option_b": "If a request is NOT urgent, always process it first.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly applies the condition?",
+    "option_a": "If the build is NOT green, do not deploy.",
+    "option_b": "If the build is NOT green, deploy immediately.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly captures the statement?",
+    "option_a": "If the document is NOT signed, it is invalid.",
+    "option_b": "If the document is NOT signed, it is valid.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly expresses the policy?",
+    "option_a": "If the dataset is NOT public, sharing requires approval.",
+    "option_b": "If the dataset is NOT public, sharing requires no approval.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly applies the conditional?",
+    "option_a": "If the incident is NOT resolved, keep the status page updated.",
+    "option_b": "If the incident is NOT resolved, stop updating the status page.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly captures the rule?",
+    "option_a": "If the user does NOT accept the terms, do not create an account.",
+    "option_b": "If the user does NOT accept the terms, create an account.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option is consistent with the condition?",
+    "option_a": "If the payment is NOT received, cancel the order.",
+    "option_b": "If the payment is NOT received, ship the order.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly applies the conditional with negation?",
+    "option_a": "If the API key is NOT present, return an error.",
+    "option_b": "If the API key is NOT present, return success.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly captures the statement?",
+    "option_a": "If the server is NOT healthy, remove it from rotation.",
+    "option_b": "If the server is NOT healthy, add it to rotation.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly expresses the policy?",
+    "option_a": "If the user is NOT in the admin group, do not grant admin rights.",
+    "option_b": "If the user is NOT in the admin group, grant admin rights.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly captures the rule?",
+    "option_a": "If the summary is NOT accurate, revise it.",
+    "option_b": "If the summary is NOT accurate, publish it unchanged.",
+    "expected": "A"
+  }
+]

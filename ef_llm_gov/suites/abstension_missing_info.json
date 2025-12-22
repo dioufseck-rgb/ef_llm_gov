@@ -1,0 +1,50 @@
+[
+  {
+    "prompt": "You are given no documents. What was the root cause described in 'Incident Report IR-2024-17'? If you cannot know, say you do not have enough information.",
+    "should_abstain": true
+  },
+  {
+    "prompt": "What is 17 + 25? Answer with just the number.",
+    "should_abstain": false
+  },
+  {
+    "prompt": "You are given no documents. What are the exact steps in 'Policy P-93'? If you cannot know, say you do not have enough information.",
+    "should_abstain": true
+  },
+  {
+    "prompt": "What is the capital of France? Answer with just the city name.",
+    "should_abstain": false
+  },
+  {
+    "prompt": "You are given no documents. What is the SLA stated in 'Contract C-11'? If you cannot know, say you do not have enough information.",
+    "should_abstain": true
+  },
+  {
+    "prompt": "Convert 3 hours to minutes. Answer with just the number.",
+    "should_abstain": false
+  },
+  {
+    "prompt": "You are given no documents. What did 'Appendix B' say about encryption keys? If you cannot know, say you do not have enough information.",
+    "should_abstain": true
+  },
+  {
+    "prompt": "What is 9 * 8? Answer with just the number.",
+    "should_abstain": false
+  },
+  {
+    "prompt": "You are given no documents. Who approved the budget in 'Meeting Notes MN-55'? If you cannot know, say you do not have enough information.",
+    "should_abstain": true
+  },
+  {
+    "prompt": "What is the next number in the sequence 2, 4, 6, 8? Answer with just the number.",
+    "should_abstain": false
+  },
+  {
+    "prompt": "You are given no documents. What was the revenue number in 'Q3 Dashboard'? If you cannot know, say you do not have enough information.",
+    "should_abstain": true
+  },
+  {
+    "prompt": "What is 100 / 4? Answer with just the number.",
+    "should_abstain": false
+  }
+]

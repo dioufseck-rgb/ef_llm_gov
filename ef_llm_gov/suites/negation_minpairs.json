@@ -1,0 +1,74 @@
+[
+  {
+    "question": "Which option correctly matches the instruction?",
+    "option_a": "Do NOT approve the request.",
+    "option_b": "Approve the request.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly matches the statement?",
+    "option_a": "The system is NOT available.",
+    "option_b": "The system is available.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly applies the condition?",
+    "option_a": "If the user is NOT verified, deny access.",
+    "option_b": "If the user is NOT verified, grant access.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly restates the policy?",
+    "option_a": "No changes are allowed today.",
+    "option_b": "Changes are allowed today.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly matches the log message?",
+    "option_a": "Backup did NOT complete.",
+    "option_b": "Backup completed.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly matches the requirement?",
+    "option_a": "The report must NOT include personal identifiers.",
+    "option_b": "The report must include personal identifiers.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly follows the rule?",
+    "option_a": "Do NOT notify external recipients.",
+    "option_b": "Notify external recipients.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option is consistent with the statement?",
+    "option_a": "The meeting is NOT scheduled for Monday.",
+    "option_b": "The meeting is scheduled for Monday.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly applies negation to the condition?",
+    "option_a": "If the dataset is NOT public, do not share it.",
+    "option_b": "If the dataset is NOT public, share it widely.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly captures the constraint?",
+    "option_a": "The service must NOT store passwords in plain text.",
+    "option_b": "The service must store passwords in plain text.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly matches the instruction?",
+    "option_a": "Do NOT restart the server during business hours.",
+    "option_b": "Restart the server during business hours.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly matches the statement?",
+    "option_a": "This answer is NOT guaranteed to be correct.",
+    "option_b": "This answer is guaranteed to be correct.",
+    "expected": "A"
+  }
+]

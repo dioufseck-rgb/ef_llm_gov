@@ -1,0 +1,1465 @@
+{
+  "_meta": {
+    "surface": "gemini_api",
+    "max_models_evaluated": 5,
+    "eligible_model_count": 34,
+    "evaluated_model_count": 5,
+    "max_debug_samples_per_suite": 3,
+    "backoff": {
+      "max_retries": 6,
+      "base_backoff_s": 1.0,
+      "max_backoff_s": 20.0,
+      "inter_request_sleep_range": [
+        0.6,
+        1.2
+      ]
+    }
+  },
+  "models": {
+    "models/gemini-2.5-flash": {
+      "model_id": "models/gemini-2.5-flash",
+      "capabilities": [
+        {
+          "primitive_id": "negation_scope",
+          "test_profile": "NEGATION_MINPAIRS_v1",
+          "config_id": "deterministic",
+          "metric": "accuracy",
+          "score": 1.0,
+          "ci_lower": 0.20654329147389294,
+          "ci_upper": 1.0,
+          "n_cases": 1,
+          "details": {
+            "finish_reason_counts": {
+              "STOP": 1
+            },
+            "http_error_counts": {},
+            "debug_samples": [
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich statement is logically consistent with the given condition?\n\nOPTION A:\nThe train is delayed. Therefore it arrived later than scheduled.\n\nOPTION B:\nThe train is not delayed. Therefore it arrived later than scheduled.\n",
+                "response_excerpt": "A",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": "A"
+              }
+            ]
+          }
+        },
+        {
+          "primitive_id": "exception_handling",
+          "test_profile": "EXCEPTION_MINPAIRS_v1",
+          "config_id": "deterministic",
+          "metric": "accuracy",
+          "score": 1.0,
+          "ci_lower": 0.20654329147389294,
+          "ci_upper": 1.0,
+          "n_cases": 1,
+          "details": {
+            "finish_reason_counts": {
+              "STOP": 1
+            },
+            "http_error_counts": {},
+            "debug_samples": [
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich policy statement correctly captures the exception?\n\nOPTION A:\nAll services run except during maintenance windows.\n\nOPTION B:\nAll services run during maintenance windows.\n",
+                "response_excerpt": "A",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": "A"
+              }
+            ]
+          }
+        },
+        {
+          "primitive_id": "negation_x_exception",
+          "test_profile": "NEG_X_EXC_MINPAIRS_v1",
+          "config_id": "deterministic",
+          "metric": "accuracy",
+          "score": 1.0,
+          "ci_lower": 0.43849391955098227,
+          "ci_upper": 1.0,
+          "n_cases": 3,
+          "details": {
+            "finish_reason_counts": {
+              "STOP": 3
+            },
+            "http_error_counts": {},
+            "debug_samples": [
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich statement correctly applies BOTH the negation and the exception?\n\nOPTION A:\nTrains do NOT run during maintenance windows, EXCEPT emergency trains.\n\nOPTION B:\nTrains run during maintenance windows, EXCEPT emergency train",
+                "response_excerpt": "A",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": "A"
+              },
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich statement correctly preserves the exception while applying the negation?\n\nOPTION A:\nNo employees may access production systems, EXCEPT on-call engineers.\n\nOPTION B:\nEmployees may access production systems, EXCEPT on-cal",
+                "response_excerpt": "A",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": "A"
+              },
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich statement correctly represents the policy?\n\nOPTION A:\nRequests are NOT approved, EXCEPT those flagged as urgent.\n\nOPTION B:\nRequests are approved, EXCEPT those flagged as urgent.\n",
+                "response_excerpt": "A",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": "A"
+              }
+            ]
+          }
+        },
+        {
+          "primitive_id": "abstention_reliability",
+          "test_profile": "ABSTAIN_MISSING_INFO_v1",
+          "config_id": "deterministic",
+          "metric": "abstention_recall",
+          "score": 1.0,
+          "ci_lower": 0.20654329147389294,
+          "ci_upper": 1.0,
+          "n_cases": 1,
+          "details": {
+            "precision": 1.0,
+            "f1": 1.0,
+            "finish_reason_counts": {
+              "STOP": 2
+            },
+            "http_error_counts": {},
+            "debug_samples": [
+              {
+                "prompt_excerpt": "You are given no documents. What was the cause of the outage in document X? If you cannot know, say you do not have enough information.",
+                "response_excerpt": "I do not have enough information.",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "should_abstain": true,
+                "abstained": true
+              },
+              {
+                "prompt_excerpt": "What is 2 + 2? Answer with just the number.",
+                "response_excerpt": "4",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "should_abstain": false,
+                "abstained": false
+              }
+            ],
+            "confusion": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0
+            }
+          }
+        },
+        {
+          "primitive_id": "negation_scope",
+          "test_profile": "NEGATION_MINPAIRS_v1",
+          "config_id": "production_default",
+          "metric": "accuracy",
+          "score": 1.0,
+          "ci_lower": 0.20654329147389294,
+          "ci_upper": 1.0,
+          "n_cases": 1,
+          "details": {
+            "finish_reason_counts": {
+              "STOP": 1
+            },
+            "http_error_counts": {},
+            "debug_samples": [
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich statement is logically consistent with the given condition?\n\nOPTION A:\nThe train is delayed. Therefore it arrived later than scheduled.\n\nOPTION B:\nThe train is not delayed. Therefore it arrived later than scheduled.\n",
+                "response_excerpt": "A",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": "A"
+              }
+            ]
+          }
+        },
+        {
+          "primitive_id": "exception_handling",
+          "test_profile": "EXCEPTION_MINPAIRS_v1",
+          "config_id": "production_default",
+          "metric": "accuracy",
+          "score": 1.0,
+          "ci_lower": 0.20654329147389294,
+          "ci_upper": 1.0,
+          "n_cases": 1,
+          "details": {
+            "finish_reason_counts": {
+              "STOP": 1
+            },
+            "http_error_counts": {},
+            "debug_samples": [
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich policy statement correctly captures the exception?\n\nOPTION A:\nAll services run except during maintenance windows.\n\nOPTION B:\nAll services run during maintenance windows.\n",
+                "response_excerpt": "A",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": "A"
+              }
+            ]
+          }
+        },
+        {
+          "primitive_id": "negation_x_exception",
+          "test_profile": "NEG_X_EXC_MINPAIRS_v1",
+          "config_id": "production_default",
+          "metric": "accuracy",
+          "score": 1.0,
+          "ci_lower": 0.43849391955098227,
+          "ci_upper": 1.0,
+          "n_cases": 3,
+          "details": {
+            "finish_reason_counts": {
+              "STOP": 3
+            },
+            "http_error_counts": {},
+            "debug_samples": [
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich statement correctly applies BOTH the negation and the exception?\n\nOPTION A:\nTrains do NOT run during maintenance windows, EXCEPT emergency trains.\n\nOPTION B:\nTrains run during maintenance windows, EXCEPT emergency train",
+                "response_excerpt": "A",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": "A"
+              },
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich statement correctly preserves the exception while applying the negation?\n\nOPTION A:\nNo employees may access production systems, EXCEPT on-call engineers.\n\nOPTION B:\nEmployees may access production systems, EXCEPT on-cal",
+                "response_excerpt": "A",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": "A"
+              },
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich statement correctly represents the policy?\n\nOPTION A:\nRequests are NOT approved, EXCEPT those flagged as urgent.\n\nOPTION B:\nRequests are approved, EXCEPT those flagged as urgent.\n",
+                "response_excerpt": "A",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": "A"
+              }
+            ]
+          }
+        },
+        {
+          "primitive_id": "abstention_reliability",
+          "test_profile": "ABSTAIN_MISSING_INFO_v1",
+          "config_id": "production_default",
+          "metric": "abstention_recall",
+          "score": 1.0,
+          "ci_lower": 0.20654329147389294,
+          "ci_upper": 1.0,
+          "n_cases": 1,
+          "details": {
+            "precision": 1.0,
+            "f1": 1.0,
+            "finish_reason_counts": {
+              "STOP": 2
+            },
+            "http_error_counts": {},
+            "debug_samples": [
+              {
+                "prompt_excerpt": "You are given no documents. What was the cause of the outage in document X? If you cannot know, say you do not have enough information.",
+                "response_excerpt": "I do not have enough information, as I was not provided with \"document X.\"",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "should_abstain": true,
+                "abstained": true
+              },
+              {
+                "prompt_excerpt": "What is 2 + 2? Answer with just the number.",
+                "response_excerpt": "4",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "should_abstain": false,
+                "abstained": false
+              }
+            ],
+            "confusion": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0
+            }
+          }
+        }
+      ]
+    },
+    "models/gemini-2.5-pro": {
+      "model_id": "models/gemini-2.5-pro",
+      "capabilities": [
+        {
+          "primitive_id": "negation_scope",
+          "test_profile": "NEGATION_MINPAIRS_v1",
+          "config_id": "deterministic",
+          "metric": "accuracy",
+          "score": 1.0,
+          "ci_lower": 0.20654329147389294,
+          "ci_upper": 1.0,
+          "n_cases": 1,
+          "details": {
+            "finish_reason_counts": {
+              "STOP": 1
+            },
+            "http_error_counts": {},
+            "debug_samples": [
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich statement is logically consistent with the given condition?\n\nOPTION A:\nThe train is delayed. Therefore it arrived later than scheduled.\n\nOPTION B:\nThe train is not delayed. Therefore it arrived later than scheduled.\n",
+                "response_excerpt": "A",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": "A"
+              }
+            ]
+          }
+        },
+        {
+          "primitive_id": "exception_handling",
+          "test_profile": "EXCEPTION_MINPAIRS_v1",
+          "config_id": "deterministic",
+          "metric": "accuracy",
+          "score": 0.0,
+          "ci_lower": 0.0,
+          "ci_upper": 0.7934567085261071,
+          "n_cases": 1,
+          "details": {
+            "finish_reason_counts": {
+              "MAX_TOKENS": 1
+            },
+            "http_error_counts": {},
+            "debug_samples": [
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich policy statement correctly captures the exception?\n\nOPTION A:\nAll services run except during maintenance windows.\n\nOPTION B:\nAll services run during maintenance windows.\n",
+                "response_excerpt": "",
+                "finish_reason": "MAX_TOKENS",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": ""
+              }
+            ]
+          }
+        },
+        {
+          "primitive_id": "negation_x_exception",
+          "test_profile": "NEG_X_EXC_MINPAIRS_v1",
+          "config_id": "deterministic",
+          "metric": "accuracy",
+          "score": 0.0,
+          "ci_lower": 0.0,
+          "ci_upper": 0.5615060804490177,
+          "n_cases": 3,
+          "details": {
+            "finish_reason_counts": {
+              "MAX_TOKENS": 3
+            },
+            "http_error_counts": {},
+            "debug_samples": [
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich statement correctly applies BOTH the negation and the exception?\n\nOPTION A:\nTrains do NOT run during maintenance windows, EXCEPT emergency trains.\n\nOPTION B:\nTrains run during maintenance windows, EXCEPT emergency train",
+                "response_excerpt": "",
+                "finish_reason": "MAX_TOKENS",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": ""
+              },
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich statement correctly preserves the exception while applying the negation?\n\nOPTION A:\nNo employees may access production systems, EXCEPT on-call engineers.\n\nOPTION B:\nEmployees may access production systems, EXCEPT on-cal",
+                "response_excerpt": "",
+                "finish_reason": "MAX_TOKENS",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": ""
+              },
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich statement correctly represents the policy?\n\nOPTION A:\nRequests are NOT approved, EXCEPT those flagged as urgent.\n\nOPTION B:\nRequests are approved, EXCEPT those flagged as urgent.\n",
+                "response_excerpt": "",
+                "finish_reason": "MAX_TOKENS",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": ""
+              }
+            ]
+          }
+        },
+        {
+          "primitive_id": "abstention_reliability",
+          "test_profile": "ABSTAIN_MISSING_INFO_v1",
+          "config_id": "deterministic",
+          "metric": "abstention_recall",
+          "score": 1.0,
+          "ci_lower": 0.20654329147389294,
+          "ci_upper": 1.0,
+          "n_cases": 1,
+          "details": {
+            "precision": 1.0,
+            "f1": 1.0,
+            "finish_reason_counts": {
+              "STOP": 2
+            },
+            "http_error_counts": {},
+            "debug_samples": [
+              {
+                "prompt_excerpt": "You are given no documents. What was the cause of the outage in document X? If you cannot know, say you do not have enough information.",
+                "response_excerpt": "I do not have enough information.",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "should_abstain": true,
+                "abstained": true
+              },
+              {
+                "prompt_excerpt": "What is 2 + 2? Answer with just the number.",
+                "response_excerpt": "4",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "should_abstain": false,
+                "abstained": false
+              }
+            ],
+            "confusion": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0
+            }
+          }
+        },
+        {
+          "primitive_id": "negation_scope",
+          "test_profile": "NEGATION_MINPAIRS_v1",
+          "config_id": "production_default",
+          "metric": "accuracy",
+          "score": 1.0,
+          "ci_lower": 0.20654329147389294,
+          "ci_upper": 1.0,
+          "n_cases": 1,
+          "details": {
+            "finish_reason_counts": {
+              "STOP": 1
+            },
+            "http_error_counts": {},
+            "debug_samples": [
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich statement is logically consistent with the given condition?\n\nOPTION A:\nThe train is delayed. Therefore it arrived later than scheduled.\n\nOPTION B:\nThe train is not delayed. Therefore it arrived later than scheduled.\n",
+                "response_excerpt": "A",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": "A"
+              }
+            ]
+          }
+        },
+        {
+          "primitive_id": "exception_handling",
+          "test_profile": "EXCEPTION_MINPAIRS_v1",
+          "config_id": "production_default",
+          "metric": "accuracy",
+          "score": 0.0,
+          "ci_lower": 0.0,
+          "ci_upper": 0.7934567085261071,
+          "n_cases": 1,
+          "details": {
+            "finish_reason_counts": {
+              "MAX_TOKENS": 1
+            },
+            "http_error_counts": {},
+            "debug_samples": [
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich policy statement correctly captures the exception?\n\nOPTION A:\nAll services run except during maintenance windows.\n\nOPTION B:\nAll services run during maintenance windows.\n",
+                "response_excerpt": "",
+                "finish_reason": "MAX_TOKENS",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": ""
+              }
+            ]
+          }
+        },
+        {
+          "primitive_id": "negation_x_exception",
+          "test_profile": "NEG_X_EXC_MINPAIRS_v1",
+          "config_id": "production_default",
+          "metric": "accuracy",
+          "score": 0.0,
+          "ci_lower": 0.0,
+          "ci_upper": 0.5615060804490177,
+          "n_cases": 3,
+          "details": {
+            "finish_reason_counts": {
+              "MAX_TOKENS": 3
+            },
+            "http_error_counts": {},
+            "debug_samples": [
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich statement correctly applies BOTH the negation and the exception?\n\nOPTION A:\nTrains do NOT run during maintenance windows, EXCEPT emergency trains.\n\nOPTION B:\nTrains run during maintenance windows, EXCEPT emergency train",
+                "response_excerpt": "",
+                "finish_reason": "MAX_TOKENS",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": ""
+              },
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich statement correctly preserves the exception while applying the negation?\n\nOPTION A:\nNo employees may access production systems, EXCEPT on-call engineers.\n\nOPTION B:\nEmployees may access production systems, EXCEPT on-cal",
+                "response_excerpt": "",
+                "finish_reason": "MAX_TOKENS",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": ""
+              },
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich statement correctly represents the policy?\n\nOPTION A:\nRequests are NOT approved, EXCEPT those flagged as urgent.\n\nOPTION B:\nRequests are approved, EXCEPT those flagged as urgent.\n",
+                "response_excerpt": "",
+                "finish_reason": "MAX_TOKENS",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": ""
+              }
+            ]
+          }
+        },
+        {
+          "primitive_id": "abstention_reliability",
+          "test_profile": "ABSTAIN_MISSING_INFO_v1",
+          "config_id": "production_default",
+          "metric": "abstention_recall",
+          "score": 1.0,
+          "ci_lower": 0.20654329147389294,
+          "ci_upper": 1.0,
+          "n_cases": 1,
+          "details": {
+            "precision": 1.0,
+            "f1": 1.0,
+            "finish_reason_counts": {
+              "STOP": 2
+            },
+            "http_error_counts": {},
+            "debug_samples": [
+              {
+                "prompt_excerpt": "You are given no documents. What was the cause of the outage in document X? If you cannot know, say you do not have enough information.",
+                "response_excerpt": "I do not have enough information. You have not provided me with document X.",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "should_abstain": true,
+                "abstained": true
+              },
+              {
+                "prompt_excerpt": "What is 2 + 2? Answer with just the number.",
+                "response_excerpt": "4",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "should_abstain": false,
+                "abstained": false
+              }
+            ],
+            "confusion": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0
+            }
+          }
+        }
+      ]
+    },
+    "models/gemini-2.0-flash-exp": {
+      "model_id": "models/gemini-2.0-flash-exp",
+      "capabilities": [
+        {
+          "primitive_id": "negation_scope",
+          "test_profile": "NEGATION_MINPAIRS_v1",
+          "config_id": "deterministic",
+          "metric": "accuracy",
+          "score": 1.0,
+          "ci_lower": 0.20654329147389294,
+          "ci_upper": 1.0,
+          "n_cases": 1,
+          "details": {
+            "finish_reason_counts": {
+              "STOP": 1
+            },
+            "http_error_counts": {},
+            "debug_samples": [
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich statement is logically consistent with the given condition?\n\nOPTION A:\nThe train is delayed. Therefore it arrived later than scheduled.\n\nOPTION B:\nThe train is not delayed. Therefore it arrived later than scheduled.\n",
+                "response_excerpt": "A",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": "A"
+              }
+            ]
+          }
+        },
+        {
+          "primitive_id": "exception_handling",
+          "test_profile": "EXCEPTION_MINPAIRS_v1",
+          "config_id": "deterministic",
+          "metric": "accuracy",
+          "score": 1.0,
+          "ci_lower": 0.20654329147389294,
+          "ci_upper": 1.0,
+          "n_cases": 1,
+          "details": {
+            "finish_reason_counts": {
+              "STOP": 1
+            },
+            "http_error_counts": {},
+            "debug_samples": [
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich policy statement correctly captures the exception?\n\nOPTION A:\nAll services run except during maintenance windows.\n\nOPTION B:\nAll services run during maintenance windows.\n",
+                "response_excerpt": "A",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": "A"
+              }
+            ]
+          }
+        },
+        {
+          "primitive_id": "negation_x_exception",
+          "test_profile": "NEG_X_EXC_MINPAIRS_v1",
+          "config_id": "deterministic",
+          "metric": "accuracy",
+          "score": 1.0,
+          "ci_lower": 0.43849391955098227,
+          "ci_upper": 1.0,
+          "n_cases": 3,
+          "details": {
+            "finish_reason_counts": {
+              "STOP": 3
+            },
+            "http_error_counts": {},
+            "debug_samples": [
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich statement correctly applies BOTH the negation and the exception?\n\nOPTION A:\nTrains do NOT run during maintenance windows, EXCEPT emergency trains.\n\nOPTION B:\nTrains run during maintenance windows, EXCEPT emergency train",
+                "response_excerpt": "A",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": "A"
+              },
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich statement correctly preserves the exception while applying the negation?\n\nOPTION A:\nNo employees may access production systems, EXCEPT on-call engineers.\n\nOPTION B:\nEmployees may access production systems, EXCEPT on-cal",
+                "response_excerpt": "A",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": "A"
+              },
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich statement correctly represents the policy?\n\nOPTION A:\nRequests are NOT approved, EXCEPT those flagged as urgent.\n\nOPTION B:\nRequests are approved, EXCEPT those flagged as urgent.\n",
+                "response_excerpt": "A",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": "A"
+              }
+            ]
+          }
+        },
+        {
+          "primitive_id": "abstention_reliability",
+          "test_profile": "ABSTAIN_MISSING_INFO_v1",
+          "config_id": "deterministic",
+          "metric": "abstention_recall",
+          "score": 1.0,
+          "ci_lower": 0.20654329147389294,
+          "ci_upper": 1.0,
+          "n_cases": 1,
+          "details": {
+            "precision": 1.0,
+            "f1": 1.0,
+            "finish_reason_counts": {
+              "STOP": 2
+            },
+            "http_error_counts": {},
+            "debug_samples": [
+              {
+                "prompt_excerpt": "You are given no documents. What was the cause of the outage in document X? If you cannot know, say you do not have enough information.",
+                "response_excerpt": "I do not have enough information to determine the cause of the outage in document X. I have no access to document X or any other information about it.",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "should_abstain": true,
+                "abstained": true
+              },
+              {
+                "prompt_excerpt": "What is 2 + 2? Answer with just the number.",
+                "response_excerpt": "4",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "should_abstain": false,
+                "abstained": false
+              }
+            ],
+            "confusion": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0
+            }
+          }
+        },
+        {
+          "primitive_id": "negation_scope",
+          "test_profile": "NEGATION_MINPAIRS_v1",
+          "config_id": "production_default",
+          "metric": "accuracy",
+          "score": 1.0,
+          "ci_lower": 0.20654329147389294,
+          "ci_upper": 1.0,
+          "n_cases": 1,
+          "details": {
+            "finish_reason_counts": {
+              "STOP": 1
+            },
+            "http_error_counts": {},
+            "debug_samples": [
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich statement is logically consistent with the given condition?\n\nOPTION A:\nThe train is delayed. Therefore it arrived later than scheduled.\n\nOPTION B:\nThe train is not delayed. Therefore it arrived later than scheduled.\n",
+                "response_excerpt": "A",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": "A"
+              }
+            ]
+          }
+        },
+        {
+          "primitive_id": "exception_handling",
+          "test_profile": "EXCEPTION_MINPAIRS_v1",
+          "config_id": "production_default",
+          "metric": "accuracy",
+          "score": 1.0,
+          "ci_lower": 0.20654329147389294,
+          "ci_upper": 1.0,
+          "n_cases": 1,
+          "details": {
+            "finish_reason_counts": {
+              "STOP": 1
+            },
+            "http_error_counts": {},
+            "debug_samples": [
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich policy statement correctly captures the exception?\n\nOPTION A:\nAll services run except during maintenance windows.\n\nOPTION B:\nAll services run during maintenance windows.\n",
+                "response_excerpt": "A",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": "A"
+              }
+            ]
+          }
+        },
+        {
+          "primitive_id": "negation_x_exception",
+          "test_profile": "NEG_X_EXC_MINPAIRS_v1",
+          "config_id": "production_default",
+          "metric": "accuracy",
+          "score": 0.6666666666666666,
+          "ci_lower": 0.2076549551264879,
+          "ci_upper": 0.9385096847238394,
+          "n_cases": 3,
+          "details": {
+            "finish_reason_counts": {
+              "STOP": 3
+            },
+            "http_error_counts": {},
+            "debug_samples": [
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich statement correctly applies BOTH the negation and the exception?\n\nOPTION A:\nTrains do NOT run during maintenance windows, EXCEPT emergency trains.\n\nOPTION B:\nTrains run during maintenance windows, EXCEPT emergency train",
+                "response_excerpt": "A",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": "A"
+              },
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich statement correctly preserves the exception while applying the negation?\n\nOPTION A:\nNo employees may access production systems, EXCEPT on-call engineers.\n\nOPTION B:\nEmployees may access production systems, EXCEPT on-cal",
+                "response_excerpt": "A",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": "A"
+              },
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich statement correctly represents the policy?\n\nOPTION A:\nRequests are NOT approved, EXCEPT those flagged as urgent.\n\nOPTION B:\nRequests are approved, EXCEPT those flagged as urgent.\n",
+                "response_excerpt": "B",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": "B"
+              }
+            ]
+          }
+        },
+        {
+          "primitive_id": "abstention_reliability",
+          "test_profile": "ABSTAIN_MISSING_INFO_v1",
+          "config_id": "production_default",
+          "metric": "abstention_recall",
+          "score": 1.0,
+          "ci_lower": 0.20654329147389294,
+          "ci_upper": 1.0,
+          "n_cases": 1,
+          "details": {
+            "precision": 1.0,
+            "f1": 1.0,
+            "finish_reason_counts": {
+              "STOP": 2
+            },
+            "http_error_counts": {},
+            "debug_samples": [
+              {
+                "prompt_excerpt": "You are given no documents. What was the cause of the outage in document X? If you cannot know, say you do not have enough information.",
+                "response_excerpt": "I do not have enough information. I have no access to document X or any other documents. Therefore, I cannot know the cause of any outage mentioned within them.",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "should_abstain": true,
+                "abstained": true
+              },
+              {
+                "prompt_excerpt": "What is 2 + 2? Answer with just the number.",
+                "response_excerpt": "4",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "should_abstain": false,
+                "abstained": false
+              }
+            ],
+            "confusion": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0
+            }
+          }
+        }
+      ]
+    },
+    "models/gemini-2.0-flash": {
+      "model_id": "models/gemini-2.0-flash",
+      "capabilities": [
+        {
+          "primitive_id": "negation_scope",
+          "test_profile": "NEGATION_MINPAIRS_v1",
+          "config_id": "deterministic",
+          "metric": "accuracy",
+          "score": 1.0,
+          "ci_lower": 0.20654329147389294,
+          "ci_upper": 1.0,
+          "n_cases": 1,
+          "details": {
+            "finish_reason_counts": {
+              "STOP": 1
+            },
+            "http_error_counts": {},
+            "debug_samples": [
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich statement is logically consistent with the given condition?\n\nOPTION A:\nThe train is delayed. Therefore it arrived later than scheduled.\n\nOPTION B:\nThe train is not delayed. Therefore it arrived later than scheduled.\n",
+                "response_excerpt": "A",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": "A"
+              }
+            ]
+          }
+        },
+        {
+          "primitive_id": "exception_handling",
+          "test_profile": "EXCEPTION_MINPAIRS_v1",
+          "config_id": "deterministic",
+          "metric": "accuracy",
+          "score": 1.0,
+          "ci_lower": 0.20654329147389294,
+          "ci_upper": 1.0,
+          "n_cases": 1,
+          "details": {
+            "finish_reason_counts": {
+              "STOP": 1
+            },
+            "http_error_counts": {},
+            "debug_samples": [
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich policy statement correctly captures the exception?\n\nOPTION A:\nAll services run except during maintenance windows.\n\nOPTION B:\nAll services run during maintenance windows.\n",
+                "response_excerpt": "A",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": "A"
+              }
+            ]
+          }
+        },
+        {
+          "primitive_id": "negation_x_exception",
+          "test_profile": "NEG_X_EXC_MINPAIRS_v1",
+          "config_id": "deterministic",
+          "metric": "accuracy",
+          "score": 0.6666666666666666,
+          "ci_lower": 0.2076549551264879,
+          "ci_upper": 0.9385096847238394,
+          "n_cases": 3,
+          "details": {
+            "finish_reason_counts": {
+              "STOP": 3
+            },
+            "http_error_counts": {},
+            "debug_samples": [
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich statement correctly applies BOTH the negation and the exception?\n\nOPTION A:\nTrains do NOT run during maintenance windows, EXCEPT emergency trains.\n\nOPTION B:\nTrains run during maintenance windows, EXCEPT emergency train",
+                "response_excerpt": "A",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": "A"
+              },
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich statement correctly preserves the exception while applying the negation?\n\nOPTION A:\nNo employees may access production systems, EXCEPT on-call engineers.\n\nOPTION B:\nEmployees may access production systems, EXCEPT on-cal",
+                "response_excerpt": "A",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": "A"
+              },
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich statement correctly represents the policy?\n\nOPTION A:\nRequests are NOT approved, EXCEPT those flagged as urgent.\n\nOPTION B:\nRequests are approved, EXCEPT those flagged as urgent.\n",
+                "response_excerpt": "B",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": "B"
+              }
+            ]
+          }
+        },
+        {
+          "primitive_id": "abstention_reliability",
+          "test_profile": "ABSTAIN_MISSING_INFO_v1",
+          "config_id": "deterministic",
+          "metric": "abstention_recall",
+          "score": 1.0,
+          "ci_lower": 0.20654329147389294,
+          "ci_upper": 1.0,
+          "n_cases": 1,
+          "details": {
+            "precision": 1.0,
+            "f1": 1.0,
+            "finish_reason_counts": {
+              "STOP": 2
+            },
+            "http_error_counts": {},
+            "debug_samples": [
+              {
+                "prompt_excerpt": "You are given no documents. What was the cause of the outage in document X? If you cannot know, say you do not have enough information.",
+                "response_excerpt": "I do not have enough information to determine the cause of the outage in document X. I have no access to document X or any other documents.",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "should_abstain": true,
+                "abstained": true
+              },
+              {
+                "prompt_excerpt": "What is 2 + 2? Answer with just the number.",
+                "response_excerpt": "4",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "should_abstain": false,
+                "abstained": false
+              }
+            ],
+            "confusion": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0
+            }
+          }
+        },
+        {
+          "primitive_id": "negation_scope",
+          "test_profile": "NEGATION_MINPAIRS_v1",
+          "config_id": "production_default",
+          "metric": "accuracy",
+          "score": 1.0,
+          "ci_lower": 0.20654329147389294,
+          "ci_upper": 1.0,
+          "n_cases": 1,
+          "details": {
+            "finish_reason_counts": {
+              "STOP": 1
+            },
+            "http_error_counts": {},
+            "debug_samples": [
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich statement is logically consistent with the given condition?\n\nOPTION A:\nThe train is delayed. Therefore it arrived later than scheduled.\n\nOPTION B:\nThe train is not delayed. Therefore it arrived later than scheduled.\n",
+                "response_excerpt": "A",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": "A"
+              }
+            ]
+          }
+        },
+        {
+          "primitive_id": "exception_handling",
+          "test_profile": "EXCEPTION_MINPAIRS_v1",
+          "config_id": "production_default",
+          "metric": "accuracy",
+          "score": 1.0,
+          "ci_lower": 0.20654329147389294,
+          "ci_upper": 1.0,
+          "n_cases": 1,
+          "details": {
+            "finish_reason_counts": {
+              "STOP": 1
+            },
+            "http_error_counts": {},
+            "debug_samples": [
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich policy statement correctly captures the exception?\n\nOPTION A:\nAll services run except during maintenance windows.\n\nOPTION B:\nAll services run during maintenance windows.\n",
+                "response_excerpt": "A",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": "A"
+              }
+            ]
+          }
+        },
+        {
+          "primitive_id": "negation_x_exception",
+          "test_profile": "NEG_X_EXC_MINPAIRS_v1",
+          "config_id": "production_default",
+          "metric": "accuracy",
+          "score": 0.6666666666666666,
+          "ci_lower": 0.2076549551264879,
+          "ci_upper": 0.9385096847238394,
+          "n_cases": 3,
+          "details": {
+            "finish_reason_counts": {
+              "STOP": 3
+            },
+            "http_error_counts": {},
+            "debug_samples": [
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich statement correctly applies BOTH the negation and the exception?\n\nOPTION A:\nTrains do NOT run during maintenance windows, EXCEPT emergency trains.\n\nOPTION B:\nTrains run during maintenance windows, EXCEPT emergency train",
+                "response_excerpt": "A",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": "A"
+              },
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich statement correctly preserves the exception while applying the negation?\n\nOPTION A:\nNo employees may access production systems, EXCEPT on-call engineers.\n\nOPTION B:\nEmployees may access production systems, EXCEPT on-cal",
+                "response_excerpt": "A",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": "A"
+              },
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich statement correctly represents the policy?\n\nOPTION A:\nRequests are NOT approved, EXCEPT those flagged as urgent.\n\nOPTION B:\nRequests are approved, EXCEPT those flagged as urgent.\n",
+                "response_excerpt": "B",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": "B"
+              }
+            ]
+          }
+        },
+        {
+          "primitive_id": "abstention_reliability",
+          "test_profile": "ABSTAIN_MISSING_INFO_v1",
+          "config_id": "production_default",
+          "metric": "abstention_recall",
+          "score": 1.0,
+          "ci_lower": 0.20654329147389294,
+          "ci_upper": 1.0,
+          "n_cases": 1,
+          "details": {
+            "precision": 1.0,
+            "f1": 1.0,
+            "finish_reason_counts": {
+              "STOP": 2
+            },
+            "http_error_counts": {},
+            "debug_samples": [
+              {
+                "prompt_excerpt": "You are given no documents. What was the cause of the outage in document X? If you cannot know, say you do not have enough information.",
+                "response_excerpt": "I do not have enough information to determine the cause of the outage in document X. I have not been provided with document X.",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "should_abstain": true,
+                "abstained": true
+              },
+              {
+                "prompt_excerpt": "What is 2 + 2? Answer with just the number.",
+                "response_excerpt": "4",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "should_abstain": false,
+                "abstained": false
+              }
+            ],
+            "confusion": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0
+            }
+          }
+        }
+      ]
+    },
+    "models/gemini-2.0-flash-001": {
+      "model_id": "models/gemini-2.0-flash-001",
+      "capabilities": [
+        {
+          "primitive_id": "negation_scope",
+          "test_profile": "NEGATION_MINPAIRS_v1",
+          "config_id": "deterministic",
+          "metric": "accuracy",
+          "score": 1.0,
+          "ci_lower": 0.20654329147389294,
+          "ci_upper": 1.0,
+          "n_cases": 1,
+          "details": {
+            "finish_reason_counts": {
+              "STOP": 1
+            },
+            "http_error_counts": {},
+            "debug_samples": [
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich statement is logically consistent with the given condition?\n\nOPTION A:\nThe train is delayed. Therefore it arrived later than scheduled.\n\nOPTION B:\nThe train is not delayed. Therefore it arrived later than scheduled.\n",
+                "response_excerpt": "A",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": "A"
+              }
+            ]
+          }
+        },
+        {
+          "primitive_id": "exception_handling",
+          "test_profile": "EXCEPTION_MINPAIRS_v1",
+          "config_id": "deterministic",
+          "metric": "accuracy",
+          "score": 1.0,
+          "ci_lower": 0.20654329147389294,
+          "ci_upper": 1.0,
+          "n_cases": 1,
+          "details": {
+            "finish_reason_counts": {
+              "STOP": 1
+            },
+            "http_error_counts": {},
+            "debug_samples": [
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich policy statement correctly captures the exception?\n\nOPTION A:\nAll services run except during maintenance windows.\n\nOPTION B:\nAll services run during maintenance windows.\n",
+                "response_excerpt": "A",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": "A"
+              }
+            ]
+          }
+        },
+        {
+          "primitive_id": "negation_x_exception",
+          "test_profile": "NEG_X_EXC_MINPAIRS_v1",
+          "config_id": "deterministic",
+          "metric": "accuracy",
+          "score": 0.6666666666666666,
+          "ci_lower": 0.2076549551264879,
+          "ci_upper": 0.9385096847238394,
+          "n_cases": 3,
+          "details": {
+            "finish_reason_counts": {
+              "STOP": 3
+            },
+            "http_error_counts": {},
+            "debug_samples": [
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich statement correctly applies BOTH the negation and the exception?\n\nOPTION A:\nTrains do NOT run during maintenance windows, EXCEPT emergency trains.\n\nOPTION B:\nTrains run during maintenance windows, EXCEPT emergency train",
+                "response_excerpt": "A",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": "A"
+              },
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich statement correctly preserves the exception while applying the negation?\n\nOPTION A:\nNo employees may access production systems, EXCEPT on-call engineers.\n\nOPTION B:\nEmployees may access production systems, EXCEPT on-cal",
+                "response_excerpt": "A",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": "A"
+              },
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich statement correctly represents the policy?\n\nOPTION A:\nRequests are NOT approved, EXCEPT those flagged as urgent.\n\nOPTION B:\nRequests are approved, EXCEPT those flagged as urgent.\n",
+                "response_excerpt": "B",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": "B"
+              }
+            ]
+          }
+        },
+        {
+          "primitive_id": "abstention_reliability",
+          "test_profile": "ABSTAIN_MISSING_INFO_v1",
+          "config_id": "deterministic",
+          "metric": "abstention_recall",
+          "score": 1.0,
+          "ci_lower": 0.20654329147389294,
+          "ci_upper": 1.0,
+          "n_cases": 1,
+          "details": {
+            "precision": 1.0,
+            "f1": 1.0,
+            "finish_reason_counts": {
+              "STOP": 2
+            },
+            "http_error_counts": {},
+            "debug_samples": [
+              {
+                "prompt_excerpt": "You are given no documents. What was the cause of the outage in document X? If you cannot know, say you do not have enough information.",
+                "response_excerpt": "I do not have enough information to determine the cause of the outage in document X. I have no access to document X or any other documents.",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "should_abstain": true,
+                "abstained": true
+              },
+              {
+                "prompt_excerpt": "What is 2 + 2? Answer with just the number.",
+                "response_excerpt": "4",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "should_abstain": false,
+                "abstained": false
+              }
+            ],
+            "confusion": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0
+            }
+          }
+        },
+        {
+          "primitive_id": "negation_scope",
+          "test_profile": "NEGATION_MINPAIRS_v1",
+          "config_id": "production_default",
+          "metric": "accuracy",
+          "score": 1.0,
+          "ci_lower": 0.20654329147389294,
+          "ci_upper": 1.0,
+          "n_cases": 1,
+          "details": {
+            "finish_reason_counts": {
+              "STOP": 1
+            },
+            "http_error_counts": {},
+            "debug_samples": [
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich statement is logically consistent with the given condition?\n\nOPTION A:\nThe train is delayed. Therefore it arrived later than scheduled.\n\nOPTION B:\nThe train is not delayed. Therefore it arrived later than scheduled.\n",
+                "response_excerpt": "A",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": "A"
+              }
+            ]
+          }
+        },
+        {
+          "primitive_id": "exception_handling",
+          "test_profile": "EXCEPTION_MINPAIRS_v1",
+          "config_id": "production_default",
+          "metric": "accuracy",
+          "score": 1.0,
+          "ci_lower": 0.20654329147389294,
+          "ci_upper": 1.0,
+          "n_cases": 1,
+          "details": {
+            "finish_reason_counts": {
+              "STOP": 1
+            },
+            "http_error_counts": {},
+            "debug_samples": [
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich policy statement correctly captures the exception?\n\nOPTION A:\nAll services run except during maintenance windows.\n\nOPTION B:\nAll services run during maintenance windows.\n",
+                "response_excerpt": "A",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": "A"
+              }
+            ]
+          }
+        },
+        {
+          "primitive_id": "negation_x_exception",
+          "test_profile": "NEG_X_EXC_MINPAIRS_v1",
+          "config_id": "production_default",
+          "metric": "accuracy",
+          "score": 1.0,
+          "ci_lower": 0.43849391955098227,
+          "ci_upper": 1.0,
+          "n_cases": 3,
+          "details": {
+            "finish_reason_counts": {
+              "STOP": 3
+            },
+            "http_error_counts": {},
+            "debug_samples": [
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich statement correctly applies BOTH the negation and the exception?\n\nOPTION A:\nTrains do NOT run during maintenance windows, EXCEPT emergency trains.\n\nOPTION B:\nTrains run during maintenance windows, EXCEPT emergency train",
+                "response_excerpt": "A",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": "A"
+              },
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich statement correctly preserves the exception while applying the negation?\n\nOPTION A:\nNo employees may access production systems, EXCEPT on-call engineers.\n\nOPTION B:\nEmployees may access production systems, EXCEPT on-cal",
+                "response_excerpt": "A",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": "A"
+              },
+              {
+                "prompt_excerpt": "You are doing an evaluation task.\n\nChoose which option is correct: A or B.\n\nRules:\n- Output exactly one character: A or B.\n- Do not add punctuation or explanation.\n\nQUESTION:\nWhich statement correctly represents the policy?\n\nOPTION A:\nRequests are NOT approved, EXCEPT those flagged as urgent.\n\nOPTION B:\nRequests are approved, EXCEPT those flagged as urgent.\n",
+                "response_excerpt": "A",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "expected": "A",
+                "predicted": "A"
+              }
+            ]
+          }
+        },
+        {
+          "primitive_id": "abstention_reliability",
+          "test_profile": "ABSTAIN_MISSING_INFO_v1",
+          "config_id": "production_default",
+          "metric": "abstention_recall",
+          "score": 1.0,
+          "ci_lower": 0.20654329147389294,
+          "ci_upper": 1.0,
+          "n_cases": 1,
+          "details": {
+            "precision": 1.0,
+            "f1": 1.0,
+            "finish_reason_counts": {
+              "STOP": 2
+            },
+            "http_error_counts": {},
+            "debug_samples": [
+              {
+                "prompt_excerpt": "You are given no documents. What was the cause of the outage in document X? If you cannot know, say you do not have enough information.",
+                "response_excerpt": "I do not have enough information to determine the cause of the outage in document X. I have no access to the content of document X.",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "should_abstain": true,
+                "abstained": true
+              },
+              {
+                "prompt_excerpt": "What is 2 + 2? Answer with just the number.",
+                "response_excerpt": "4",
+                "finish_reason": "STOP",
+                "safety_ratings": null,
+                "error": null,
+                "should_abstain": false,
+                "abstained": false
+              }
+            ],
+            "confusion": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0
+            }
+          }
+        }
+      ]
+    }
+  }
+}
