@@ -12,6 +12,33 @@ import requests
 GEMINI_BASE_URL = "https://generativelanguage.googleapis.com/v1beta"
 
 
+def _extract_text_and_finish(resp: dict) -> tuple[str, str]:
+    finish_reason = "UNKNOWN"
+    text_chunks: list[str] = []
+
+    candidates = resp.get("candidates") or []
+    if not candidates:
+        return "", finish_reason
+
+    c0 = candidates[0] or {}
+    finish_reason = c0.get("finishReason", "UNKNOWN") or "UNKNOWN"
+
+    content = c0.get("content") or {}
+    parts = content.get("parts") or []
+
+    # parts is usually a list of dicts, but be defensive
+    for p in parts:
+        if isinstance(p, dict):
+            # common case
+            t = p.get("text")
+            if isinstance(t, str) and t.strip():
+                text_chunks.append(t)
+        elif isinstance(p, str) and p.strip():
+            text_chunks.append(p)
+
+    return ("\n".join(text_chunks)).strip(), finish_reason
+
+
 def _is_text_generation_model(model: Dict[str, Any]) -> Tuple[bool, str]:
     """
     Returns (is_eligible, reason_if_excluded).
@@ -151,6 +178,8 @@ class GeminiAPIAdapter:
         r.raise_for_status()
         return r.json()
 
+
+
     def generate(
     self,
     model: str,
@@ -241,6 +270,14 @@ class GeminiAPIAdapter:
                 )
         except Exception:
             pass
+
+
+
+    # inside generate():
+        text, finish_reason = _extract_text_and_finish(resp)
+        return {"text": text, "finish_reason": finish_reason, "raw": resp}
+
+
 
         return resp
 

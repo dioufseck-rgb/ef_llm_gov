@@ -23,7 +23,7 @@ SUITES_DIR = REPO_ROOT / "ef_llm_gov" / "suites"
 OUT_DIR = REPO_ROOT / "out"
 OUT_DIR.mkdir(exist_ok=True)
 
-MAX_MODELS = int(os.getenv("MAX_MODELS", "1"))
+MAX_MODELS = int(os.getenv("MAX_MODELS", "3"))
 JITTER_RANGE = (0.6, 1.2)
 
 
