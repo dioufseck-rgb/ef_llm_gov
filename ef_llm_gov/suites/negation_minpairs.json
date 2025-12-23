@@ -1,74 +1,74 @@
 [
   {
-    "question": "Which option correctly matches the instruction?",
-    "option_a": "Do NOT approve the request.",
-    "option_b": "Approve the request.",
+    "question": "Which option correctly applies the instruction?",
+    "option_a": "The request must be rejected if approval has not been granted.",
+    "option_b": "The request must be approved if approval has not been granted.",
     "expected": "A"
   },
   {
-    "question": "Which option correctly matches the statement?",
-    "option_a": "The system is NOT available.",
-    "option_b": "The system is available.",
-    "expected": "A"
-  },
-  {
-    "question": "Which option correctly applies the condition?",
-    "option_a": "If the user is NOT verified, deny access.",
-    "option_b": "If the user is NOT verified, grant access.",
-    "expected": "A"
-  },
-  {
-    "question": "Which option correctly restates the policy?",
-    "option_a": "No changes are allowed today.",
-    "option_b": "Changes are allowed today.",
-    "expected": "A"
-  },
-  {
-    "question": "Which option correctly matches the log message?",
-    "option_a": "Backup did NOT complete.",
-    "option_b": "Backup completed.",
-    "expected": "A"
-  },
-  {
-    "question": "Which option correctly matches the requirement?",
-    "option_a": "The report must NOT include personal identifiers.",
-    "option_b": "The report must include personal identifiers.",
+    "question": "Which option is consistent with the policy?",
+    "option_a": "Access is denied to users who are not members of the admin group.",
+    "option_b": "Access is denied to users who are members of the admin group.",
     "expected": "A"
   },
   {
     "question": "Which option correctly follows the rule?",
-    "option_a": "Do NOT notify external recipients.",
-    "option_b": "Notify external recipients.",
+    "option_a": "The system remains unavailable until recovery is complete.",
+    "option_b": "The system becomes available before recovery is complete.",
     "expected": "A"
   },
   {
-    "question": "Which option is consistent with the statement?",
-    "option_a": "The meeting is NOT scheduled for Monday.",
-    "option_b": "The meeting is scheduled for Monday.",
+    "question": "Which option preserves the negation?",
+    "option_a": "A response should be sent only if the request is not invalid.",
+    "option_b": "A response should be sent only if the request is invalid.",
     "expected": "A"
   },
   {
-    "question": "Which option correctly applies negation to the condition?",
-    "option_a": "If the dataset is NOT public, do not share it.",
-    "option_b": "If the dataset is NOT public, share it widely.",
+    "question": "Which option correctly interprets the constraint?",
+    "option_a": "Passwords may not be stored unless they are hashed.",
+    "option_b": "Passwords may be stored unless they are hashed.",
     "expected": "A"
   },
   {
-    "question": "Which option correctly captures the constraint?",
-    "option_a": "The service must NOT store passwords in plain text.",
-    "option_b": "The service must store passwords in plain text.",
+    "question": "Which option matches the requirement?",
+    "option_a": "Do not proceed when the verification step has failed.",
+    "option_b": "Proceed when the verification step has failed.",
     "expected": "A"
   },
   {
-    "question": "Which option correctly matches the instruction?",
-    "option_a": "Do NOT restart the server during business hours.",
-    "option_b": "Restart the server during business hours.",
+    "question": "Which option correctly applies the rule?",
+    "option_a": "The task should run only if the job has not already completed.",
+    "option_b": "The task should run only if the job has already completed.",
     "expected": "A"
   },
   {
-    "question": "Which option correctly matches the statement?",
-    "option_a": "This answer is NOT guaranteed to be correct.",
-    "option_b": "This answer is guaranteed to be correct.",
+    "question": "Which option correctly captures the negation?",
+    "option_a": "The report is considered invalid if required fields are missing.",
+    "option_b": "The report is considered valid if required fields are missing.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option is logically consistent?",
+    "option_a": "Deployment must be blocked when tests do not pass.",
+    "option_b": "Deployment must be allowed when tests do not pass.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option preserves the negation?",
+    "option_a": "The service should not restart while maintenance is ongoing.",
+    "option_b": "The service should restart while maintenance is ongoing.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly applies the condition?",
+    "option_a": "If validation is not successful, the request is rejected.",
+    "option_b": "If validation is not successful, the request is accepted.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly matches the rule?",
+    "option_a": "A user is denied access unless authentication succeeds.",
+    "option_b": "A user is granted access unless authentication succeeds.",
     "expected": "A"
   }
 ]

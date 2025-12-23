@@ -1,0 +1,86 @@
+[
+  {
+    "policy": "Do NOT approve requests, EXCEPT urgent ones, UNLESS documentation is missing.",
+    "question": "For an urgent request with missing documentation, which option is correct?",
+    "option_a": "It must be approved.",
+    "option_b": "It must be denied.",
+    "expected": "U"
+  },
+  {
+    "policy": "Access is NOT granted, EXCEPT to employees, UNLESS the device is unmanaged.",
+    "question": "For an employee using an unmanaged device, which option is correct?",
+    "option_a": "Access must be granted.",
+    "option_b": "Access must be denied.",
+    "expected": "U"
+  },
+  {
+    "policy": "Do NOT send notifications, EXCEPT to administrators, UNLESS the message is confidential.",
+    "question": "For a confidential message sent to administrators, which option is correct?",
+    "option_a": "Notifications must be sent.",
+    "option_b": "Notifications must not be sent.",
+    "expected": "U"
+  },
+  {
+    "policy": "Records must NOT be deleted, EXCEPT duplicates, UNLESS a legal hold is active.",
+    "question": "For duplicate records when a legal hold is active, which option is correct?",
+    "option_a": "They must be deleted.",
+    "option_b": "They must not be deleted.",
+    "expected": "U"
+  },
+  {
+    "policy": "Do NOT grant admin rights, EXCEPT to security engineers, UNLESS the request lacks ticket approval.",
+    "question": "For a security engineer request that lacks ticket approval, which option is correct?",
+    "option_a": "Admin rights must be granted.",
+    "option_b": "Admin rights must not be granted.",
+    "expected": "U"
+  },
+  {
+    "policy": "Refunds are NOT issued, EXCEPT for billing errors, UNLESS the claim is filed after 30 days.",
+    "question": "For a billing error claim filed after 30 days, which option is correct?",
+    "option_a": "A refund must be issued.",
+    "option_b": "A refund must not be issued.",
+    "expected": "U"
+  },
+  {
+    "policy": "Deployments are NOT allowed after 5pm, EXCEPT emergency fixes, UNLESS a freeze is active.",
+    "question": "For an emergency fix after 5pm when a freeze is active, which option is correct?",
+    "option_a": "It is allowed.",
+    "option_b": "It is not allowed.",
+    "expected": "U"
+  },
+  {
+    "policy": "Do NOT restart services, EXCEPT for critical outages, UNLESS the incident is marked external-facing.",
+    "question": "For a critical outage marked external-facing, which option is correct?",
+    "option_a": "Restarting services is required.",
+    "option_b": "Restarting services is prohibited.",
+    "expected": "U"
+  },
+  {
+    "policy": "Do NOT share data, EXCEPT anonymized samples, UNLESS the recipient is external.",
+    "question": "For anonymized samples sent to an external recipient, which option is correct?",
+    "option_a": "Sharing is allowed.",
+    "option_b": "Sharing is not allowed.",
+    "expected": "U"
+  },
+  {
+    "policy": "Messages must NOT be archived, EXCEPT audit-required ones, UNLESS the channel is public.",
+    "question": "For audit-required messages in a public channel, which option is correct?",
+    "option_a": "They must be archived.",
+    "option_b": "They must not be archived.",
+    "expected": "U"
+  },
+  {
+    "policy": "Jobs do NOT run, EXCEPT nightly backups, UNLESS maintenance is active.",
+    "question": "For nightly backups during maintenance, which option is correct?",
+    "option_a": "They must run.",
+    "option_b": "They must not run.",
+    "expected": "U"
+  },
+  {
+    "policy": "Do NOT approve exceptions, EXCEPT for regulators, UNLESS approval is undocumented.",
+    "question": "For a regulator exception with undocumented approval, which option is correct?",
+    "option_a": "It must be approved.",
+    "option_b": "It must be denied.",
+    "expected": "U"
+  }
+]

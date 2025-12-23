@@ -1,74 +1,87 @@
 [
   {
-    "question": "Which option correctly captures the time-window exception?",
-    "option_a": "Deployments are blocked after 5pm, except for critical security patches.",
-    "option_b": "Deployments are allowed after 5pm, except for critical security patches.",
+    "policy": "After 30 days, refunds are not available, EXCEPT for billing errors.",
+    "question": "It is 45 days after purchase and the case is a billing error. Which option is correct?",
+    "option_a": "A refund may be issued.",
+    "option_b": "A refund must not be issued.",
     "expected": "A"
   },
   {
-    "question": "Which option correctly expresses the rule?",
-    "option_a": "Access is denied on weekends, except for on-call engineers.",
-    "option_b": "Access is granted on weekends, except for on-call engineers.",
+    "policy": "During weekends, access is restricted, EXCEPT for on-call engineers.",
+    "question": "It is Sunday and the user is on-call. Which option is correct?",
+    "option_a": "Access may be granted.",
+    "option_b": "Access must be denied.",
     "expected": "A"
   },
   {
-    "question": "Which option correctly applies the exception to the time condition?",
-    "option_a": "Tickets are processed in 2 days, except urgent tickets which are processed within 2 hours.",
-    "option_b": "Tickets are processed in 2 days, except urgent tickets which are processed in 2 days.",
+    "policy": "Between 9pm and 6am, notifications are suppressed, EXCEPT paging alerts.",
+    "question": "It is 11pm and the message is a paging alert. Which option is correct?",
+    "option_a": "The alert may be sent.",
+    "option_b": "The alert must not be sent.",
     "expected": "A"
   },
   {
-    "question": "Which option correctly captures the time-based exception?",
-    "option_a": "Reports are generated nightly, except on the first day of the month.",
-    "option_b": "Reports are generated nightly, including on the first day of the month.",
+    "policy": "During change freeze, deployments are blocked, EXCEPT security patches.",
+    "question": "A change freeze is active and the deployment is a security patch. Which option is correct?",
+    "option_a": "Deployment may proceed.",
+    "option_b": "Deployment must be blocked.",
     "expected": "A"
   },
   {
-    "question": "Which option correctly expresses the rule?",
-    "option_a": "No maintenance is allowed during business hours, except during declared emergencies.",
-    "option_b": "Maintenance is allowed during business hours, except during declared emergencies.",
+    "policy": "Within 24 hours of release, changes are disallowed, EXCEPT emergency changes.",
+    "question": "It is 6 hours after release and the change is an emergency change. Which option is correct?",
+    "option_a": "The change may be approved.",
+    "option_b": "The change must not be approved.",
     "expected": "A"
   },
   {
-    "question": "Which option correctly captures the exception timing?",
-    "option_a": "Emails are sent immediately, except digest emails which are sent at 9am daily.",
-    "option_b": "Emails are sent at 9am daily, except digest emails which are sent immediately.",
+    "policy": "After business hours, support calls are not handled, EXCEPT critical incidents.",
+    "question": "It is after business hours and the call is a critical incident. Which option is correct?",
+    "option_a": "The call may be handled.",
+    "option_b": "The call must not be handled.",
     "expected": "A"
   },
+
   {
-    "question": "Which option correctly expresses the time-window exception?",
-    "option_a": "Backups run every night, except Sundays.",
-    "option_b": "Backups run every night, including Sundays only.",
-    "expected": "A"
+    "policy": "After 30 days, refunds are not available, EXCEPT for billing errors.",
+    "question": "It is 45 days after purchase and the case is not a billing error. Which option is correct?",
+    "option_a": "A refund may be issued.",
+    "option_b": "A refund must not be issued.",
+    "expected": "B"
   },
   {
-    "question": "Which option correctly applies the exception?",
-    "option_a": "Changes must be submitted 24 hours in advance, except emergency changes.",
-    "option_b": "Changes may be submitted at any time, except emergency changes.",
-    "expected": "A"
+    "policy": "During weekends, access is restricted, EXCEPT for on-call engineers.",
+    "question": "It is Sunday and the user is not on-call. Which option is correct?",
+    "option_a": "Access may be granted.",
+    "option_b": "Access must be denied.",
+    "expected": "B"
   },
   {
-    "question": "Which option correctly captures the time-based exception?",
-    "option_a": "The service is read-only during upgrades, except for admin operations.",
-    "option_b": "The service is writable during upgrades, except for admin operations.",
-    "expected": "A"
+    "policy": "Between 9pm and 6am, notifications are suppressed, EXCEPT paging alerts.",
+    "question": "It is 11pm and the message is not a paging alert. Which option is correct?",
+    "option_a": "The message may be sent.",
+    "option_b": "The message must not be sent.",
+    "expected": "B"
   },
   {
-    "question": "Which option correctly expresses the exception?",
-    "option_a": "No alerts are sent at night, except paging alerts.",
-    "option_b": "Alerts are sent at night, except paging alerts.",
-    "expected": "A"
+    "policy": "During change freeze, deployments are blocked, EXCEPT security patches.",
+    "question": "A change freeze is active and the deployment is not a security patch. Which option is correct?",
+    "option_a": "Deployment may proceed.",
+    "option_b": "Deployment must be blocked.",
+    "expected": "B"
   },
   {
-    "question": "Which option correctly captures the timing rule and exception?",
-    "option_a": "Keys must be rotated quarterly, except temporary keys which expire in 7 days.",
-    "option_b": "Keys must be rotated quarterly, except temporary keys which rotate quarterly.",
-    "expected": "A"
+    "policy": "Within 24 hours of release, changes are disallowed, EXCEPT emergency changes.",
+    "question": "It is 6 hours after release and the change is not an emergency change. Which option is correct?",
+    "option_a": "The change may be approved.",
+    "option_b": "The change must not be approved.",
+    "expected": "B"
   },
   {
-    "question": "Which option correctly expresses the rule?",
-    "option_a": "Meetings are scheduled on weekdays, except public holidays.",
-    "option_b": "Meetings are scheduled on weekdays, including public holidays only.",
-    "expected": "A"
+    "policy": "After business hours, support calls are not handled, EXCEPT critical incidents.",
+    "question": "It is after business hours and the call is not a critical incident. Which option is correct?",
+    "option_a": "The call may be handled.",
+    "option_b": "The call must not be handled.",
+    "expected": "B"
   }
 ]

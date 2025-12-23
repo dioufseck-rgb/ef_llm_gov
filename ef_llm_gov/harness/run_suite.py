@@ -1,23 +1,10 @@
-"""
-Run the Experimental-Frame LLM Evaluation Suite.
-
-This script:
-- Enumerates eligible Gemini text models
-- Runs atomic and composite cognitive suites
-- Produces a unified capability ledger
-
-MVP assumptions:
-- Forced-choice A/B for min-pairs
-- Deterministic + production_default configs
-"""
-
 from __future__ import annotations
 
-import json
+import os
 import time
 import random
 from pathlib import Path
-from typing import Dict, Any, List
+from typing import Dict, Iterable, Tuple
 
 from ef_llm_gov.adapters.gemini_api import GeminiAPIAdapter
 from ef_llm_gov.harness.eval_minpairs import evaluate_minpairs
@@ -28,38 +15,62 @@ from ef_llm_gov.configs.generation_configs import GENERATION_CONFIGS
 
 
 # -------------------------
-# Configuration
+# Paths & runtime knobs
 # -------------------------
 
-SUITES_DIR = Path(__file__).parent.parent / "suites"
-OUT_DIR = Path(__file__).parent.parent.parent / "out"
+REPO_ROOT = Path(__file__).resolve().parents[2]
+SUITES_DIR = REPO_ROOT / "ef_llm_gov" / "suites"
+OUT_DIR = REPO_ROOT / "out"
 OUT_DIR.mkdir(exist_ok=True)
 
-MAX_MODELS = 5            # MVP limit
-JITTER_RANGE = (0.6, 1.2) # seconds
+MAX_MODELS = int(os.getenv("MAX_MODELS", "1"))
+JITTER_RANGE = (0.6, 1.2)
 
 
-# Atomic suites
-ATOMIC_MINPAIRS = {
+# -------------------------
+# Suite catalog
+# -------------------------
+
+ATOMIC_MINPAIRS: Dict[str, str] = {
     "negation_scope": "negation_minpairs.json",
     "exception_handling": "exception_minpair.json",
+    "positional_control": "positional_control_minpairs.json",
 }
 
-ABSTENTION_SUITE = {
-    "abstention_reliability": "abstension_missing_info.json"
-}
-
-# Composite suites (2-way)
-COMPOSITE_MINPAIRS = {
-    "negation_x_exception": "neg_x_exc_minpairs.json",
+COMPOSITE_MINPAIRS: Dict[str, str] = {
+    "negation_x_exception": "neg_x_exc_decidable.json",
+    "neg_x_exc_undecidable_blind": "neg_x_exc_undecidable_blind.json",
     "temporal_x_exception": "temporal_x_exception_minpairs.json",
     "negation_x_conditional": "negation_x_conditional_minpairs.json",
 }
 
-# Composite suites (3-way)
-COMPOSITE_3WAY_MINPAIRS = {
-    "negation_x_exception_x_temporal": "neg_x_exc_x_temp_minpairs.json"
+COMPOSITE_3WAY_MINPAIRS: Dict[str, str] = {
+    "negation_x_exception_x_temporal": "neg_x_exc_x_temp_minpairs.json",
 }
+
+ABSTENTION_SUITES: Dict[str, str] = {
+    "abstention_reliability": "abstension_missing_info.json",
+}
+
+
+# -------------------------
+# Helpers
+# -------------------------
+
+def _sleep_jitter() -> None:
+    time.sleep(random.uniform(*JITTER_RANGE))
+
+
+def _iter_existing_suites(
+    suites: Dict[str, str],
+    suites_dir: Path,
+) -> Iterable[Tuple[str, Path]]:
+    for suite_name, filename in suites.items():
+        path = suites_dir / filename
+        if not path.exists():
+            print(f"[WARN] Missing suite file, skipping: {suite_name} -> {path}")
+            continue
+        yield suite_name, path
 
 
 # -------------------------
@@ -69,25 +80,33 @@ COMPOSITE_3WAY_MINPAIRS = {
 def main() -> None:
     adapter = GeminiAPIAdapter()
 
-    # 1) Discover models
-    models = adapter.list_models()
-    models = models[:MAX_MODELS]
+    # Discover models
+    eligible_models = adapter.list_models()
+    eligible_model_count = len(eligible_models)
 
-    ledger = init_ledger()
+    models = eligible_models[:MAX_MODELS]
+    evaluated_model_count = len(models)
 
-    # 2) Iterate models × configs × suites
+    if not models:
+        raise RuntimeError("No models returned by adapter.list_models()")
+
+    ledger = init_ledger(
+        surface="gemini_api",
+        max_models_evaluated=MAX_MODELS,
+        eligible_model_count=eligible_model_count,
+        evaluated_model_count=evaluated_model_count,
+    )
+
     for model in models:
         model_name = model["name"]
         print(f"\n=== Evaluating model: {model_name} ===")
 
         for config_name, gen_cfg in GENERATION_CONFIGS.items():
-            print(f"--- Config: {config_name} ---")
+            print(f"\n--- Config: {config_name} ---")
 
-            # ---- Atomic min-pairs ----
-            for suite_name, file_name in ATOMIC_MINPAIRS.items():
-                suite_path = SUITES_DIR / file_name
+            # Atomic & control suites
+            for suite_name, suite_path in _iter_existing_suites(ATOMIC_MINPAIRS, SUITES_DIR):
                 cases = load_minpairs_suite(suite_path)
-
                 result = evaluate_minpairs(
                     adapter=adapter,
                     model_name=model_name,
@@ -95,21 +114,12 @@ def main() -> None:
                     suite_name=suite_name,
                     cases=cases,
                 )
-
-                ledger.record(
-                    model=model_name,
-                    config=config_name,
-                    suite=suite_name,
-                    result=result,
-                )
-
+                ledger.record(model_name, config_name, suite_name, result)
                 _sleep_jitter()
 
-            # ---- Composite (2-way) ----
-            for suite_name, file_name in COMPOSITE_MINPAIRS.items():
-                suite_path = SUITES_DIR / file_name
+            # Composite (2-way)
+            for suite_name, suite_path in _iter_existing_suites(COMPOSITE_MINPAIRS, SUITES_DIR):
                 cases = load_minpairs_suite(suite_path)
-
                 result = evaluate_minpairs(
                     adapter=adapter,
                     model_name=model_name,
@@ -117,21 +127,12 @@ def main() -> None:
                     suite_name=suite_name,
                     cases=cases,
                 )
-
-                ledger.record(
-                    model=model_name,
-                    config=config_name,
-                    suite=suite_name,
-                    result=result,
-                )
-
+                ledger.record(model_name, config_name, suite_name, result)
                 _sleep_jitter()
 
-            # ---- Composite (3-way) ----
-            for suite_name, file_name in COMPOSITE_3WAY_MINPAIRS.items():
-                suite_path = SUITES_DIR / file_name
+            # Composite (3-way)
+            for suite_name, suite_path in _iter_existing_suites(COMPOSITE_3WAY_MINPAIRS, SUITES_DIR):
                 cases = load_minpairs_suite(suite_path)
-
                 result = evaluate_minpairs(
                     adapter=adapter,
                     model_name=model_name,
@@ -139,21 +140,12 @@ def main() -> None:
                     suite_name=suite_name,
                     cases=cases,
                 )
-
-                ledger.record(
-                    model=model_name,
-                    config=config_name,
-                    suite=suite_name,
-                    result=result,
-                )
-
+                ledger.record(model_name, config_name, suite_name, result)
                 _sleep_jitter()
 
-            # ---- Abstention ----
-            for suite_name, file_name in ABSTENTION_SUITE.items():
-                suite_path = SUITES_DIR / file_name
+            # Abstention suites
+            for suite_name, suite_path in _iter_existing_suites(ABSTENTION_SUITES, SUITES_DIR):
                 cases = load_abstention_suite(suite_path)
-
                 result = evaluate_abstention(
                     adapter=adapter,
                     model_name=model_name,
@@ -161,24 +153,11 @@ def main() -> None:
                     suite_name=suite_name,
                     cases=cases,
                 )
-
-                ledger.record(
-                    model=model_name,
-                    config=config_name,
-                    suite=suite_name,
-                    result=result,
-                )
-
+                ledger.record(model_name, config_name, suite_name, result)
                 _sleep_jitter()
 
-    # 3) Write ledger
-    out_path = OUT_DIR / "capability_ledger.json"
-    write_ledger(ledger, out_path)
-    print(f"\nLedger written to {out_path}")
-
-
-def _sleep_jitter() -> None:
-    time.sleep(random.uniform(*JITTER_RANGE))
+    write_ledger(ledger, OUT_DIR)
+    print("\nLedger written to out/capability_ledger.json")
 
 
 if __name__ == "__main__":

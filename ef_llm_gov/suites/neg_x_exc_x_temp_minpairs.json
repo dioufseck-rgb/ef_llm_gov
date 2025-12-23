@@ -1,74 +1,87 @@
 [
   {
-    "question": "Which option correctly applies negation, exception, and time constraint?",
-    "option_a": "Do NOT deploy after 5pm, EXCEPT emergency patches, which may be deployed after 5pm.",
-    "option_b": "Deploy after 5pm, EXCEPT emergency patches, which may be deployed after 5pm.",
+    "policy": "Do NOT deploy on weekends, EXCEPT emergency fixes. After 6pm, do NOT deploy even emergency fixes.",
+    "question": "It is Saturday at 7pm and an emergency fix is ready. Which option is correct?",
+    "option_a": "Deployment is prohibited.",
+    "option_b": "Deployment is allowed.",
     "expected": "A"
   },
   {
-    "question": "Which option correctly captures the rule?",
-    "option_a": "Do NOT grant weekend access, EXCEPT to on-call engineers, who may have weekend access.",
-    "option_b": "Grant weekend access, EXCEPT to on-call engineers, who may have weekend access.",
+    "policy": "Do NOT approve expenses after month-end close, EXCEPT regulatory fees. After close + 48 hours, approve nothing.",
+    "question": "It is 60 hours after close and the expense is a regulatory fee. Which option is correct?",
+    "option_a": "Approval is prohibited.",
+    "option_b": "Approval is allowed.",
     "expected": "A"
   },
   {
-    "question": "Which option correctly applies the constraint?",
-    "option_a": "No maintenance is allowed during business hours, EXCEPT during emergencies, when maintenance is allowed during business hours.",
-    "option_b": "Maintenance is allowed during business hours, EXCEPT during emergencies, when maintenance is allowed during business hours.",
+    "policy": "Do NOT grant access during off-hours, EXCEPT on-call engineers. During an incident freeze, grant nobody access.",
+    "question": "It is off-hours, the user is on-call, and an incident freeze is active. Which option is correct?",
+    "option_a": "Access is prohibited.",
+    "option_b": "Access is allowed.",
     "expected": "A"
   },
   {
-    "question": "Which option correctly captures the policy?",
-    "option_a": "Do NOT send alerts at night, EXCEPT paging alerts, which may be sent at night.",
-    "option_b": "Send alerts at night, EXCEPT paging alerts, which may be sent at night.",
+    "policy": "Do NOT run batch jobs during business hours, EXCEPT billing reconciliation. During quarter-end lockdown, run no batch jobs.",
+    "question": "It is 2pm (business hours), quarter-end lockdown is active, and the job is billing reconciliation. Which option is correct?",
+    "option_a": "The job must not run.",
+    "option_b": "The job may run.",
     "expected": "A"
   },
   {
-    "question": "Which option correctly applies the rule?",
-    "option_a": "Do NOT run batch jobs on Sundays, EXCEPT cleanup jobs, which may run on Sundays.",
-    "option_b": "Run batch jobs on Sundays, EXCEPT cleanup jobs, which may run on Sundays.",
+    "policy": "Do NOT send marketing emails after 8pm, EXCEPT outage notices. During quiet-hours mode, send no emails after 8pm.",
+    "question": "It is 9pm, quiet-hours mode is active, and the message is an outage notice. Which option is correct?",
+    "option_a": "The email must not be sent.",
+    "option_b": "The email must be sent.",
     "expected": "A"
   },
   {
-    "question": "Which option correctly expresses the constraint?",
-    "option_a": "Do NOT approve changes within 24 hours of release, EXCEPT emergency changes, which may be approved within 24 hours of release.",
-    "option_b": "Approve changes within 24 hours of release, EXCEPT emergency changes, which may be approved within 24 hours of release.",
+    "policy": "Do NOT process refunds after 30 days, EXCEPT billing errors. After 90 days, process no refunds.",
+    "question": "It is 100 days after purchase and the case is a billing error. Which option is correct?",
+    "option_a": "A refund must not be processed.",
+    "option_b": "A refund must be processed.",
     "expected": "A"
   },
+
   {
-    "question": "Which option correctly captures the policy?",
-    "option_a": "Do NOT rotate keys during business hours, EXCEPT temporary keys, which may be rotated during business hours.",
-    "option_b": "Rotate keys during business hours, EXCEPT temporary keys, which may be rotated during business hours.",
-    "expected": "A"
+    "policy": "Do NOT deploy on weekends, EXCEPT emergency fixes. Before 6pm on weekends, emergency fixes may be deployed.",
+    "question": "It is Saturday at 3pm and an emergency fix is ready. Which option is correct?",
+    "option_a": "Deployment is prohibited.",
+    "option_b": "Deployment is allowed.",
+    "expected": "B"
   },
   {
-    "question": "Which option correctly applies the rule?",
-    "option_a": "Do NOT publish reports before Friday, EXCEPT urgent reports, which may be published before Friday.",
-    "option_b": "Publish reports before Friday, EXCEPT urgent reports, which may be published before Friday.",
-    "expected": "A"
+    "policy": "Do NOT approve expenses after month-end close, EXCEPT regulatory fees. Within 48 hours after close, regulatory fees may be approved.",
+    "question": "It is 24 hours after close and the expense is a regulatory fee. Which option is correct?",
+    "option_a": "Approval is prohibited.",
+    "option_b": "Approval is allowed.",
+    "expected": "B"
   },
   {
-    "question": "Which option correctly captures the constraint?",
-    "option_a": "Do NOT restart services during peak hours, EXCEPT during critical outages, when restarts are allowed during peak hours.",
-    "option_b": "Restart services during peak hours, EXCEPT during critical outages, when restarts are allowed during peak hours.",
-    "expected": "A"
+    "policy": "Do NOT grant access during off-hours, EXCEPT on-call engineers. If no incident freeze is active, on-call engineers may access during off-hours.",
+    "question": "It is off-hours, the user is on-call, and no incident freeze is active. Which option is correct?",
+    "option_a": "Access is prohibited.",
+    "option_b": "Access is allowed.",
+    "expected": "B"
   },
   {
-    "question": "Which option correctly applies the policy?",
-    "option_a": "Do NOT delete records after month-end close, EXCEPT duplicates, which may be deleted after month-end close.",
-    "option_b": "Delete records after month-end close, EXCEPT duplicates, which may be deleted after month-end close.",
-    "expected": "A"
+    "policy": "Do NOT run batch jobs during business hours, EXCEPT billing reconciliation. If quarter-end lockdown is not active, billing reconciliation may run during business hours.",
+    "question": "It is 2pm, quarter-end lockdown is not active, and the job is billing reconciliation. Which option is correct?",
+    "option_a": "The job must not run.",
+    "option_b": "The job may run.",
+    "expected": "B"
   },
   {
-    "question": "Which option correctly captures the rule?",
-    "option_a": "Do NOT grant access after account closure, EXCEPT during a 7-day appeal window, when access may be granted after closure.",
-    "option_b": "Grant access after account closure, EXCEPT during a 7-day appeal window, when access may be granted after closure.",
-    "expected": "A"
+    "policy": "Do NOT send marketing emails after 8pm, EXCEPT outage notices. If quiet-hours mode is not active, outage notices may be sent after 8pm.",
+    "question": "It is 9pm, quiet-hours mode is not active, and the message is an outage notice. Which option is correct?",
+    "option_a": "The email must not be sent.",
+    "option_b": "The email must be sent.",
+    "expected": "B"
   },
   {
-    "question": "Which option correctly applies the constraint?",
-    "option_a": "Do NOT process refunds after 30 days, EXCEPT billing errors, which may be processed after 30 days.",
-    "option_b": "Process refunds after 30 days, EXCEPT billing errors, which may be processed after 30 days.",
-    "expected": "A"
+    "policy": "Do NOT process refunds after 30 days, EXCEPT billing errors. Between day 31 and day 90, billing-error refunds may be processed.",
+    "question": "It is 45 days after purchase and the case is a billing error. Which option is correct?",
+    "option_a": "A refund must not be processed.",
+    "option_b": "A refund may be processed.",
+    "expected": "B"
   }
 ]

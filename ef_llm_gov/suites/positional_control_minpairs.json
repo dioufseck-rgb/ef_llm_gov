@@ -1,0 +1,74 @@
+[
+  {
+    "question": "Select the option that states a true fact.",
+    "option_a": "A triangle has three sides.",
+    "option_b": "A triangle has four sides.",
+    "expected": "A"
+  },
+  {
+    "question": "Select the option that states a true fact.",
+    "option_a": "2 + 2 = 5.",
+    "option_b": "2 + 2 = 4.",
+    "expected": "B"
+  },
+  {
+    "question": "Select the option that states a true fact.",
+    "option_a": "Water freezes at 0°C.",
+    "option_b": "Water freezes at 100°C.",
+    "expected": "A"
+  },
+  {
+    "question": "Select the option that states a true fact.",
+    "option_a": "The sun rises in the west.",
+    "option_b": "The sun rises in the east.",
+    "expected": "B"
+  },
+  {
+    "question": "Select the option that states a true fact.",
+    "option_a": "A cat is an animal.",
+    "option_b": "A cat is a vegetable.",
+    "expected": "A"
+  },
+  {
+    "question": "Select the option that states a true fact.",
+    "option_a": "10 is less than 3.",
+    "option_b": "10 is greater than 3.",
+    "expected": "B"
+  },
+  {
+    "question": "Select the option that states a true fact.",
+    "option_a": "A week has seven days.",
+    "option_b": "A week has nine days.",
+    "expected": "A"
+  },
+  {
+    "question": "Select the option that states a true fact.",
+    "option_a": "Ice is hot.",
+    "option_b": "Ice is cold.",
+    "expected": "B"
+  },
+  {
+    "question": "Select the option that states a true fact.",
+    "option_a": "Paris is a city.",
+    "option_b": "Paris is a planet.",
+    "expected": "A"
+  },
+  {
+    "question": "Select the option that states a true fact.",
+    "option_a": "Dogs are plants.",
+    "option_b": "Dogs are animals.",
+    "expected": "B"
+  },
+  {
+    "question": "Select the option that states a true fact.",
+    "option_a": "A square has four equal sides.",
+    "option_b": "A square has three equal sides.",
+    "expected": "A"
+  },
+  {
+    "question": "Select the option that states a true fact.",
+    "option_a": "0 is greater than 1.",
+    "option_b": "0 is less than 1.",
+    "expected": "B"
+  }
+]

@@ -1,0 +1,75 @@
+[
+  {
+    "question": "Which option correctly applies the policy?",
+    "option_a": "Requests must not be approved unless they are marked as urgent.",
+    "option_b": "Requests must be approved unless they are marked as urgent.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option preserves both operators?",
+    "option_a": "Access is denied to all users except those explicitly granted admin rights.",
+    "option_b": "Access is granted to all users except those explicitly granted admin rights.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option is logically consistent?",
+    "option_a": "Notifications are not sent except when an outage is declared.",
+    "option_b": "Notifications are sent except when an outage is declared.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly applies the rule?",
+    "option_a": "Records must not be deleted except when retention periods have expired.",
+    "option_b": "Records must be deleted except when retention periods have expired.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option correctly captures the constraint?",
+    "option_a": "Changes are not allowed except during approved maintenance windows.",
+    "option_b": "Changes are allowed except during approved maintenance windows.",
+    "expected": "A"
+  },
+  {
+    "question": "Which option preserves the scope?",
+    "option_a": "Users are not notified except when the system is unavailable.",
+    "option_b": "Users are notified except when the system is unavailable.",
+    "expected": "A"
+  },
+
+  {
+    "question": "Which option correctly applies both negation and exception?",
+    "option_a": "Access is granted to accounts except those verified by compliance.",
+    "option_b": "Access is not granted to accounts except those verified by compliance.",
+    "expected": "B"
+  },
+  {
+    "question": "Which option is consistent with the statement?",
+    "option_a": "Tasks run unless prerequisites have completed.",
+    "option_b": "Tasks do not run unless prerequisites have completed.",
+    "expected": "B"
+  },
+  {
+    "question": "Which option correctly captures the policy?",
+    "option_a": "Messages are archived except those required for audits.",
+    "option_b": "Messages are not archived except those required for audits.",
+    "expected": "B"
+  },
+  {
+    "question": "Which option preserves the constraint?",
+    "option_a": "Deployments are permitted except for emergency fixes.",
+    "option_b": "Deployments are not permitted except for emergency fixes.",
+    "expected": "B"
+  },
+  {
+    "question": "Which option correctly applies the rule?",
+    "option_a": "Services are restarted except during coordinated rollouts.",
+    "option_b": "Services are not restarted except during coordinated rollouts.",
+    "expected": "B"
+  },
+  {
+    "question": "Which option is logically correct?",
+    "option_a": "Refunds are issued except in cases of billing error.",
+    "option_b": "Refunds are not issued except in cases of billing error.",
+    "expected": "B"
+  }
+]

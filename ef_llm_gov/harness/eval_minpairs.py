@@ -1,203 +1,206 @@
 from __future__ import annotations
 
-import json
-import math
-import random
-import time
-from pathlib import Path
-from typing import Dict, List, Any, Tuple, Optional
+from dataclasses import dataclass
+from typing import Any, Dict, List, Optional, Tuple
 
-import requests
-
-from ef_llm_gov.adapters.gemini_api import GeminiAPIAdapter
+VALID_CHOICES = {"A", "B", "U"}
 
 
-# ---------------------------
-# Utilities
-# ---------------------------
-
-def wilson_ci(p: float, n: int, z: float = 1.96) -> Tuple[float, float]:
-    if n == 0:
-        return 0.0, 0.0
-    denom = 1 + z**2 / n
-    center = (p + z**2 / (2 * n)) / denom
-    margin = z * math.sqrt((p * (1 - p) + z**2 / (4 * n)) / n) / denom
-    return max(0.0, center - margin), min(1.0, center + margin)
+@dataclass
+class MinPairsResult:
+    score: float
+    metric: str
+    ci_lower: float
+    ci_upper: float
+    n_cases: int
+    details: Dict[str, Any]
 
 
-def extract_text(response: Dict[str, Any]) -> str:
-    try:
-        parts = response["candidates"][0]["content"]["parts"]
-        return "\n".join([p.get("text", "") for p in parts if isinstance(p, dict)]).strip()
-    except Exception:
-        return ""
-
-
-def finish_reason(response: Dict[str, Any]) -> str:
-    try:
-        return response["candidates"][0].get("finishReason", "UNKNOWN")
-    except Exception:
-        return "NO_CANDIDATE"
-
-
-def safety_ratings(response: Dict[str, Any]) -> Any:
-    try:
-        return response["candidates"][0].get("safetyRatings", None)
-    except Exception:
-        return None
-
-
-def _sleep_jitter(lo: float, hi: float) -> None:
-    time.sleep(random.uniform(lo, hi))
-
-
-def call_generate_with_backoff(
-    adapter: GeminiAPIAdapter,
-    model: str,
-    prompt: str,
-    config: Dict[str, Any],
-) -> Dict[str, Any]:
+def build_minpairs_prompt(case: Dict[str, Any]) -> str:
     """
-    Calls adapter.generate(...) with exponential backoff on HTTP 429.
+    Builds an Experimental-Frame prompt for a single min-pairs case.
+
+    Supports optional fields:
+      - policy: str  (prepended context)
+      - question: str
+      - option_a: str
+      - option_b: str
+
+    Output alphabet: A, B, U
+      - A/B: uniquely determined
+      - U: underdetermined by the policy/text (multiple reasonable interpretations)
     """
-    attempt = 0
-    while True:
-        try:
-            resp = adapter.generate(model, prompt, config)
-            return resp
-        except requests.exceptions.HTTPError as e:
-            status = getattr(e.response, "status_code", None)
-            if status == 429 and attempt < 6:
-                backoff = min(20.0, 1.0 * (2 ** attempt))
-                jitter = random.uniform(0.0, 0.5 * backoff)
-                time.sleep(backoff + jitter)
-                attempt += 1
-                continue
-            raise
-        except requests.exceptions.RequestException:
-            if attempt < 6:
-                backoff = min(20.0, 1.0 * (2 ** attempt))
-                jitter = random.uniform(0.0, 0.5 * backoff)
-                time.sleep(backoff + jitter)
-                attempt += 1
-                continue
-            raise
+    policy = (case.get("policy") or "").strip()
+    question = (case.get("question") or "").strip()
+    a = (case.get("option_a") or "").strip()
+    b = (case.get("option_b") or "").strip()
 
-
-# ---------------------------
-# Prompt constructors (forced-choice)
-# ---------------------------
-
-FORCED_CHOICE_TEMPLATE = """You are doing an evaluation task.
-
-Choose which option is correct: A or B.
-
-Rules:
-- Output exactly one character: A or B.
-- Do not add punctuation or explanation.
-
-QUESTION:
-{question}
-
-OPTION A:
-{option_a}
-
-OPTION B:
-{option_b}
-"""
-
-
-def build_forced_choice_prompt(item: Dict[str, Any]) -> str:
-    return FORCED_CHOICE_TEMPLATE.format(
-        question=item["question"].strip(),
-        option_a=item["option_a"].strip(),
-        option_b=item["option_b"].strip(),
+    parts: List[str] = []
+    parts.append(
+        "Instruction: Choose A or B if the policy/text uniquely determines the correct option. "
+        "If it does not uniquely determine the answer (multiple reasonable interpretations lead to different outcomes), output U. "
+        "Output exactly one character: A, B, or U."
     )
 
+    if policy:
+        parts.append(f"\nPolicy:\n{policy}")
 
-# ---------------------------
-# Evaluators
-# ---------------------------
+    parts.append(f"\nQuestion:\n{question}")
+    parts.append("\nOptions:")
+    parts.append(f"A) {a}")
+    parts.append(f"B) {b}")
+    parts.append("\nAnswer (A/B/U):")
+
+    return "\n".join(parts)
+
+
+def normalize_choice(model_text: str) -> str:
+    """
+    Extract a single choice token (A/B/U) from model output.
+    - Strips whitespace
+    - Scans left-to-right for first valid choice char
+    - Returns 'INVALID' if no valid choice found
+    """
+    t = (model_text or "").strip().upper()
+    for ch in t:
+        if ch in VALID_CHOICES:
+            return ch
+    return "INVALID"
+
+
+def wilson_ci(p: float, n: int, z: float = 1.96) -> Tuple[float, float]:
+    """
+    Wilson score interval for a Bernoulli proportion.
+    """
+    if n <= 0:
+        return 0.0, 1.0
+    denom = 1.0 + (z * z) / n
+    center = (p + (z * z) / (2.0 * n)) / denom
+    half = (z / denom) * ((p * (1.0 - p) / n + (z * z) / (4.0 * n * n)) ** 0.5)
+    lo = max(0.0, center - half)
+    hi = min(1.0, center + half)
+    return lo, hi
+
 
 def evaluate_minpairs(
-    adapter: GeminiAPIAdapter,
+    adapter,
     model_name: str,
     generation_config: Dict[str, Any],
     suite_name: str,
     cases: List[Dict[str, Any]],
 ) -> Dict[str, Any]:
-    correct = 0
+    """
+    Evaluates min-pairs with output alphabet {A,B,U}.
+
+    Metrics:
+      - accuracy_decidable: accuracy on cases with expected in {A,B}
+      - u_recall: correct-U / total-U
+      - u_precision: correct-U / predicted-U
+      - format_compliance: outputs in {A,B,U} / total
+      - (primary) score + CI returned uses:
+          * accuracy_decidable if there is at least one decidable item
+          * otherwise u_recall (for pure-U suites)
+    """
     n = len(cases)
+    decidable_total = 0
+    decidable_correct = 0
 
-    finish_counts: Dict[str, int] = {}
-    http_errors: Dict[str, int] = {}
-    debug_samples: List[Dict[str, Any]] = []
+    u_total = 0
+    u_tp = 0
+    u_pred_total = 0
 
-    for item in cases:
-        prompt = build_forced_choice_prompt(item)
-        resp: Optional[Dict[str, Any]] = None
-        err: Optional[str] = None
+    format_ok_total = 0
+
+    http_error_counts: Dict[str, int] = {}
+    finish_reason_counts: Dict[str, int] = {}
+
+    debug_samples = []
+
+    for i, case in enumerate(cases):
+        prompt = build_minpairs_prompt(case)
 
         try:
-            resp = call_generate_with_backoff(adapter, model_name, prompt, generation_config)
-        except requests.exceptions.HTTPError as e:
-            code = getattr(e.response, "status_code", None)
-            key = str(code) if code is not None else "HTTPError"
-            http_errors[key] = http_errors.get(key, 0) + 1
-            err = f"http_error:{key}"
+            resp = adapter.generate(
+            model=model_name,
+            prompt=prompt,
+            generation_config=generation_config,
+        )
+            text = resp.get("text", "")
+            finish_reason = resp.get("finish_reason", "UNKNOWN")
+            finish_reason_counts[finish_reason] = finish_reason_counts.get(finish_reason, 0) + 1
+
         except Exception as e:
+            # If your adapter exposes structured HTTP errors, map them here.
+            # We'll bucket by exception name as a minimal fallback.
             key = type(e).__name__
-            http_errors[key] = http_errors.get(key, 0) + 1
-            err = f"exception:{key}"
+            http_error_counts[key] = http_error_counts.get(key, 0) + 1
+            text = ""
+            finish_reason_counts["ERROR"] = finish_reason_counts.get("ERROR", 0) + 1
 
-        if resp is None:
-            if len(debug_samples) < 3:
-                debug_samples.append({
-                    "prompt_excerpt": prompt[:400],
-                    "response_excerpt": "",
-                    "finish_reason": "NO_RESPONSE",
-                    "safety_ratings": None,
-                    "error": err,
-                    "expected": item["expected"],
-                    "predicted": "",
-                })
-            _sleep_jitter(0.6, 1.2)
-            continue
+        pred = normalize_choice(text)
+        exp = str(case.get("expected", "")).strip().upper()
 
-        fr = finish_reason(resp)
-        finish_counts[fr] = finish_counts.get(fr, 0) + 1
+        format_ok = pred in VALID_CHOICES
+        format_ok_total += int(format_ok)
 
-        text = extract_text(resp).strip()
-        predicted = (text[:1].upper() if text else "")
+        if exp in {"A", "B"}:
+            decidable_total += 1
+            decidable_correct += int(pred == exp)
+        elif exp == "U":
+            u_total += 1
+            u_tp += int(pred == "U")
+        else:
+            # Unknown label in suite definition; treat as invalid suite data
+            pass
 
-        if predicted == item["expected"]:
-            correct += 1
+        u_pred_total += int(pred == "U")
 
         if len(debug_samples) < 3:
-            debug_samples.append({
-                "prompt_excerpt": prompt[:400],
-                "response_excerpt": text[:400],
-                "finish_reason": fr,
-                "safety_ratings": safety_ratings(resp),
-                "error": None,
-                "expected": item["expected"],
-                "predicted": predicted,
-            })
+            debug_samples.append(
+                {
+                    "case_index": i,
+                    "expected": exp,
+                    "predicted": pred,
+                    "raw_text": (text[:200] + "…") if len(text) > 200 else text,
+                }
+            )
 
-        _sleep_jitter(0.6, 1.2)
+    # Derived metrics
+    accuracy_decidable = decidable_correct / max(1, decidable_total)
+    u_recall = u_tp / max(1, u_total)
+    u_precision = u_tp / max(1, u_pred_total)
+    format_compliance = format_ok_total / max(1, n)
 
-    acc = correct / n if n else 0.0
-    lo, hi = wilson_ci(acc, n)
+    # Primary score selection
+    if decidable_total > 0:
+        primary_metric = "accuracy_decidable"
+        primary_score = accuracy_decidable
+        ci_lo, ci_hi = wilson_ci(primary_score, decidable_total)
+        ci_n = decidable_total
+    else:
+        # pure-U suite
+        primary_metric = "u_recall"
+        primary_score = u_recall
+        ci_lo, ci_hi = wilson_ci(primary_score, u_total)
+        ci_n = u_total
 
     return {
-        "metric": "accuracy",
-        "score": acc,
-        "ci_lower": lo,
-        "ci_upper": hi,
+        "suite_name": suite_name,
+        "metric": primary_metric,
+        "score": float(primary_score),
+        "ci_lower": float(ci_lo),
+        "ci_upper": float(ci_hi),
         "n_cases": n,
         "details": {
-            "finish_reason_counts": finish_counts,
-            "http_error_counts": http_errors,
+            "n_decidable": decidable_total,
+            "n_undecidable": u_total,
+            "accuracy_decidable": float(accuracy_decidable),
+            "u_recall": float(u_recall),
+            "u_precision": float(u_precision),
+            "format_compliance": float(format_compliance),
+            "http_error_counts": http_error_counts,
+            "finish_reason_counts": finish_reason_counts,
             "debug_samples": debug_samples,
+            "ci_n": ci_n,
         },
     }
