@@ -1,74 +1,74 @@
 [
   {
-    "question": "Which option correctly captures the exception?",
-    "option_a": "All changes require approval, except those classified as emergency fixes.",
-    "option_b": "Only emergency fixes require approval.",
+    "question": "PREMISE: All Type-X units require activation, except those with State-Sigma. TASK: Which option correctly captures the logic scope?",
+    "option_a": "All Type-X units require activation, excluding those with State-Sigma.",
+    "option_b": "Activation is only required for Type-X units with State-Sigma.",
     "expected": "A"
   },
   {
-    "question": "Which option preserves the rule?",
-    "option_a": "Data must be encrypted, except for publicly released samples.",
-    "option_b": "Only publicly released samples must be encrypted.",
+    "question": "PREMISE: All Data-Packets must be encrypted, except for Public-Samples. TASK: Which option preserves the logical rule?",
+    "option_a": "Only Public-Samples must be encrypted.",
+    "option_b": "Encryption is mandatory for Data-Packets, excluding Public-Samples.",
+    "expected": "B"
+  },
+  {
+    "question": "PREMISE: Tier-1 entities must log activity, except Tier-2 proxies under Fixed-Mode. TASK: Which option correctly applies the exception?",
+    "option_a": "Tier-1 entities must log activity, excluding Tier-2 proxies under Fixed-Mode.",
+    "option_b": "Tier-1 entities must log activity, including Tier-2 proxies under Fixed-Mode.",
     "expected": "A"
   },
   {
-    "question": "Which option correctly applies the exception?",
-    "option_a": "Employees must log hours, except contractors working under fixed-price agreements.",
-    "option_b": "Employees must log hours, including contractors working under fixed-price agreements.",
+    "question": "PREMISE: All Alpha-Triggers generate a Pulse, except Low-Priority Echoes. TASK: Which option preserves the intended scope?",
+    "option_a": "Only Low-Priority Echoes generate a Pulse.",
+    "option_b": "All Alpha-Triggers generate a Pulse, excluding Low-Priority Echoes.",
+    "expected": "B"
+  },
+  {
+    "question": "PREMISE: All Sigma-Records are retained for Cycle-7, except Beta-Test sets. TASK: Which option is consistent with the policy?",
+    "option_a": "Cycle-7 retention applies to all Sigma-Records, excluding Beta-Test sets.",
+    "option_b": "Cycle-7 retention applies only to Beta-Test sets.",
     "expected": "A"
   },
   {
-    "question": "Which option preserves the intended scope?",
-    "option_a": "All incidents trigger alerts, except low-severity informational events.",
-    "option_b": "Only low-severity informational events trigger alerts.",
+    "question": "PREMISE: Flux-Inputs are processed in Sequence, except those marked with Priority-Z. TASK: Which option correctly applies the exception?",
+    "option_a": "Flux-Inputs are processed in Sequence, including those marked with Priority-Z.",
+    "option_b": "Flux-Inputs are processed in Sequence, excluding those marked with Priority-Z.",
+    "expected": "B"
+  },
+  {
+    "question": "PREMISE: Access is restricted to Core-Members, except External-Sync nodes. TASK: Which option correctly captures the exception?",
+    "option_a": "Access is granted only to External-Sync nodes.",
+    "option_b": "Access is restricted to Core-Members, excluding External-Sync nodes.",
+    "expected": "B"
+  },
+  {
+    "question": "PREMISE: System-Sweeps run nightly, except during Window-Delta maintenance. TASK: Which option preserves the rule?",
+    "option_a": "System-Sweeps run nightly, excluding Window-Delta maintenance periods.",
+    "option_b": "System-Sweeps run only during Window-Delta maintenance periods.",
     "expected": "A"
   },
   {
-    "question": "Which option is consistent with the policy?",
-    "option_a": "All records are retained for seven years, except test records.",
-    "option_b": "Only test records are retained for seven years.",
+    "question": "PREMISE: All Signal-Outputs are suppressed, except Security-Interrupts. TASK: Which option correctly interprets the exception?",
+    "option_a": "All Signal-Outputs are suppressed, excluding Security-Interrupts.",
+    "option_b": "All Signal-Outputs, including Security-Interrupts, are suppressed.",
     "expected": "A"
   },
   {
-    "question": "Which option correctly applies the exception?",
-    "option_a": "Requests are processed in order, except those explicitly marked urgent.",
-    "option_b": "Requests are processed in order, including those explicitly marked urgent.",
-    "expected": "A"
+    "question": "PREMISE: All Node-Calls are authenticated, except Health-Check pings. TASK: Which option correctly applies the policy?",
+    "option_a": "Only Health-Check pings are authenticated.",
+    "option_b": "All Node-Calls are authenticated, excluding Health-Check pings.",
+    "expected": "B"
   },
   {
-    "question": "Which option correctly captures the exception?",
-    "option_a": "Access is restricted to employees, except external auditors.",
-    "option_b": "Access is restricted to employees and external auditors.",
-    "expected": "A"
+    "question": "PREMISE: Batch-Reports are generated weekly, except the Q-Summary aggregate. TASK: Which option preserves the exception scope?",
+    "option_a": "Weekly generation applies only to the Q-Summary aggregate.",
+    "option_b": "Batch-Reports are generated weekly, excluding the Q-Summary aggregate.",
+    "expected": "B"
   },
   {
-    "question": "Which option preserves the rule?",
-    "option_a": "Backups run nightly, except during scheduled maintenance windows.",
-    "option_b": "Backups run only during scheduled maintenance windows.",
-    "expected": "A"
-  },
-  {
-    "question": "Which option correctly interprets the exception?",
-    "option_a": "All notifications are suppressed, except security alerts.",
-    "option_b": "All notifications, including security alerts, are suppressed.",
-    "expected": "A"
-  },
-  {
-    "question": "Which option correctly applies the policy?",
-    "option_a": "All API calls are authenticated, except health-check endpoints.",
-    "option_b": "Only health-check endpoints are authenticated.",
-    "expected": "A"
-  },
-  {
-    "question": "Which option preserves the exception scope?",
-    "option_a": "Reports are published weekly, except the quarterly financial summary.",
-    "option_b": "Only the quarterly financial summary is published weekly.",
-    "expected": "A"
-  },
-  {
-    "question": "Which option correctly applies the rule?",
-    "option_a": "Meetings are recorded, except one-on-one performance discussions.",
-    "option_b": "Only one-on-one performance discussions are recorded.",
+    "question": "PREMISE: Session-Streams are recorded, except Tier-3 private discussions. TASK: Which option correctly applies the rule?",
+    "option_a": "Session-Streams are recorded, excluding Tier-3 private discussions.",
+    "option_b": "Only Tier-3 private discussions are recorded.",
     "expected": "A"
   }
 ]

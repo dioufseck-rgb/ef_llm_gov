@@ -1,75 +1,74 @@
 [
   {
-    "question": "Which option correctly applies the policy?",
-    "option_a": "Requests must not be approved unless they are marked as urgent.",
-    "option_b": "Requests must be approved unless they are marked as urgent.",
+    "question": "PREMISE: Requirement-Beta specifies that 'Node-Activation' is prohibited unless 'Signal-Z' is high. TASK: Which option correctly rephrases this requirement?",
+    "option_a": "Node-Activation must not occur except when Signal-Z is high.",
+    "option_b": "Node-Activation must occur except when Signal-Z is high.",
     "expected": "A"
   },
   {
-    "question": "Which option preserves both operators?",
-    "option_a": "Access is denied to all users except those explicitly granted admin rights.",
-    "option_b": "Access is granted to all users except those explicitly granted admin rights.",
+    "question": "PREMISE: Protocol-9 specifies that 'Data-Transfer' is denied to all targets except those explicitly listed in 'Registry-Alpha'. TASK: Which option preserves the logical constraint?",
+    "option_a": "Data-Transfer is granted to all targets except those listed in Registry-Alpha.",
+    "option_b": "Data-Transfer is denied to all targets except those listed in Registry-Alpha.",
+    "expected": "B"
+  },
+  {
+    "question": "PREMISE: System-Rule-0 specifies that 'Pulse-Emissions' are not generated except during a 'State-Error' event. TASK: Which option is logically consistent with Rule-0?",
+    "option_a": "Pulse-Emissions are not generated except when a State-Error occurs.",
+    "option_b": "Pulse-Emissions are generated except when a State-Error occurs.",
     "expected": "A"
   },
   {
-    "question": "Which option is logically consistent?",
-    "option_a": "Notifications are not sent except when an outage is declared.",
-    "option_b": "Notifications are sent except when an outage is declared.",
+    "question": "PREMISE: Storage-Policy-X specifies that 'Object-Deletion' is forbidden except when 'Retention-Cycles' have reached zero. TASK: Which option correctly applies this rule?",
+    "option_a": "Object-Deletion is permitted except when Retention-Cycles have reached zero.",
+    "option_b": "Object-Deletion is forbidden except when Retention-Cycles have reached zero.",
+    "expected": "B"
+  },
+  {
+    "question": "PREMISE: Security-Constraint-1 specifies that 'Flux-Modifications' are disallowed except during 'Window-Sigma'. TASK: Which option captures the constraint accurately?",
+    "option_a": "Flux-Modifications are not allowed except during Window-Sigma.",
+    "option_b": "Flux-Modifications are allowed except during Window-Sigma.",
     "expected": "A"
   },
   {
-    "question": "Which option correctly applies the rule?",
-    "option_a": "Records must not be deleted except when retention periods have expired.",
-    "option_b": "Records must be deleted except when retention periods have expired.",
+    "question": "PREMISE: Flow-Policy-A specifies that 'Downstream-Syncs' are not triggered except when the 'Buffer-Status' is Empty. TASK: Which option preserves the logic scope?",
+    "option_a": "Downstream-Syncs are triggered except when the Buffer-Status is Empty.",
+    "option_b": "Downstream-Syncs are not triggered except when the Buffer-Status is Empty.",
+    "expected": "B"
+  },
+  {
+    "question": "PREMISE: Access-Rule-7 specifies that 'Account-Linking' is not authorized except for 'Compliance-Verified' nodes. TASK: Which choice correctly applies both negation and exception?",
+    "option_a": "Account-Linking is granted to nodes except those verified by compliance.",
+    "option_b": "Account-Linking is not authorized except for compliance-verified nodes.",
+    "expected": "B"
+  },
+  {
+    "question": "PREMISE: Execution-Logic-B specifies that 'Task-Strings' do not execute unless 'Pre-Condition-Alpha' is satisfied. TASK: Which option is consistent with the premise?",
+    "option_a": "Task-Strings do not execute unless Pre-Condition-Alpha is satisfied.",
+    "option_b": "Task-Strings execute unless Pre-Condition-Alpha is satisfied.",
     "expected": "A"
   },
   {
-    "question": "Which option correctly captures the constraint?",
-    "option_a": "Changes are not allowed except during approved maintenance windows.",
-    "option_b": "Changes are allowed except during approved maintenance windows.",
+    "question": "PREMISE: Archival-Standard specifies that 'Telemetry-Logs' are not compressed except for 'Audit-Class' events. TASK: Which option correctly captures the policy?",
+    "option_a": "Telemetry-Logs are compressed except for Audit-Class events.",
+    "option_b": "Telemetry-Logs are not compressed except for Audit-Class events.",
+    "expected": "B"
+  },
+  {
+    "question": "PREMISE: Deployment-Gate specifies that 'Code-Injection' is not permitted except for 'Emergency-Patches'. TASK: Which option preserves the logical constraint?",
+    "option_a": "Code-Injection is not permitted except for Emergency-Patches.",
+    "option_b": "Code-Injection is permitted except for Emergency-Patches.",
     "expected": "A"
   },
   {
-    "question": "Which option preserves the scope?",
-    "option_a": "Users are not notified except when the system is unavailable.",
-    "option_b": "Users are notified except when the system is unavailable.",
+    "question": "PREMISE: Process-Control-Z specifies that 'Service-Restarts' are not initiated except during 'Coordinated-Resets'. TASK: Which option correctly applies the rule?",
+    "option_a": "Service-Restarts are initiated except during Coordinated-Resets.",
+    "option_b": "Service-Restarts are not initiated except during Coordinated-Resets.",
+    "expected": "B"
+  },
+  {
+    "question": "PREMISE: Finance-Primitive specifies that 'Credit-Reversals' are not issued except in cases of 'Verification-Mismatch'. TASK: Which option is logically correct?",
+    "option_a": "Credit-Reversals are not issued except in cases of Verification-Mismatch.",
+    "option_b": "Credit-Reversals are issued except in cases of Verification-Mismatch.",
     "expected": "A"
-  },
-
-  {
-    "question": "Which option correctly applies both negation and exception?",
-    "option_a": "Access is granted to accounts except those verified by compliance.",
-    "option_b": "Access is not granted to accounts except those verified by compliance.",
-    "expected": "B"
-  },
-  {
-    "question": "Which option is consistent with the statement?",
-    "option_a": "Tasks run unless prerequisites have completed.",
-    "option_b": "Tasks do not run unless prerequisites have completed.",
-    "expected": "B"
-  },
-  {
-    "question": "Which option correctly captures the policy?",
-    "option_a": "Messages are archived except those required for audits.",
-    "option_b": "Messages are not archived except those required for audits.",
-    "expected": "B"
-  },
-  {
-    "question": "Which option preserves the constraint?",
-    "option_a": "Deployments are permitted except for emergency fixes.",
-    "option_b": "Deployments are not permitted except for emergency fixes.",
-    "expected": "B"
-  },
-  {
-    "question": "Which option correctly applies the rule?",
-    "option_a": "Services are restarted except during coordinated rollouts.",
-    "option_b": "Services are not restarted except during coordinated rollouts.",
-    "expected": "B"
-  },
-  {
-    "question": "Which option is logically correct?",
-    "option_a": "Refunds are issued except in cases of billing error.",
-    "option_b": "Refunds are not issued except in cases of billing error.",
-    "expected": "B"
   }
 ]

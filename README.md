@@ -1,137 +1,187 @@
 # ef_llm_gov
 
-Experimental-Frame LLM Governance MVP
+LLM Capability Evaluation Framework
 
-A Python library for governing Large Language Model (LLM) usage through structured task definitions, capability profiling, and eligibility routing.
+A Python framework for systematically evaluating Large Language Model (LLM) capabilities across multiple dimensions using structured test suites and API adapters.
 
 ## Overview
 
-`ef_llm_gov` provides a framework for:
+`ef_llm_gov` provides tools for:
 
-- **Task Definition**: Specify LLM tasks with detailed headers including risk levels, evidence requirements, and operational constraints
-- **Contract Compilation**: Transform task specifications into executable contracts
-- **Capability Profiling**: Define and score model capabilities across various dimensions
-- **Eligibility Routing**: Automatically route tasks to appropriate models based on capability matching
+- **Adapters**: API interfaces to various LLM providers (currently supports Google Gemini)
+- **Harness**: Evaluation execution engine with support for minimal pairs, abstention tests, and custom suites
+- **Suites**: Pre-defined test cases covering capabilities like negation scope, exception handling, temporal reasoning, and abstention reliability
 
 ## Installation
 
-This MVP uses only Python standard library modules. Requires Python 3.10+.
+Requires Python 3.10+. Uses Python standard library plus `requests` for API calls.
 
 ```bash
 git clone https://github.com/dioufseck-rgb/ef_llm_gov.git
 cd ef_llm_gov
-pip install -r requirements.txt  # Currently empty, but may include optional dependencies
+pip install requests
 ```
-
-Optional dependencies for extended functionality:
-- PyYAML>=6.0.1 (for YAML task header input)
-- jsonschema>=4.23.0 (for JSON schema validation)
 
 ## Quick Start
 
-See `demo.py` for a complete example. Here's a simplified version:
+1. Set your API key:
+   ```bash
+   export GEMINI_KEY=your_gemini_api_key
+   ```
 
-```python
-from ef_llm_gov import (
-    TaskHeader, FrameCompiler, EligibilityGate,
-    ModelCapabilityProfile, CapabilityScore
-)
+2. Run the evaluation suites:
+   ```bash
+   PYTHONPATH=/workspaces/ef_llm_gov python ef_llm_gov/harness/run_suite.py
+   ```
 
-# Define a task
-header = TaskHeader(
-    task_type="grounded_qa",
-    role="analyst",
-    risk="high",
-    evidence="required",
-    sources="provided_only",
-    output_mode="bullets",
-    abstain_policy="strict",
-    tools_allowed=["retrieval"],
-    domain_tags=["ops", "compliance"]
-)
-
-# Compile into a contract
-compiler = FrameCompiler()
-contract = compiler.compile(header, "Your prompt here...")
-
-# Define model capabilities
-ledger = {
-    "model_A": ModelCapabilityProfile(
-        model_id="model_A",
-        capabilities=[
-            CapabilityScore("evidence_traceability", "EVIDENCE_TRACEABILITY_v1", 0.95, 0.93, 0.97, 500),
-            # ... more capabilities
-        ]
-    )
-}
-
-# Route to eligible models
-gate = EligibilityGate()
-decision = gate.decide(contract, ledger)
-
-print(f"Selected models: {decision.selected_models}")
-```
+This will evaluate available Gemini models against all test suites and generate a capability ledger in `out/capability_ledger.json`.
 
 ## Core Components
 
-### TaskHeader
-Defines the parameters of an LLM task:
-- `task_type`: Type of task (e.g., "grounded_qa", "creative_writing")
-- `role`: Expected role (e.g., "analyst", "assistant")
-- `risk`: Risk level ("low", "medium", "high")
-- `evidence`: Evidence requirements ("none", "preferred", "required")
-- `sources`: Source constraints ("any", "provided_only")
-- `output_mode`: Output format ("text", "bullets", "json_schema")
-- `abstain_policy`: When to abstain ("normal", "strict")
-- `tools_allowed`: List of allowed tools
-- `domain_tags`: Domain-specific tags
+### Adapters
 
-### FrameCompiler
-Compiles TaskHeader + prompt into a TaskContract with governance frames.
+API wrappers for LLM providers located in `ef_llm_gov/adapters/`.
 
-### EligibilityGate
-Evaluates model capabilities against task requirements to determine eligible models.
+#### GeminiAPIAdapter
 
-### ModelCapabilityProfile
-Contains capability scores for a model across various dimensions like evidence traceability, citation integrity, etc.
+- **File**: `ef_llm_gov/adapters/gemini_api.py`
+- **Purpose**: Interface to Google Gemini API
+- **Features**:
+  - Model listing and metadata retrieval
+  - Text generation with configurable parameters
+  - Error handling and response parsing
+- **Configuration**: Set `GEMINI_KEY` or `GEMINI_API_KEY` environment variable
 
-## Running the Demo
+### Harness
 
-```bash
-python demo.py
+Evaluation execution tools in `ef_llm_gov/harness/`.
+
+#### run_suite.py
+
+- **Purpose**: Main evaluation runner
+- **Features**:
+  - Discovers and runs all test suites
+  - Evaluates multiple models with different generation configs
+  - Generates capability ledger with scores and metadata
+- **Output**: `out/capability_ledger.json`
+
+#### eval_minpairs.py
+
+- **Purpose**: Evaluates minimal pairs test cases
+- **Features**:
+  - Compares model responses on paired examples
+  - Calculates accuracy and consistency scores
+  - Supports various capability dimensions
+
+#### eval_abstention.py
+
+- **Purpose**: Tests model abstention behavior
+- **Features**:
+  - Evaluates reliability of abstention on missing information
+  - Measures false positive/negative rates
+
+#### ledger.py
+
+- **Purpose**: Capability scoring and aggregation
+- **Features**:
+  - Initializes and updates capability ledgers
+  - Aggregates results across models and configs
+
+#### suites.py
+
+- **Purpose**: Suite loading utilities
+- **Features**:
+  - Loads minimal pairs and abstention suites from JSON
+  - Validates suite structure
+
+### Suites
+
+Test case definitions in `ef_llm_gov/suites/`.
+
+#### Minimal Pairs Suites
+
+Test cases designed to probe specific capabilities through controlled comparisons:
+
+- `negation_minpairs.json`: Negation scope understanding
+- `exception_minpair.json`: Exception handling in conditional logic
+- `positional_control_minpairs.json`: Positional constraints
+- `neg_x_exc_decidable.json`: Negation + exception (decidable)
+- `neg_x_exc_undecidable_blind.json`: Negation + exception (undecidable)
+- `temporal_x_exception_minpairs.json`: Temporal + exception reasoning
+- `negation_x_conditional_minpairs.json`: Negation + conditional logic
+- `neg_x_exc_x_temp_minpairs.json`: Three-way: negation + exception + temporal
+
+#### Abstention Suites
+
+- `abstension_missing_info.json`: Tests for proper abstention when information is missing
+
+## Configuration
+
+### Generation Configs
+
+Defined in `ef_llm_gov/configs/generation_configs.py`:
+
+- `default`: Standard generation parameters
+- `creative`: Higher temperature for creative tasks
+- `precise`: Lower temperature for analytical tasks
+
+### Runtime Options
+
+Environment variables:
+- `MAX_MODELS`: Maximum number of models to evaluate (default: 3)
+- `GEMINI_KEY` or `GEMINI_API_KEY`: API key for Gemini
+
+## Output
+
+Results are saved to the `out/` directory:
+
+- `capability_ledger.json`: Comprehensive evaluation results with scores, confidence intervals, and sample counts
+
+## Extending the Framework
+
+### Adding New Adapters
+
+1. Create a new adapter class in `ef_llm_gov/adapters/`
+2. Implement the adapter interface (see `GeminiAPIAdapter` for reference)
+3. Update `run_suite.py` to use the new adapter
+
+### Adding New Suites
+
+1. Create JSON test cases following the existing format
+2. Place in `ef_llm_gov/suites/`
+3. Add to the suite catalog in `run_suite.py`
+
+### Custom Evaluations
+
+Use the harness components directly:
+
+```python
+from ef_llm_gov.adapters.gemini_api import GeminiAPIAdapter
+from ef_llm_gov.harness.eval_minpairs import evaluate_minpairs
+from ef_llm_gov.harness.suites import load_minpairs_suite
+
+adapter = GeminiAPIAdapter()
+cases = load_minpairs_suite("path/to/suite.json")
+result = evaluate_minpairs(
+    adapter=adapter,
+    model_name="gemini-1.5-pro",
+    generation_config={},
+    suite_name="custom_suite",
+    cases=cases
+)
 ```
 
-This will generate:
-- `out/task_contract.json`: The compiled task contract
-- `out/routing_decision.json`: The eligibility decision
-- `out/capability_ledger.json`: The model capability profiles
+## Demo
 
-## API Reference
-
-### Models
-- `TaskHeader`: Task specification dataclass
-- `TaskContract`: Compiled contract with governance frames
-- `RoutingDecision`: Eligibility decision result
-- `ModelCapabilityProfile`: Model capability profile
-- `CapabilityScore`: Individual capability score with confidence intervals
-
-### Core Classes
-- `FrameCompiler`: Compiles headers into contracts
-- `EligibilityGate`: Makes routing decisions
-
-### I/O Utilities
-- `dump_json()`: Save objects to JSON
-- `load_json()`: Load objects from JSON
-- `ledger_to_path()`: Save capability ledger
-- `ledger_from_path()`: Load capability ledger
+For the original governance framework demo, see `demo.py`.
 
 ## Contributing
 
-This is an experimental MVP. Contributions welcome for:
-- Additional capability dimensions
-- New task types and validation rules
-- Integration with LLM APIs
-- Performance optimizations
+Contributions welcome for:
+- Additional LLM provider adapters
+- New capability test suites
+- Evaluation metrics and scoring methods
+- Performance improvements
 
 ## License
 

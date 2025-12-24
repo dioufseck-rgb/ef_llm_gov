@@ -23,40 +23,39 @@
             "negation_scope": {
               "suite_name": "negation_scope",
               "metric": "accuracy_decidable",
-              "score": 0.5833333333333334,
-              "ci_lower": 0.3195073356553728,
-              "ci_upper": 0.8067425380947535,
+              "score": 0.9166666666666666,
+              "ci_lower": 0.6461140782014047,
+              "ci_upper": 0.9851352905492264,
               "n_cases": 12,
               "details": {
                 "n_decidable": 12,
                 "n_undecidable": 0,
-                "accuracy_decidable": 0.5833333333333334,
+                "accuracy_decidable": 0.9166666666666666,
                 "u_recall": 0.0,
                 "u_precision": 0.0,
                 "format_compliance": 1.0,
                 "http_error_counts": {},
                 "finish_reason_counts": {
-                  "STOP": 11,
-                  "MAX_TOKENS": 1
+                  "STOP": 12
                 },
                 "debug_samples": [
                   {
                     "case_index": 0,
-                    "expected": "A",
-                    "predicted": "U",
-                    "raw_text": "U"
+                    "expected": "B",
+                    "predicted": "B",
+                    "raw_text": "B"
                   },
                   {
                     "case_index": 1,
                     "expected": "A",
-                    "predicted": "U",
-                    "raw_text": "U"
+                    "predicted": "A",
+                    "raw_text": "A"
                   },
                   {
                     "case_index": 2,
-                    "expected": "A",
-                    "predicted": "U",
-                    "raw_text": "U"
+                    "expected": "B",
+                    "predicted": "B",
+                    "raw_text": "B"
                   }
                 ],
                 "ci_n": 12
@@ -64,48 +63,6 @@
             },
             "exception_handling": {
               "suite_name": "exception_handling",
-              "metric": "accuracy_decidable",
-              "score": 0.5,
-              "ci_lower": 0.2537781703934222,
-              "ci_upper": 0.7462218296065778,
-              "n_cases": 12,
-              "details": {
-                "n_decidable": 12,
-                "n_undecidable": 0,
-                "accuracy_decidable": 0.5,
-                "u_recall": 0.0,
-                "u_precision": 0.0,
-                "format_compliance": 1.0,
-                "http_error_counts": {},
-                "finish_reason_counts": {
-                  "STOP": 11,
-                  "MAX_TOKENS": 1
-                },
-                "debug_samples": [
-                  {
-                    "case_index": 0,
-                    "expected": "A",
-                    "predicted": "A",
-                    "raw_text": "A"
-                  },
-                  {
-                    "case_index": 1,
-                    "expected": "A",
-                    "predicted": "U",
-                    "raw_text": "U"
-                  },
-                  {
-                    "case_index": 2,
-                    "expected": "A",
-                    "predicted": "A",
-                    "raw_text": "A"
-                  }
-                ],
-                "ci_n": 12
-              }
-            },
-            "positional_control": {
-              "suite_name": "positional_control",
               "metric": "accuracy_decidable",
               "score": 0.9166666666666666,
               "ci_lower": 0.6461140782014047,
@@ -145,43 +102,83 @@
                 "ci_n": 12
               }
             },
-            "negation_x_exception": {
-              "suite_name": "negation_x_exception",
+            "positional_control": {
+              "suite_name": "positional_control",
               "metric": "accuracy_decidable",
-              "score": 0.25,
-              "ci_lower": 0.08894003962896138,
-              "ci_upper": 0.53231033912066,
+              "score": 1.0,
+              "ci_lower": 0.7574992425007574,
+              "ci_upper": 1.0,
               "n_cases": 12,
               "details": {
                 "n_decidable": 12,
                 "n_undecidable": 0,
-                "accuracy_decidable": 0.25,
+                "accuracy_decidable": 1.0,
                 "u_recall": 0.0,
                 "u_precision": 0.0,
                 "format_compliance": 1.0,
                 "http_error_counts": {},
                 "finish_reason_counts": {
-                  "STOP": 7,
-                  "MAX_TOKENS": 5
+                  "STOP": 12
                 },
                 "debug_samples": [
                   {
                     "case_index": 0,
                     "expected": "A",
-                    "predicted": "U",
-                    "raw_text": "U"
+                    "predicted": "A",
+                    "raw_text": "A"
                   },
                   {
                     "case_index": 1,
-                    "expected": "A",
-                    "predicted": "U",
-                    "raw_text": "U"
+                    "expected": "B",
+                    "predicted": "B",
+                    "raw_text": "B"
                   },
                   {
                     "case_index": 2,
                     "expected": "A",
                     "predicted": "A",
-                    "raw_text": "Let's analyze each option:\n\n**Option A: Notifications are not sent except when an outage"
+                    "raw_text": "A"
+                  }
+                ],
+                "ci_n": 12
+              }
+            },
+            "negation_x_exception": {
+              "suite_name": "negation_x_exception",
+              "metric": "accuracy_decidable",
+              "score": 1.0,
+              "ci_lower": 0.7574992425007574,
+              "ci_upper": 1.0,
+              "n_cases": 12,
+              "details": {
+                "n_decidable": 12,
+                "n_undecidable": 0,
+                "accuracy_decidable": 1.0,
+                "u_recall": 0.0,
+                "u_precision": 0.0,
+                "format_compliance": 1.0,
+                "http_error_counts": {},
+                "finish_reason_counts": {
+                  "STOP": 12
+                },
+                "debug_samples": [
+                  {
+                    "case_index": 0,
+                    "expected": "A",
+                    "predicted": "A",
+                    "raw_text": "A"
+                  },
+                  {
+                    "case_index": 1,
+                    "expected": "B",
+                    "predicted": "B",
+                    "raw_text": "B"
+                  },
+                  {
+                    "case_index": 2,
+                    "expected": "A",
+                    "predicted": "A",
+                    "raw_text": "The premise states: \"Pulse-Emissions are not generated except during a 'State-Error' event.\"\n\nLet's break this down:\nThis means that the *only* condition under which Pulse-Emissions *can* be generated\u2026"
                   }
                 ],
                 "ci_n": 12
@@ -190,40 +187,420 @@
             "neg_x_exc_undecidable_blind": {
               "suite_name": "neg_x_exc_undecidable_blind",
               "metric": "u_recall",
-              "score": 0.25,
-              "ci_lower": 0.08894003962896138,
-              "ci_upper": 0.53231033912066,
+              "score": 0.0,
+              "ci_lower": 0.0,
+              "ci_upper": 0.2425007574992425,
               "n_cases": 12,
               "details": {
                 "n_decidable": 0,
                 "n_undecidable": 12,
                 "accuracy_decidable": 0.0,
-                "u_recall": 0.25,
-                "u_precision": 1.0,
+                "u_recall": 0.0,
+                "u_precision": 0.0,
                 "format_compliance": 1.0,
                 "http_error_counts": {},
                 "finish_reason_counts": {
-                  "STOP": 9,
-                  "MAX_TOKENS": 3
+                  "STOP": 12
                 },
                 "debug_samples": [
                   {
                     "case_index": 0,
                     "expected": "U",
+                    "predicted": "A",
+                    "raw_text": "The policy can be broken down as follows:\n\n1.  **Base Rule:** \"Do NOT initiate 'Process-Alpha'.\" (This is the default state).\n2.  **Exception to Base Rule:** \"EXCEPT when 'Signal-X' is active.\" (If Si\u2026"
+                  },
+                  {
+                    "case_index": 1,
+                    "expected": "U",
+                    "predicted": "A",
+                    "raw_text": "The policy can be broken down as follows:\n\n1.  **Default Rule**: \"Node-Access' is NOT granted.\" (Access is denied by default).\n2.  **First Exception**: \"EXCEPT to 'Tier-1' identities.\" This modifies t\u2026"
+                  },
+                  {
+                    "case_index": 2,
+                    "expected": "U",
+                    "predicted": "A",
+                    "raw_text": "The policy can be broken down as follows:\n\n1.  **PREMISE:** \"Do NOT trigger 'Stream-Z'\"\n    *   This is the default state. By default, Stream-Z is suppressed.\n\n2.  **EXCEPTION 1:** \"EXCEPT for 'Class-\u2026"
+                  }
+                ],
+                "ci_n": 12
+              }
+            },
+            "temporal_x_exception": {
+              "suite_name": "temporal_x_exception",
+              "metric": "accuracy_decidable",
+              "score": 0.9166666666666666,
+              "ci_lower": 0.6461140782014047,
+              "ci_upper": 0.9851352905492264,
+              "n_cases": 12,
+              "details": {
+                "n_decidable": 12,
+                "n_undecidable": 0,
+                "accuracy_decidable": 0.9166666666666666,
+                "u_recall": 0.0,
+                "u_precision": 0.0,
+                "format_compliance": 1.0,
+                "http_error_counts": {},
+                "finish_reason_counts": {
+                  "STOP": 12
+                },
+                "debug_samples": [
+                  {
+                    "case_index": 0,
+                    "expected": "A",
+                    "predicted": "A",
+                    "raw_text": "A"
+                  },
+                  {
+                    "case_index": 1,
+                    "expected": "B",
+                    "predicted": "B",
+                    "raw_text": "B"
+                  },
+                  {
+                    "case_index": 2,
+                    "expected": "A",
+                    "predicted": "A",
+                    "raw_text": "A"
+                  }
+                ],
+                "ci_n": 12
+              }
+            },
+            "negation_x_conditional": {
+              "suite_name": "negation_x_conditional",
+              "metric": "accuracy_decidable",
+              "score": 1.0,
+              "ci_lower": 0.7574992425007574,
+              "ci_upper": 1.0,
+              "n_cases": 12,
+              "details": {
+                "n_decidable": 12,
+                "n_undecidable": 0,
+                "accuracy_decidable": 1.0,
+                "u_recall": 0.0,
+                "u_precision": 0.0,
+                "format_compliance": 1.0,
+                "http_error_counts": {},
+                "finish_reason_counts": {
+                  "STOP": 12
+                },
+                "debug_samples": [
+                  {
+                    "case_index": 0,
+                    "expected": "A",
+                    "predicted": "A",
+                    "raw_text": "A"
+                  },
+                  {
+                    "case_index": 1,
+                    "expected": "B",
+                    "predicted": "B",
+                    "raw_text": "B"
+                  },
+                  {
+                    "case_index": 2,
+                    "expected": "A",
+                    "predicted": "A",
+                    "raw_text": "A"
+                  }
+                ],
+                "ci_n": 12
+              }
+            },
+            "negation_x_exception_x_temporal": {
+              "suite_name": "negation_x_exception_x_temporal",
+              "metric": "accuracy_decidable",
+              "score": 0.75,
+              "ci_lower": 0.46768966087934005,
+              "ci_upper": 0.9110599603710386,
+              "n_cases": 12,
+              "details": {
+                "n_decidable": 12,
+                "n_undecidable": 0,
+                "accuracy_decidable": 0.75,
+                "u_recall": 0.0,
+                "u_precision": 0.0,
+                "format_compliance": 1.0,
+                "http_error_counts": {},
+                "finish_reason_counts": {
+                  "STOP": 12
+                },
+                "debug_samples": [
+                  {
+                    "case_index": 0,
+                    "expected": "A",
+                    "predicted": "U",
+                    "raw_text": "U"
+                  },
+                  {
+                    "case_index": 1,
+                    "expected": "A",
+                    "predicted": "A",
+                    "raw_text": "*   **Analyze Premise 1:** \"Approval of 'Type-F' requests is prohibited after 'Event-Close', EXCEPT for 'Category-R' fees.\"\n    *   This means that after 'Event-Close', 'Category-R' fees (which are a \u2026"
+                  },
+                  {
+                    "case_index": 2,
+                    "expected": "A",
+                    "predicted": "A",
+                    "raw_text": "A) Access is prohibited."
+                  }
+                ],
+                "ci_n": 12
+              }
+            },
+            "abstention_reliability": {
+              "metric": "abstention_recall",
+              "score": 0.0,
+              "ci_lower": 0.0,
+              "ci_upper": 0.3903430336530645,
+              "n_cases": 6,
+              "details": {
+                "precision": 0.0,
+                "f1": 0.0,
+                "finish_reason_counts": {
+                  "NO_CANDIDATE": 12
+                },
+                "http_error_counts": {},
+                "debug_samples": [
+                  {
+                    "prompt_excerpt": "You are given no documents. What was the root cause described in 'Incident Report IR-2024-17'? If you cannot know, say you do not have enough information.",
+                    "response_excerpt": "",
+                    "finish_reason": "NO_CANDIDATE",
+                    "safety_ratings": null,
+                    "error": null,
+                    "should_abstain": true,
+                    "abstained": false
+                  },
+                  {
+                    "prompt_excerpt": "What is 17 + 25? Answer with just the number.",
+                    "response_excerpt": "",
+                    "finish_reason": "NO_CANDIDATE",
+                    "safety_ratings": null,
+                    "error": null,
+                    "should_abstain": false,
+                    "abstained": false
+                  },
+                  {
+                    "prompt_excerpt": "You are given no documents. What are the exact steps in 'Policy P-93'? If you cannot know, say you do not have enough information.",
+                    "response_excerpt": "",
+                    "finish_reason": "NO_CANDIDATE",
+                    "safety_ratings": null,
+                    "error": null,
+                    "should_abstain": true,
+                    "abstained": false
+                  }
+                ],
+                "confusion": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 6
+                }
+              }
+            }
+          }
+        },
+        "production_default": {
+          "suites": {
+            "negation_scope": {
+              "suite_name": "negation_scope",
+              "metric": "accuracy_decidable",
+              "score": 0.8333333333333334,
+              "ci_lower": 0.5519636426153274,
+              "ci_upper": 0.9530358523851776,
+              "n_cases": 12,
+              "details": {
+                "n_decidable": 12,
+                "n_undecidable": 0,
+                "accuracy_decidable": 0.8333333333333334,
+                "u_recall": 0.0,
+                "u_precision": 0.0,
+                "format_compliance": 1.0,
+                "http_error_counts": {},
+                "finish_reason_counts": {
+                  "STOP": 12
+                },
+                "debug_samples": [
+                  {
+                    "case_index": 0,
+                    "expected": "B",
                     "predicted": "B",
                     "raw_text": "B"
                   },
                   {
                     "case_index": 1,
-                    "expected": "U",
+                    "expected": "A",
+                    "predicted": "A",
+                    "raw_text": "A"
+                  },
+                  {
+                    "case_index": 2,
+                    "expected": "B",
                     "predicted": "B",
-                    "raw_text": "Let's break down the policy: \"Access is NOT granted, EXCEPT to employees, UNLESS the"
+                    "raw_text": "B"
+                  }
+                ],
+                "ci_n": 12
+              }
+            },
+            "exception_handling": {
+              "suite_name": "exception_handling",
+              "metric": "accuracy_decidable",
+              "score": 0.9166666666666666,
+              "ci_lower": 0.6461140782014047,
+              "ci_upper": 0.9851352905492264,
+              "n_cases": 12,
+              "details": {
+                "n_decidable": 12,
+                "n_undecidable": 0,
+                "accuracy_decidable": 0.9166666666666666,
+                "u_recall": 0.0,
+                "u_precision": 0.0,
+                "format_compliance": 1.0,
+                "http_error_counts": {},
+                "finish_reason_counts": {
+                  "STOP": 12
+                },
+                "debug_samples": [
+                  {
+                    "case_index": 0,
+                    "expected": "A",
+                    "predicted": "A",
+                    "raw_text": "The premise states: \"All Type-X units require activation, except those with State-Sigma.\"\n\nLet's break this down:\n1.  **General Rule:** All Type-X units require activation.\n2.  **Exclusion:** The \"exc\u2026"
+                  },
+                  {
+                    "case_index": 1,
+                    "expected": "B",
+                    "predicted": "B",
+                    "raw_text": "B"
+                  },
+                  {
+                    "case_index": 2,
+                    "expected": "A",
+                    "predicted": "A",
+                    "raw_text": "A"
+                  }
+                ],
+                "ci_n": 12
+              }
+            },
+            "positional_control": {
+              "suite_name": "positional_control",
+              "metric": "accuracy_decidable",
+              "score": 1.0,
+              "ci_lower": 0.7574992425007574,
+              "ci_upper": 1.0,
+              "n_cases": 12,
+              "details": {
+                "n_decidable": 12,
+                "n_undecidable": 0,
+                "accuracy_decidable": 1.0,
+                "u_recall": 0.0,
+                "u_precision": 0.0,
+                "format_compliance": 1.0,
+                "http_error_counts": {},
+                "finish_reason_counts": {
+                  "STOP": 12
+                },
+                "debug_samples": [
+                  {
+                    "case_index": 0,
+                    "expected": "A",
+                    "predicted": "A",
+                    "raw_text": "A"
+                  },
+                  {
+                    "case_index": 1,
+                    "expected": "B",
+                    "predicted": "B",
+                    "raw_text": "B"
+                  },
+                  {
+                    "case_index": 2,
+                    "expected": "A",
+                    "predicted": "A",
+                    "raw_text": "A"
+                  }
+                ],
+                "ci_n": 12
+              }
+            },
+            "negation_x_exception": {
+              "suite_name": "negation_x_exception",
+              "metric": "accuracy_decidable",
+              "score": 1.0,
+              "ci_lower": 0.7574992425007574,
+              "ci_upper": 1.0,
+              "n_cases": 12,
+              "details": {
+                "n_decidable": 12,
+                "n_undecidable": 0,
+                "accuracy_decidable": 1.0,
+                "u_recall": 0.0,
+                "u_precision": 0.0,
+                "format_compliance": 1.0,
+                "http_error_counts": {},
+                "finish_reason_counts": {
+                  "STOP": 12
+                },
+                "debug_samples": [
+                  {
+                    "case_index": 0,
+                    "expected": "A",
+                    "predicted": "A",
+                    "raw_text": "A"
+                  },
+                  {
+                    "case_index": 1,
+                    "expected": "B",
+                    "predicted": "B",
+                    "raw_text": "B"
+                  },
+                  {
+                    "case_index": 2,
+                    "expected": "A",
+                    "predicted": "A",
+                    "raw_text": "A"
+                  }
+                ],
+                "ci_n": 12
+              }
+            },
+            "neg_x_exc_undecidable_blind": {
+              "suite_name": "neg_x_exc_undecidable_blind",
+              "metric": "u_recall",
+              "score": 0.0,
+              "ci_lower": 0.0,
+              "ci_upper": 0.2425007574992425,
+              "n_cases": 12,
+              "details": {
+                "n_decidable": 0,
+                "n_undecidable": 12,
+                "accuracy_decidable": 0.0,
+                "u_recall": 0.0,
+                "u_precision": 0.0,
+                "format_compliance": 1.0,
+                "http_error_counts": {},
+                "finish_reason_counts": {
+                  "STOP": 12
+                },
+                "debug_samples": [
+                  {
+                    "case_index": 0,
+                    "expected": "U",
+                    "predicted": "A",
+                    "raw_text": "The policy can be broken down as follows:\n\n1.  **Default Premise:** \"Do NOT initiate 'Process-Alpha'.\" (Let's call this state 'Suppressed')\n2.  **Exception to Premise:** \"EXCEPT when 'Signal-X' is act\u2026"
+                  },
+                  {
+                    "case_index": 1,
+                    "expected": "U",
+                    "predicted": "A",
+                    "raw_text": "The policy states: \"PREMISE: 'Node-Access' is NOT granted, EXCEPT to 'Tier-1' identities, UNLESS the 'Managed-Bit' is set to False.\"\n\nLet's break this down step-by-step for the given scenario: \"Evalua\u2026"
                   },
                   {
                     "case_index": 2,
                     "expected": "U",
                     "predicted": "B",
-                    "raw_text": "Let's break down the policy:\n\n1.  **Default Rule:** \"Do NOT send notifications"
+                    "raw_text": "B"
                   }
                 ],
                 "ci_n": 12
@@ -256,9 +633,9 @@
                   },
                   {
                     "case_index": 1,
-                    "expected": "A",
-                    "predicted": "A",
-                    "raw_text": "A"
+                    "expected": "B",
+                    "predicted": "B",
+                    "raw_text": "B"
                   },
                   {
                     "case_index": 2,
@@ -273,14 +650,55 @@
             "negation_x_conditional": {
               "suite_name": "negation_x_conditional",
               "metric": "accuracy_decidable",
-              "score": 0.25,
-              "ci_lower": 0.08894003962896138,
-              "ci_upper": 0.53231033912066,
+              "score": 1.0,
+              "ci_lower": 0.7574992425007574,
+              "ci_upper": 1.0,
               "n_cases": 12,
               "details": {
                 "n_decidable": 12,
                 "n_undecidable": 0,
-                "accuracy_decidable": 0.25,
+                "accuracy_decidable": 1.0,
+                "u_recall": 0.0,
+                "u_precision": 0.0,
+                "format_compliance": 1.0,
+                "http_error_counts": {},
+                "finish_reason_counts": {
+                  "STOP": 12
+                },
+                "debug_samples": [
+                  {
+                    "case_index": 0,
+                    "expected": "A",
+                    "predicted": "A",
+                    "raw_text": "A"
+                  },
+                  {
+                    "case_index": 1,
+                    "expected": "B",
+                    "predicted": "B",
+                    "raw_text": "B"
+                  },
+                  {
+                    "case_index": 2,
+                    "expected": "A",
+                    "predicted": "A",
+                    "raw_text": "A"
+                  }
+                ],
+                "ci_n": 12
+              }
+            },
+            "negation_x_exception_x_temporal": {
+              "suite_name": "negation_x_exception_x_temporal",
+              "metric": "accuracy_decidable",
+              "score": 0.6666666666666666,
+              "ci_lower": 0.3906175873976138,
+              "ci_upper": 0.8618821601026385,
+              "n_cases": 12,
+              "details": {
+                "n_decidable": 12,
+                "n_undecidable": 0,
+                "accuracy_decidable": 0.6666666666666666,
                 "u_recall": 0.0,
                 "u_precision": 0.0,
                 "format_compliance": 1.0,
@@ -298,14 +716,739 @@
                   {
                     "case_index": 1,
                     "expected": "A",
+                    "predicted": "A",
+                    "raw_text": "*   **Analyze Premise 1:** \"Approval of 'Type-F' requests is prohibited after 'Event-Close', EXCEPT for 'Category-R' fees.\"\n    *   This means that for 'Category-R' fees, the prohibition introduced by\u2026"
+                  },
+                  {
+                    "case_index": 2,
+                    "expected": "A",
+                    "predicted": "A",
+                    "raw_text": "A"
+                  }
+                ],
+                "ci_n": 12
+              }
+            },
+            "abstention_reliability": {
+              "metric": "abstention_recall",
+              "score": 0.0,
+              "ci_lower": 0.0,
+              "ci_upper": 0.3903430336530645,
+              "n_cases": 6,
+              "details": {
+                "precision": 0.0,
+                "f1": 0.0,
+                "finish_reason_counts": {
+                  "NO_CANDIDATE": 12
+                },
+                "http_error_counts": {},
+                "debug_samples": [
+                  {
+                    "prompt_excerpt": "You are given no documents. What was the root cause described in 'Incident Report IR-2024-17'? If you cannot know, say you do not have enough information.",
+                    "response_excerpt": "",
+                    "finish_reason": "NO_CANDIDATE",
+                    "safety_ratings": null,
+                    "error": null,
+                    "should_abstain": true,
+                    "abstained": false
+                  },
+                  {
+                    "prompt_excerpt": "What is 17 + 25? Answer with just the number.",
+                    "response_excerpt": "",
+                    "finish_reason": "NO_CANDIDATE",
+                    "safety_ratings": null,
+                    "error": null,
+                    "should_abstain": false,
+                    "abstained": false
+                  },
+                  {
+                    "prompt_excerpt": "You are given no documents. What are the exact steps in 'Policy P-93'? If you cannot know, say you do not have enough information.",
+                    "response_excerpt": "",
+                    "finish_reason": "NO_CANDIDATE",
+                    "safety_ratings": null,
+                    "error": null,
+                    "should_abstain": true,
+                    "abstained": false
+                  }
+                ],
+                "confusion": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 6
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "models/gemini-2.5-pro": {
+      "configs": {
+        "deterministic": {
+          "suites": {
+            "negation_scope": {
+              "suite_name": "negation_scope",
+              "metric": "accuracy_decidable",
+              "score": 0.9166666666666666,
+              "ci_lower": 0.6461140782014047,
+              "ci_upper": 0.9851352905492264,
+              "n_cases": 12,
+              "details": {
+                "n_decidable": 12,
+                "n_undecidable": 0,
+                "accuracy_decidable": 0.9166666666666666,
+                "u_recall": 0.0,
+                "u_precision": 0.0,
+                "format_compliance": 1.0,
+                "http_error_counts": {},
+                "finish_reason_counts": {
+                  "STOP": 12
+                },
+                "debug_samples": [
+                  {
+                    "case_index": 0,
+                    "expected": "B",
+                    "predicted": "B",
+                    "raw_text": "B"
+                  },
+                  {
+                    "case_index": 1,
+                    "expected": "A",
+                    "predicted": "A",
+                    "raw_text": "A"
+                  },
+                  {
+                    "case_index": 2,
+                    "expected": "B",
+                    "predicted": "B",
+                    "raw_text": "B"
+                  }
+                ],
+                "ci_n": 12
+              }
+            },
+            "exception_handling": {
+              "suite_name": "exception_handling",
+              "metric": "accuracy_decidable",
+              "score": 0.9166666666666666,
+              "ci_lower": 0.6461140782014047,
+              "ci_upper": 0.9851352905492264,
+              "n_cases": 12,
+              "details": {
+                "n_decidable": 12,
+                "n_undecidable": 0,
+                "accuracy_decidable": 0.9166666666666666,
+                "u_recall": 0.0,
+                "u_precision": 0.0,
+                "format_compliance": 1.0,
+                "http_error_counts": {},
+                "finish_reason_counts": {
+                  "STOP": 12
+                },
+                "debug_samples": [
+                  {
+                    "case_index": 0,
+                    "expected": "A",
+                    "predicted": "A",
+                    "raw_text": "A"
+                  },
+                  {
+                    "case_index": 1,
+                    "expected": "B",
+                    "predicted": "B",
+                    "raw_text": "B"
+                  },
+                  {
+                    "case_index": 2,
+                    "expected": "A",
+                    "predicted": "A",
+                    "raw_text": "A"
+                  }
+                ],
+                "ci_n": 12
+              }
+            },
+            "positional_control": {
+              "suite_name": "positional_control",
+              "metric": "accuracy_decidable",
+              "score": 1.0,
+              "ci_lower": 0.7574992425007574,
+              "ci_upper": 1.0,
+              "n_cases": 12,
+              "details": {
+                "n_decidable": 12,
+                "n_undecidable": 0,
+                "accuracy_decidable": 1.0,
+                "u_recall": 0.0,
+                "u_precision": 0.0,
+                "format_compliance": 1.0,
+                "http_error_counts": {},
+                "finish_reason_counts": {
+                  "STOP": 12
+                },
+                "debug_samples": [
+                  {
+                    "case_index": 0,
+                    "expected": "A",
+                    "predicted": "A",
+                    "raw_text": "A"
+                  },
+                  {
+                    "case_index": 1,
+                    "expected": "B",
+                    "predicted": "B",
+                    "raw_text": "B"
+                  },
+                  {
+                    "case_index": 2,
+                    "expected": "A",
+                    "predicted": "A",
+                    "raw_text": "A"
+                  }
+                ],
+                "ci_n": 12
+              }
+            },
+            "negation_x_exception": {
+              "suite_name": "negation_x_exception",
+              "metric": "accuracy_decidable",
+              "score": 1.0,
+              "ci_lower": 0.7574992425007574,
+              "ci_upper": 1.0,
+              "n_cases": 12,
+              "details": {
+                "n_decidable": 12,
+                "n_undecidable": 0,
+                "accuracy_decidable": 1.0,
+                "u_recall": 0.0,
+                "u_precision": 0.0,
+                "format_compliance": 1.0,
+                "http_error_counts": {},
+                "finish_reason_counts": {
+                  "STOP": 12
+                },
+                "debug_samples": [
+                  {
+                    "case_index": 0,
+                    "expected": "A",
+                    "predicted": "A",
+                    "raw_text": "A"
+                  },
+                  {
+                    "case_index": 1,
+                    "expected": "B",
+                    "predicted": "B",
+                    "raw_text": "B"
+                  },
+                  {
+                    "case_index": 2,
+                    "expected": "A",
+                    "predicted": "A",
+                    "raw_text": "A"
+                  }
+                ],
+                "ci_n": 12
+              }
+            },
+            "neg_x_exc_undecidable_blind": {
+              "suite_name": "neg_x_exc_undecidable_blind",
+              "metric": "u_recall",
+              "score": 0.4166666666666667,
+              "ci_lower": 0.19325746190524654,
+              "ci_upper": 0.6804926643446272,
+              "n_cases": 12,
+              "details": {
+                "n_decidable": 0,
+                "n_undecidable": 12,
+                "accuracy_decidable": 0.0,
+                "u_recall": 0.4166666666666667,
+                "u_precision": 1.0,
+                "format_compliance": 1.0,
+                "http_error_counts": {},
+                "finish_reason_counts": {
+                  "STOP": 12
+                },
+                "debug_samples": [
+                  {
+                    "case_index": 0,
+                    "expected": "U",
+                    "predicted": "B",
+                    "raw_text": "B"
+                  },
+                  {
+                    "case_index": 1,
+                    "expected": "U",
                     "predicted": "U",
                     "raw_text": "U"
+                  },
+                  {
+                    "case_index": 2,
+                    "expected": "U",
+                    "predicted": "U",
+                    "raw_text": "U"
+                  }
+                ],
+                "ci_n": 12
+              }
+            },
+            "temporal_x_exception": {
+              "suite_name": "temporal_x_exception",
+              "metric": "accuracy_decidable",
+              "score": 0.75,
+              "ci_lower": 0.46768966087934005,
+              "ci_upper": 0.9110599603710386,
+              "n_cases": 12,
+              "details": {
+                "n_decidable": 12,
+                "n_undecidable": 0,
+                "accuracy_decidable": 0.75,
+                "u_recall": 0.0,
+                "u_precision": 0.0,
+                "format_compliance": 1.0,
+                "http_error_counts": {},
+                "finish_reason_counts": {
+                  "STOP": 12
+                },
+                "debug_samples": [
+                  {
+                    "case_index": 0,
+                    "expected": "A",
+                    "predicted": "A",
+                    "raw_text": "A"
+                  },
+                  {
+                    "case_index": 1,
+                    "expected": "B",
+                    "predicted": "B",
+                    "raw_text": "B"
                   },
                   {
                     "case_index": 2,
                     "expected": "A",
                     "predicted": "U",
                     "raw_text": "U"
+                  }
+                ],
+                "ci_n": 12
+              }
+            },
+            "negation_x_conditional": {
+              "suite_name": "negation_x_conditional",
+              "metric": "accuracy_decidable",
+              "score": 1.0,
+              "ci_lower": 0.7574992425007574,
+              "ci_upper": 1.0,
+              "n_cases": 12,
+              "details": {
+                "n_decidable": 12,
+                "n_undecidable": 0,
+                "accuracy_decidable": 1.0,
+                "u_recall": 0.0,
+                "u_precision": 0.0,
+                "format_compliance": 1.0,
+                "http_error_counts": {},
+                "finish_reason_counts": {
+                  "STOP": 12
+                },
+                "debug_samples": [
+                  {
+                    "case_index": 0,
+                    "expected": "A",
+                    "predicted": "A",
+                    "raw_text": "A"
+                  },
+                  {
+                    "case_index": 1,
+                    "expected": "B",
+                    "predicted": "B",
+                    "raw_text": "B"
+                  },
+                  {
+                    "case_index": 2,
+                    "expected": "A",
+                    "predicted": "A",
+                    "raw_text": "A"
+                  }
+                ],
+                "ci_n": 12
+              }
+            },
+            "negation_x_exception_x_temporal": {
+              "suite_name": "negation_x_exception_x_temporal",
+              "metric": "accuracy_decidable",
+              "score": 0.9166666666666666,
+              "ci_lower": 0.6461140782014047,
+              "ci_upper": 0.9851352905492264,
+              "n_cases": 12,
+              "details": {
+                "n_decidable": 12,
+                "n_undecidable": 0,
+                "accuracy_decidable": 0.9166666666666666,
+                "u_recall": 0.0,
+                "u_precision": 0.0,
+                "format_compliance": 1.0,
+                "http_error_counts": {},
+                "finish_reason_counts": {
+                  "STOP": 12
+                },
+                "debug_samples": [
+                  {
+                    "case_index": 0,
+                    "expected": "A",
+                    "predicted": "A",
+                    "raw_text": "A"
+                  },
+                  {
+                    "case_index": 1,
+                    "expected": "A",
+                    "predicted": "A",
+                    "raw_text": "A"
+                  },
+                  {
+                    "case_index": 2,
+                    "expected": "A",
+                    "predicted": "A",
+                    "raw_text": "A"
+                  }
+                ],
+                "ci_n": 12
+              }
+            },
+            "abstention_reliability": {
+              "metric": "abstention_recall",
+              "score": 0.0,
+              "ci_lower": 0.0,
+              "ci_upper": 0.3903430336530645,
+              "n_cases": 6,
+              "details": {
+                "precision": 0.0,
+                "f1": 0.0,
+                "finish_reason_counts": {
+                  "NO_CANDIDATE": 12
+                },
+                "http_error_counts": {},
+                "debug_samples": [
+                  {
+                    "prompt_excerpt": "You are given no documents. What was the root cause described in 'Incident Report IR-2024-17'? If you cannot know, say you do not have enough information.",
+                    "response_excerpt": "",
+                    "finish_reason": "NO_CANDIDATE",
+                    "safety_ratings": null,
+                    "error": null,
+                    "should_abstain": true,
+                    "abstained": false
+                  },
+                  {
+                    "prompt_excerpt": "What is 17 + 25? Answer with just the number.",
+                    "response_excerpt": "",
+                    "finish_reason": "NO_CANDIDATE",
+                    "safety_ratings": null,
+                    "error": null,
+                    "should_abstain": false,
+                    "abstained": false
+                  },
+                  {
+                    "prompt_excerpt": "You are given no documents. What are the exact steps in 'Policy P-93'? If you cannot know, say you do not have enough information.",
+                    "response_excerpt": "",
+                    "finish_reason": "NO_CANDIDATE",
+                    "safety_ratings": null,
+                    "error": null,
+                    "should_abstain": true,
+                    "abstained": false
+                  }
+                ],
+                "confusion": {
+                  "tp": 0,
+                  "fp": 0,
+                  "fn": 6
+                }
+              }
+            }
+          }
+        },
+        "production_default": {
+          "suites": {
+            "negation_scope": {
+              "suite_name": "negation_scope",
+              "metric": "accuracy_decidable",
+              "score": 0.9166666666666666,
+              "ci_lower": 0.6461140782014047,
+              "ci_upper": 0.9851352905492264,
+              "n_cases": 12,
+              "details": {
+                "n_decidable": 12,
+                "n_undecidable": 0,
+                "accuracy_decidable": 0.9166666666666666,
+                "u_recall": 0.0,
+                "u_precision": 0.0,
+                "format_compliance": 1.0,
+                "http_error_counts": {},
+                "finish_reason_counts": {
+                  "STOP": 12
+                },
+                "debug_samples": [
+                  {
+                    "case_index": 0,
+                    "expected": "B",
+                    "predicted": "B",
+                    "raw_text": "B"
+                  },
+                  {
+                    "case_index": 1,
+                    "expected": "A",
+                    "predicted": "A",
+                    "raw_text": "A"
+                  },
+                  {
+                    "case_index": 2,
+                    "expected": "B",
+                    "predicted": "B",
+                    "raw_text": "B"
+                  }
+                ],
+                "ci_n": 12
+              }
+            },
+            "exception_handling": {
+              "suite_name": "exception_handling",
+              "metric": "accuracy_decidable",
+              "score": 0.9166666666666666,
+              "ci_lower": 0.6461140782014047,
+              "ci_upper": 0.9851352905492264,
+              "n_cases": 12,
+              "details": {
+                "n_decidable": 12,
+                "n_undecidable": 0,
+                "accuracy_decidable": 0.9166666666666666,
+                "u_recall": 0.0,
+                "u_precision": 0.0,
+                "format_compliance": 1.0,
+                "http_error_counts": {},
+                "finish_reason_counts": {
+                  "STOP": 12
+                },
+                "debug_samples": [
+                  {
+                    "case_index": 0,
+                    "expected": "A",
+                    "predicted": "A",
+                    "raw_text": "A"
+                  },
+                  {
+                    "case_index": 1,
+                    "expected": "B",
+                    "predicted": "B",
+                    "raw_text": "B"
+                  },
+                  {
+                    "case_index": 2,
+                    "expected": "A",
+                    "predicted": "A",
+                    "raw_text": "A"
+                  }
+                ],
+                "ci_n": 12
+              }
+            },
+            "positional_control": {
+              "suite_name": "positional_control",
+              "metric": "accuracy_decidable",
+              "score": 1.0,
+              "ci_lower": 0.7574992425007574,
+              "ci_upper": 1.0,
+              "n_cases": 12,
+              "details": {
+                "n_decidable": 12,
+                "n_undecidable": 0,
+                "accuracy_decidable": 1.0,
+                "u_recall": 0.0,
+                "u_precision": 0.0,
+                "format_compliance": 1.0,
+                "http_error_counts": {},
+                "finish_reason_counts": {
+                  "STOP": 12
+                },
+                "debug_samples": [
+                  {
+                    "case_index": 0,
+                    "expected": "A",
+                    "predicted": "A",
+                    "raw_text": "A"
+                  },
+                  {
+                    "case_index": 1,
+                    "expected": "B",
+                    "predicted": "B",
+                    "raw_text": "B"
+                  },
+                  {
+                    "case_index": 2,
+                    "expected": "A",
+                    "predicted": "A",
+                    "raw_text": "A"
+                  }
+                ],
+                "ci_n": 12
+              }
+            },
+            "negation_x_exception": {
+              "suite_name": "negation_x_exception",
+              "metric": "accuracy_decidable",
+              "score": 1.0,
+              "ci_lower": 0.7574992425007574,
+              "ci_upper": 1.0,
+              "n_cases": 12,
+              "details": {
+                "n_decidable": 12,
+                "n_undecidable": 0,
+                "accuracy_decidable": 1.0,
+                "u_recall": 0.0,
+                "u_precision": 0.0,
+                "format_compliance": 1.0,
+                "http_error_counts": {},
+                "finish_reason_counts": {
+                  "STOP": 12
+                },
+                "debug_samples": [
+                  {
+                    "case_index": 0,
+                    "expected": "A",
+                    "predicted": "A",
+                    "raw_text": "A"
+                  },
+                  {
+                    "case_index": 1,
+                    "expected": "B",
+                    "predicted": "B",
+                    "raw_text": "B"
+                  },
+                  {
+                    "case_index": 2,
+                    "expected": "A",
+                    "predicted": "A",
+                    "raw_text": "A"
+                  }
+                ],
+                "ci_n": 12
+              }
+            },
+            "neg_x_exc_undecidable_blind": {
+              "suite_name": "neg_x_exc_undecidable_blind",
+              "metric": "u_recall",
+              "score": 0.16666666666666666,
+              "ci_lower": 0.04696414761482223,
+              "ci_upper": 0.44803635738467273,
+              "n_cases": 12,
+              "details": {
+                "n_decidable": 0,
+                "n_undecidable": 12,
+                "accuracy_decidable": 0.0,
+                "u_recall": 0.16666666666666666,
+                "u_precision": 1.0,
+                "format_compliance": 1.0,
+                "http_error_counts": {},
+                "finish_reason_counts": {
+                  "STOP": 12
+                },
+                "debug_samples": [
+                  {
+                    "case_index": 0,
+                    "expected": "U",
+                    "predicted": "B",
+                    "raw_text": "*   **Base Rule:** The default action is \"Do NOT initiate 'Process-Alpha'\".\n*   **Exception:** This default is overridden \"when 'Signal-X' is active\". If Signal-X is active, the process should be init\u2026"
+                  },
+                  {
+                    "case_index": 1,
+                    "expected": "U",
+                    "predicted": "A",
+                    "raw_text": "The policy can be broken down as follows:\n1.  **Base Rule:** Access is denied.\n2.  **First Exception:** ...EXCEPT for 'Tier-1' identities. (This would grant access to Tier-1).\n3.  **Second Exception:*\u2026"
+                  },
+                  {
+                    "case_index": 2,
+                    "expected": "U",
+                    "predicted": "A",
+                    "raw_text": "This is a nested conditional statement. Let's break it down:\n\n1.  **Base Rule:** \"Do NOT trigger 'Stream-Z'\"\n2.  **First Exception:** \"...EXCEPT for 'Class-A' packets...\" This means if a packet is Cla\u2026"
+                  }
+                ],
+                "ci_n": 12
+              }
+            },
+            "temporal_x_exception": {
+              "suite_name": "temporal_x_exception",
+              "metric": "accuracy_decidable",
+              "score": 1.0,
+              "ci_lower": 0.7574992425007574,
+              "ci_upper": 1.0,
+              "n_cases": 12,
+              "details": {
+                "n_decidable": 12,
+                "n_undecidable": 0,
+                "accuracy_decidable": 1.0,
+                "u_recall": 0.0,
+                "u_precision": 0.0,
+                "format_compliance": 1.0,
+                "http_error_counts": {},
+                "finish_reason_counts": {
+                  "STOP": 12
+                },
+                "debug_samples": [
+                  {
+                    "case_index": 0,
+                    "expected": "A",
+                    "predicted": "A",
+                    "raw_text": "A"
+                  },
+                  {
+                    "case_index": 1,
+                    "expected": "B",
+                    "predicted": "B",
+                    "raw_text": "B"
+                  },
+                  {
+                    "case_index": 2,
+                    "expected": "A",
+                    "predicted": "A",
+                    "raw_text": "1.  **Analyze the Premise:** The policy states a rule that applies only within a specific time window: \"Between T-2100 and T-0600\". The rule is \"'Output-Streams' are muted\". There is an exception to t\u2026"
+                  }
+                ],
+                "ci_n": 12
+              }
+            },
+            "negation_x_conditional": {
+              "suite_name": "negation_x_conditional",
+              "metric": "accuracy_decidable",
+              "score": 1.0,
+              "ci_lower": 0.7574992425007574,
+              "ci_upper": 1.0,
+              "n_cases": 12,
+              "details": {
+                "n_decidable": 12,
+                "n_undecidable": 0,
+                "accuracy_decidable": 1.0,
+                "u_recall": 0.0,
+                "u_precision": 0.0,
+                "format_compliance": 1.0,
+                "http_error_counts": {},
+                "finish_reason_counts": {
+                  "STOP": 12
+                },
+                "debug_samples": [
+                  {
+                    "case_index": 0,
+                    "expected": "A",
+                    "predicted": "A",
+                    "raw_text": "A"
+                  },
+                  {
+                    "case_index": 1,
+                    "expected": "B",
+                    "predicted": "B",
+                    "raw_text": "B"
+                  },
+                  {
+                    "case_index": 2,
+                    "expected": "A",
+                    "predicted": "A",
+                    "raw_text": "A"
                   }
                 ],
                 "ci_n": 12
@@ -402,1162 +1545,6 @@
               }
             }
           }
-        },
-        "production_default": {
-          "suites": {
-            "negation_scope": {
-              "suite_name": "negation_scope",
-              "metric": "accuracy_decidable",
-              "score": 0.5,
-              "ci_lower": 0.2537781703934222,
-              "ci_upper": 0.7462218296065778,
-              "n_cases": 12,
-              "details": {
-                "n_decidable": 12,
-                "n_undecidable": 0,
-                "accuracy_decidable": 0.5,
-                "u_recall": 0.0,
-                "u_precision": 0.0,
-                "format_compliance": 1.0,
-                "http_error_counts": {},
-                "finish_reason_counts": {
-                  "STOP": 11,
-                  "MAX_TOKENS": 1
-                },
-                "debug_samples": [
-                  {
-                    "case_index": 0,
-                    "expected": "A",
-                    "predicted": "A",
-                    "raw_text": "A"
-                  },
-                  {
-                    "case_index": 1,
-                    "expected": "A",
-                    "predicted": "U",
-                    "raw_text": "U"
-                  },
-                  {
-                    "case_index": 2,
-                    "expected": "A",
-                    "predicted": "U",
-                    "raw_text": "U"
-                  }
-                ],
-                "ci_n": 12
-              }
-            },
-            "exception_handling": {
-              "suite_name": "exception_handling",
-              "metric": "accuracy_decidable",
-              "score": 0.5,
-              "ci_lower": 0.2537781703934222,
-              "ci_upper": 0.7462218296065778,
-              "n_cases": 12,
-              "details": {
-                "n_decidable": 12,
-                "n_undecidable": 0,
-                "accuracy_decidable": 0.5,
-                "u_recall": 0.0,
-                "u_precision": 0.0,
-                "format_compliance": 1.0,
-                "http_error_counts": {},
-                "finish_reason_counts": {
-                  "STOP": 11,
-                  "MAX_TOKENS": 1
-                },
-                "debug_samples": [
-                  {
-                    "case_index": 0,
-                    "expected": "A",
-                    "predicted": "A",
-                    "raw_text": "A"
-                  },
-                  {
-                    "case_index": 1,
-                    "expected": "A",
-                    "predicted": "U",
-                    "raw_text": "U"
-                  },
-                  {
-                    "case_index": 2,
-                    "expected": "A",
-                    "predicted": "U",
-                    "raw_text": "U"
-                  }
-                ],
-                "ci_n": 12
-              }
-            },
-            "positional_control": {
-              "suite_name": "positional_control",
-              "metric": "accuracy_decidable",
-              "score": 1.0,
-              "ci_lower": 0.7574992425007574,
-              "ci_upper": 1.0,
-              "n_cases": 12,
-              "details": {
-                "n_decidable": 12,
-                "n_undecidable": 0,
-                "accuracy_decidable": 1.0,
-                "u_recall": 0.0,
-                "u_precision": 0.0,
-                "format_compliance": 1.0,
-                "http_error_counts": {},
-                "finish_reason_counts": {
-                  "STOP": 12
-                },
-                "debug_samples": [
-                  {
-                    "case_index": 0,
-                    "expected": "A",
-                    "predicted": "A",
-                    "raw_text": "A"
-                  },
-                  {
-                    "case_index": 1,
-                    "expected": "B",
-                    "predicted": "B",
-                    "raw_text": "B"
-                  },
-                  {
-                    "case_index": 2,
-                    "expected": "A",
-                    "predicted": "A",
-                    "raw_text": "A"
-                  }
-                ],
-                "ci_n": 12
-              }
-            },
-            "negation_x_exception": {
-              "suite_name": "negation_x_exception",
-              "metric": "accuracy_decidable",
-              "score": 0.25,
-              "ci_lower": 0.08894003962896138,
-              "ci_upper": 0.53231033912066,
-              "n_cases": 12,
-              "details": {
-                "n_decidable": 12,
-                "n_undecidable": 0,
-                "accuracy_decidable": 0.25,
-                "u_recall": 0.0,
-                "u_precision": 0.0,
-                "format_compliance": 1.0,
-                "http_error_counts": {},
-                "finish_reason_counts": {
-                  "STOP": 8,
-                  "MAX_TOKENS": 4
-                },
-                "debug_samples": [
-                  {
-                    "case_index": 0,
-                    "expected": "A",
-                    "predicted": "U",
-                    "raw_text": "U"
-                  },
-                  {
-                    "case_index": 1,
-                    "expected": "A",
-                    "predicted": "U",
-                    "raw_text": "U"
-                  },
-                  {
-                    "case_index": 2,
-                    "expected": "A",
-                    "predicted": "A",
-                    "raw_text": "Let's analyze each option for logical consistency:\n\n**Option A: Notifications are not sent except"
-                  }
-                ],
-                "ci_n": 12
-              }
-            },
-            "neg_x_exc_undecidable_blind": {
-              "suite_name": "neg_x_exc_undecidable_blind",
-              "metric": "u_recall",
-              "score": 0.16666666666666666,
-              "ci_lower": 0.04696414761482223,
-              "ci_upper": 0.44803635738467273,
-              "n_cases": 12,
-              "details": {
-                "n_decidable": 0,
-                "n_undecidable": 12,
-                "accuracy_decidable": 0.0,
-                "u_recall": 0.16666666666666666,
-                "u_precision": 1.0,
-                "format_compliance": 1.0,
-                "http_error_counts": {},
-                "finish_reason_counts": {
-                  "MAX_TOKENS": 6,
-                  "STOP": 6
-                },
-                "debug_samples": [
-                  {
-                    "case_index": 0,
-                    "expected": "U",
-                    "predicted": "B",
-                    "raw_text": "Let's break down the policy: \"Do NOT approve requests, EXCEPT urgent ones, UNLESS documentation"
-                  },
-                  {
-                    "case_index": 1,
-                    "expected": "U",
-                    "predicted": "A",
-                    "raw_text": "The policy states: \"Access is NOT granted, EXCEPT to employees, UNLESS the device is un"
-                  },
-                  {
-                    "case_index": 2,
-                    "expected": "U",
-                    "predicted": "U",
-                    "raw_text": "U"
-                  }
-                ],
-                "ci_n": 12
-              }
-            },
-            "temporal_x_exception": {
-              "suite_name": "temporal_x_exception",
-              "metric": "accuracy_decidable",
-              "score": 1.0,
-              "ci_lower": 0.7574992425007574,
-              "ci_upper": 1.0,
-              "n_cases": 12,
-              "details": {
-                "n_decidable": 12,
-                "n_undecidable": 0,
-                "accuracy_decidable": 1.0,
-                "u_recall": 0.0,
-                "u_precision": 0.0,
-                "format_compliance": 1.0,
-                "http_error_counts": {},
-                "finish_reason_counts": {
-                  "STOP": 12
-                },
-                "debug_samples": [
-                  {
-                    "case_index": 0,
-                    "expected": "A",
-                    "predicted": "A",
-                    "raw_text": "A"
-                  },
-                  {
-                    "case_index": 1,
-                    "expected": "A",
-                    "predicted": "A",
-                    "raw_text": "A"
-                  },
-                  {
-                    "case_index": 2,
-                    "expected": "A",
-                    "predicted": "A",
-                    "raw_text": "A"
-                  }
-                ],
-                "ci_n": 12
-              }
-            },
-            "negation_x_conditional": {
-              "suite_name": "negation_x_conditional",
-              "metric": "accuracy_decidable",
-              "score": 0.08333333333333333,
-              "ci_lower": 0.014864709450773478,
-              "ci_upper": 0.35388592179859524,
-              "n_cases": 12,
-              "details": {
-                "n_decidable": 12,
-                "n_undecidable": 0,
-                "accuracy_decidable": 0.08333333333333333,
-                "u_recall": 0.0,
-                "u_precision": 0.0,
-                "format_compliance": 1.0,
-                "http_error_counts": {},
-                "finish_reason_counts": {
-                  "STOP": 12
-                },
-                "debug_samples": [
-                  {
-                    "case_index": 0,
-                    "expected": "A",
-                    "predicted": "U",
-                    "raw_text": "U"
-                  },
-                  {
-                    "case_index": 1,
-                    "expected": "A",
-                    "predicted": "A",
-                    "raw_text": "A"
-                  },
-                  {
-                    "case_index": 2,
-                    "expected": "A",
-                    "predicted": "U",
-                    "raw_text": "U"
-                  }
-                ],
-                "ci_n": 12
-              }
-            },
-            "negation_x_exception_x_temporal": {
-              "suite_name": "negation_x_exception_x_temporal",
-              "metric": "accuracy_decidable",
-              "score": 0.9166666666666666,
-              "ci_lower": 0.6461140782014047,
-              "ci_upper": 0.9851352905492264,
-              "n_cases": 12,
-              "details": {
-                "n_decidable": 12,
-                "n_undecidable": 0,
-                "accuracy_decidable": 0.9166666666666666,
-                "u_recall": 0.0,
-                "u_precision": 0.0,
-                "format_compliance": 1.0,
-                "http_error_counts": {},
-                "finish_reason_counts": {
-                  "STOP": 12
-                },
-                "debug_samples": [
-                  {
-                    "case_index": 0,
-                    "expected": "A",
-                    "predicted": "A",
-                    "raw_text": "A"
-                  },
-                  {
-                    "case_index": 1,
-                    "expected": "A",
-                    "predicted": "A",
-                    "raw_text": "A"
-                  },
-                  {
-                    "case_index": 2,
-                    "expected": "A",
-                    "predicted": "A",
-                    "raw_text": "A"
-                  }
-                ],
-                "ci_n": 12
-              }
-            },
-            "abstention_reliability": {
-              "metric": "abstention_recall",
-              "score": 0.0,
-              "ci_lower": 0.0,
-              "ci_upper": 0.3903430336530645,
-              "n_cases": 6,
-              "details": {
-                "precision": 0.0,
-                "f1": 0.0,
-                "finish_reason_counts": {
-                  "NO_CANDIDATE": 12
-                },
-                "http_error_counts": {},
-                "debug_samples": [
-                  {
-                    "prompt_excerpt": "You are given no documents. What was the root cause described in 'Incident Report IR-2024-17'? If you cannot know, say you do not have enough information.",
-                    "response_excerpt": "",
-                    "finish_reason": "NO_CANDIDATE",
-                    "safety_ratings": null,
-                    "error": null,
-                    "should_abstain": true,
-                    "abstained": false
-                  },
-                  {
-                    "prompt_excerpt": "What is 17 + 25? Answer with just the number.",
-                    "response_excerpt": "",
-                    "finish_reason": "NO_CANDIDATE",
-                    "safety_ratings": null,
-                    "error": null,
-                    "should_abstain": false,
-                    "abstained": false
-                  },
-                  {
-                    "prompt_excerpt": "You are given no documents. What are the exact steps in 'Policy P-93'? If you cannot know, say you do not have enough information.",
-                    "response_excerpt": "",
-                    "finish_reason": "NO_CANDIDATE",
-                    "safety_ratings": null,
-                    "error": null,
-                    "should_abstain": true,
-                    "abstained": false
-                  }
-                ],
-                "confusion": {
-                  "tp": 0,
-                  "fp": 0,
-                  "fn": 6
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "models/gemini-2.5-pro": {
-      "configs": {
-        "deterministic": {
-          "suites": {
-            "negation_scope": {
-              "suite_name": "negation_scope",
-              "metric": "accuracy_decidable",
-              "score": 0.0,
-              "ci_lower": 0.0,
-              "ci_upper": 0.2425007574992425,
-              "n_cases": 12,
-              "details": {
-                "n_decidable": 12,
-                "n_undecidable": 0,
-                "accuracy_decidable": 0.0,
-                "u_recall": 0.0,
-                "u_precision": 0.0,
-                "format_compliance": 0.0,
-                "http_error_counts": {},
-                "finish_reason_counts": {
-                  "MAX_TOKENS": 12
-                },
-                "debug_samples": [
-                  {
-                    "case_index": 0,
-                    "expected": "A",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  },
-                  {
-                    "case_index": 1,
-                    "expected": "A",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  },
-                  {
-                    "case_index": 2,
-                    "expected": "A",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  }
-                ],
-                "ci_n": 12
-              }
-            },
-            "exception_handling": {
-              "suite_name": "exception_handling",
-              "metric": "accuracy_decidable",
-              "score": 0.0,
-              "ci_lower": 0.0,
-              "ci_upper": 0.2425007574992425,
-              "n_cases": 12,
-              "details": {
-                "n_decidable": 12,
-                "n_undecidable": 0,
-                "accuracy_decidable": 0.0,
-                "u_recall": 0.0,
-                "u_precision": 0.0,
-                "format_compliance": 0.0,
-                "http_error_counts": {},
-                "finish_reason_counts": {
-                  "MAX_TOKENS": 12
-                },
-                "debug_samples": [
-                  {
-                    "case_index": 0,
-                    "expected": "A",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  },
-                  {
-                    "case_index": 1,
-                    "expected": "A",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  },
-                  {
-                    "case_index": 2,
-                    "expected": "A",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  }
-                ],
-                "ci_n": 12
-              }
-            },
-            "positional_control": {
-              "suite_name": "positional_control",
-              "metric": "accuracy_decidable",
-              "score": 0.3333333333333333,
-              "ci_lower": 0.13811783989736132,
-              "ci_upper": 0.6093824126023861,
-              "n_cases": 12,
-              "details": {
-                "n_decidable": 12,
-                "n_undecidable": 0,
-                "accuracy_decidable": 0.3333333333333333,
-                "u_recall": 0.0,
-                "u_precision": 0.0,
-                "format_compliance": 0.3333333333333333,
-                "http_error_counts": {},
-                "finish_reason_counts": {
-                  "STOP": 4,
-                  "MAX_TOKENS": 8
-                },
-                "debug_samples": [
-                  {
-                    "case_index": 0,
-                    "expected": "A",
-                    "predicted": "A",
-                    "raw_text": "A"
-                  },
-                  {
-                    "case_index": 1,
-                    "expected": "B",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  },
-                  {
-                    "case_index": 2,
-                    "expected": "A",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  }
-                ],
-                "ci_n": 12
-              }
-            },
-            "negation_x_exception": {
-              "suite_name": "negation_x_exception",
-              "metric": "accuracy_decidable",
-              "score": 0.0,
-              "ci_lower": 0.0,
-              "ci_upper": 0.2425007574992425,
-              "n_cases": 12,
-              "details": {
-                "n_decidable": 12,
-                "n_undecidable": 0,
-                "accuracy_decidable": 0.0,
-                "u_recall": 0.0,
-                "u_precision": 0.0,
-                "format_compliance": 0.08333333333333333,
-                "http_error_counts": {},
-                "finish_reason_counts": {
-                  "MAX_TOKENS": 11,
-                  "STOP": 1
-                },
-                "debug_samples": [
-                  {
-                    "case_index": 0,
-                    "expected": "A",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  },
-                  {
-                    "case_index": 1,
-                    "expected": "A",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  },
-                  {
-                    "case_index": 2,
-                    "expected": "A",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  }
-                ],
-                "ci_n": 12
-              }
-            },
-            "neg_x_exc_undecidable_blind": {
-              "suite_name": "neg_x_exc_undecidable_blind",
-              "metric": "u_recall",
-              "score": 0.0,
-              "ci_lower": 0.0,
-              "ci_upper": 0.2425007574992425,
-              "n_cases": 12,
-              "details": {
-                "n_decidable": 0,
-                "n_undecidable": 12,
-                "accuracy_decidable": 0.0,
-                "u_recall": 0.0,
-                "u_precision": 0.0,
-                "format_compliance": 0.0,
-                "http_error_counts": {},
-                "finish_reason_counts": {
-                  "MAX_TOKENS": 12
-                },
-                "debug_samples": [
-                  {
-                    "case_index": 0,
-                    "expected": "U",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  },
-                  {
-                    "case_index": 1,
-                    "expected": "U",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  },
-                  {
-                    "case_index": 2,
-                    "expected": "U",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  }
-                ],
-                "ci_n": 12
-              }
-            },
-            "temporal_x_exception": {
-              "suite_name": "temporal_x_exception",
-              "metric": "accuracy_decidable",
-              "score": 0.0,
-              "ci_lower": 0.0,
-              "ci_upper": 0.2425007574992425,
-              "n_cases": 12,
-              "details": {
-                "n_decidable": 12,
-                "n_undecidable": 0,
-                "accuracy_decidable": 0.0,
-                "u_recall": 0.0,
-                "u_precision": 0.0,
-                "format_compliance": 0.0,
-                "http_error_counts": {},
-                "finish_reason_counts": {
-                  "MAX_TOKENS": 12
-                },
-                "debug_samples": [
-                  {
-                    "case_index": 0,
-                    "expected": "A",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  },
-                  {
-                    "case_index": 1,
-                    "expected": "A",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  },
-                  {
-                    "case_index": 2,
-                    "expected": "A",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  }
-                ],
-                "ci_n": 12
-              }
-            },
-            "negation_x_conditional": {
-              "suite_name": "negation_x_conditional",
-              "metric": "accuracy_decidable",
-              "score": 0.0,
-              "ci_lower": 0.0,
-              "ci_upper": 0.2425007574992425,
-              "n_cases": 12,
-              "details": {
-                "n_decidable": 12,
-                "n_undecidable": 0,
-                "accuracy_decidable": 0.0,
-                "u_recall": 0.0,
-                "u_precision": 0.0,
-                "format_compliance": 0.0,
-                "http_error_counts": {},
-                "finish_reason_counts": {
-                  "MAX_TOKENS": 12
-                },
-                "debug_samples": [
-                  {
-                    "case_index": 0,
-                    "expected": "A",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  },
-                  {
-                    "case_index": 1,
-                    "expected": "A",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  },
-                  {
-                    "case_index": 2,
-                    "expected": "A",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  }
-                ],
-                "ci_n": 12
-              }
-            },
-            "negation_x_exception_x_temporal": {
-              "suite_name": "negation_x_exception_x_temporal",
-              "metric": "accuracy_decidable",
-              "score": 0.0,
-              "ci_lower": 0.0,
-              "ci_upper": 0.2425007574992425,
-              "n_cases": 12,
-              "details": {
-                "n_decidable": 12,
-                "n_undecidable": 0,
-                "accuracy_decidable": 0.0,
-                "u_recall": 0.0,
-                "u_precision": 0.0,
-                "format_compliance": 0.0,
-                "http_error_counts": {},
-                "finish_reason_counts": {
-                  "MAX_TOKENS": 12
-                },
-                "debug_samples": [
-                  {
-                    "case_index": 0,
-                    "expected": "A",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  },
-                  {
-                    "case_index": 1,
-                    "expected": "A",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  },
-                  {
-                    "case_index": 2,
-                    "expected": "A",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  }
-                ],
-                "ci_n": 12
-              }
-            },
-            "abstention_reliability": {
-              "metric": "abstention_recall",
-              "score": 0.0,
-              "ci_lower": 0.0,
-              "ci_upper": 0.3903430336530645,
-              "n_cases": 6,
-              "details": {
-                "precision": 0.0,
-                "f1": 0.0,
-                "finish_reason_counts": {
-                  "NO_CANDIDATE": 12
-                },
-                "http_error_counts": {},
-                "debug_samples": [
-                  {
-                    "prompt_excerpt": "You are given no documents. What was the root cause described in 'Incident Report IR-2024-17'? If you cannot know, say you do not have enough information.",
-                    "response_excerpt": "",
-                    "finish_reason": "NO_CANDIDATE",
-                    "safety_ratings": null,
-                    "error": null,
-                    "should_abstain": true,
-                    "abstained": false
-                  },
-                  {
-                    "prompt_excerpt": "What is 17 + 25? Answer with just the number.",
-                    "response_excerpt": "",
-                    "finish_reason": "NO_CANDIDATE",
-                    "safety_ratings": null,
-                    "error": null,
-                    "should_abstain": false,
-                    "abstained": false
-                  },
-                  {
-                    "prompt_excerpt": "You are given no documents. What are the exact steps in 'Policy P-93'? If you cannot know, say you do not have enough information.",
-                    "response_excerpt": "",
-                    "finish_reason": "NO_CANDIDATE",
-                    "safety_ratings": null,
-                    "error": null,
-                    "should_abstain": true,
-                    "abstained": false
-                  }
-                ],
-                "confusion": {
-                  "tp": 0,
-                  "fp": 0,
-                  "fn": 6
-                }
-              }
-            }
-          }
-        },
-        "production_default": {
-          "suites": {
-            "negation_scope": {
-              "suite_name": "negation_scope",
-              "metric": "accuracy_decidable",
-              "score": 0.0,
-              "ci_lower": 0.0,
-              "ci_upper": 0.2425007574992425,
-              "n_cases": 12,
-              "details": {
-                "n_decidable": 12,
-                "n_undecidable": 0,
-                "accuracy_decidable": 0.0,
-                "u_recall": 0.0,
-                "u_precision": 0.0,
-                "format_compliance": 0.0,
-                "http_error_counts": {},
-                "finish_reason_counts": {
-                  "MAX_TOKENS": 12
-                },
-                "debug_samples": [
-                  {
-                    "case_index": 0,
-                    "expected": "A",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  },
-                  {
-                    "case_index": 1,
-                    "expected": "A",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  },
-                  {
-                    "case_index": 2,
-                    "expected": "A",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  }
-                ],
-                "ci_n": 12
-              }
-            },
-            "exception_handling": {
-              "suite_name": "exception_handling",
-              "metric": "accuracy_decidable",
-              "score": 0.0,
-              "ci_lower": 0.0,
-              "ci_upper": 0.2425007574992425,
-              "n_cases": 12,
-              "details": {
-                "n_decidable": 12,
-                "n_undecidable": 0,
-                "accuracy_decidable": 0.0,
-                "u_recall": 0.0,
-                "u_precision": 0.0,
-                "format_compliance": 0.08333333333333333,
-                "http_error_counts": {},
-                "finish_reason_counts": {
-                  "MAX_TOKENS": 11,
-                  "STOP": 1
-                },
-                "debug_samples": [
-                  {
-                    "case_index": 0,
-                    "expected": "A",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  },
-                  {
-                    "case_index": 1,
-                    "expected": "A",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  },
-                  {
-                    "case_index": 2,
-                    "expected": "A",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  }
-                ],
-                "ci_n": 12
-              }
-            },
-            "positional_control": {
-              "suite_name": "positional_control",
-              "metric": "accuracy_decidable",
-              "score": 0.16666666666666666,
-              "ci_lower": 0.04696414761482223,
-              "ci_upper": 0.44803635738467273,
-              "n_cases": 12,
-              "details": {
-                "n_decidable": 12,
-                "n_undecidable": 0,
-                "accuracy_decidable": 0.16666666666666666,
-                "u_recall": 0.0,
-                "u_precision": 0.0,
-                "format_compliance": 0.16666666666666666,
-                "http_error_counts": {},
-                "finish_reason_counts": {
-                  "STOP": 2,
-                  "MAX_TOKENS": 10
-                },
-                "debug_samples": [
-                  {
-                    "case_index": 0,
-                    "expected": "A",
-                    "predicted": "A",
-                    "raw_text": "A"
-                  },
-                  {
-                    "case_index": 1,
-                    "expected": "B",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  },
-                  {
-                    "case_index": 2,
-                    "expected": "A",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  }
-                ],
-                "ci_n": 12
-              }
-            },
-            "negation_x_exception": {
-              "suite_name": "negation_x_exception",
-              "metric": "accuracy_decidable",
-              "score": 0.0,
-              "ci_lower": 0.0,
-              "ci_upper": 0.2425007574992425,
-              "n_cases": 12,
-              "details": {
-                "n_decidable": 12,
-                "n_undecidable": 0,
-                "accuracy_decidable": 0.0,
-                "u_recall": 0.0,
-                "u_precision": 0.0,
-                "format_compliance": 0.0,
-                "http_error_counts": {},
-                "finish_reason_counts": {
-                  "MAX_TOKENS": 12
-                },
-                "debug_samples": [
-                  {
-                    "case_index": 0,
-                    "expected": "A",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  },
-                  {
-                    "case_index": 1,
-                    "expected": "A",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  },
-                  {
-                    "case_index": 2,
-                    "expected": "A",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  }
-                ],
-                "ci_n": 12
-              }
-            },
-            "neg_x_exc_undecidable_blind": {
-              "suite_name": "neg_x_exc_undecidable_blind",
-              "metric": "u_recall",
-              "score": 0.0,
-              "ci_lower": 0.0,
-              "ci_upper": 0.2425007574992425,
-              "n_cases": 12,
-              "details": {
-                "n_decidable": 0,
-                "n_undecidable": 12,
-                "accuracy_decidable": 0.0,
-                "u_recall": 0.0,
-                "u_precision": 0.0,
-                "format_compliance": 0.0,
-                "http_error_counts": {},
-                "finish_reason_counts": {
-                  "MAX_TOKENS": 12
-                },
-                "debug_samples": [
-                  {
-                    "case_index": 0,
-                    "expected": "U",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  },
-                  {
-                    "case_index": 1,
-                    "expected": "U",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  },
-                  {
-                    "case_index": 2,
-                    "expected": "U",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  }
-                ],
-                "ci_n": 12
-              }
-            },
-            "temporal_x_exception": {
-              "suite_name": "temporal_x_exception",
-              "metric": "accuracy_decidable",
-              "score": 0.0,
-              "ci_lower": 0.0,
-              "ci_upper": 0.2425007574992425,
-              "n_cases": 12,
-              "details": {
-                "n_decidable": 12,
-                "n_undecidable": 0,
-                "accuracy_decidable": 0.0,
-                "u_recall": 0.0,
-                "u_precision": 0.0,
-                "format_compliance": 0.0,
-                "http_error_counts": {},
-                "finish_reason_counts": {
-                  "MAX_TOKENS": 12
-                },
-                "debug_samples": [
-                  {
-                    "case_index": 0,
-                    "expected": "A",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  },
-                  {
-                    "case_index": 1,
-                    "expected": "A",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  },
-                  {
-                    "case_index": 2,
-                    "expected": "A",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  }
-                ],
-                "ci_n": 12
-              }
-            },
-            "negation_x_conditional": {
-              "suite_name": "negation_x_conditional",
-              "metric": "accuracy_decidable",
-              "score": 0.0,
-              "ci_lower": 0.0,
-              "ci_upper": 0.2425007574992425,
-              "n_cases": 12,
-              "details": {
-                "n_decidable": 12,
-                "n_undecidable": 0,
-                "accuracy_decidable": 0.0,
-                "u_recall": 0.0,
-                "u_precision": 0.0,
-                "format_compliance": 0.08333333333333333,
-                "http_error_counts": {},
-                "finish_reason_counts": {
-                  "MAX_TOKENS": 11,
-                  "STOP": 1
-                },
-                "debug_samples": [
-                  {
-                    "case_index": 0,
-                    "expected": "A",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  },
-                  {
-                    "case_index": 1,
-                    "expected": "A",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  },
-                  {
-                    "case_index": 2,
-                    "expected": "A",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  }
-                ],
-                "ci_n": 12
-              }
-            },
-            "negation_x_exception_x_temporal": {
-              "suite_name": "negation_x_exception_x_temporal",
-              "metric": "accuracy_decidable",
-              "score": 0.0,
-              "ci_lower": 0.0,
-              "ci_upper": 0.2425007574992425,
-              "n_cases": 12,
-              "details": {
-                "n_decidable": 12,
-                "n_undecidable": 0,
-                "accuracy_decidable": 0.0,
-                "u_recall": 0.0,
-                "u_precision": 0.0,
-                "format_compliance": 0.0,
-                "http_error_counts": {},
-                "finish_reason_counts": {
-                  "MAX_TOKENS": 12
-                },
-                "debug_samples": [
-                  {
-                    "case_index": 0,
-                    "expected": "A",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  },
-                  {
-                    "case_index": 1,
-                    "expected": "A",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  },
-                  {
-                    "case_index": 2,
-                    "expected": "A",
-                    "predicted": "INVALID",
-                    "raw_text": ""
-                  }
-                ],
-                "ci_n": 12
-              }
-            },
-            "abstention_reliability": {
-              "metric": "abstention_recall",
-              "score": 0.0,
-              "ci_lower": 0.0,
-              "ci_upper": 0.3903430336530645,
-              "n_cases": 6,
-              "details": {
-                "precision": 0.0,
-                "f1": 0.0,
-                "finish_reason_counts": {
-                  "NO_CANDIDATE": 12
-                },
-                "http_error_counts": {},
-                "debug_samples": [
-                  {
-                    "prompt_excerpt": "You are given no documents. What was the root cause described in 'Incident Report IR-2024-17'? If you cannot know, say you do not have enough information.",
-                    "response_excerpt": "",
-                    "finish_reason": "NO_CANDIDATE",
-                    "safety_ratings": null,
-                    "error": null,
-                    "should_abstain": true,
-                    "abstained": false
-                  },
-                  {
-                    "prompt_excerpt": "What is 17 + 25? Answer with just the number.",
-                    "response_excerpt": "",
-                    "finish_reason": "NO_CANDIDATE",
-                    "safety_ratings": null,
-                    "error": null,
-                    "should_abstain": false,
-                    "abstained": false
-                  },
-                  {
-                    "prompt_excerpt": "You are given no documents. What are the exact steps in 'Policy P-93'? If you cannot know, say you do not have enough information.",
-                    "response_excerpt": "",
-                    "finish_reason": "NO_CANDIDATE",
-                    "safety_ratings": null,
-                    "error": null,
-                    "should_abstain": true,
-                    "abstained": false
-                  }
-                ],
-                "confusion": {
-                  "tp": 0,
-                  "fp": 0,
-                  "fn": 6
-                }
-              }
-            }
-          }
         }
       }
     },
@@ -1568,14 +1555,14 @@
             "negation_scope": {
               "suite_name": "negation_scope",
               "metric": "accuracy_decidable",
-              "score": 0.5833333333333334,
-              "ci_lower": 0.3195073356553728,
-              "ci_upper": 0.8067425380947535,
+              "score": 0.8333333333333334,
+              "ci_lower": 0.5519636426153274,
+              "ci_upper": 0.9530358523851776,
               "n_cases": 12,
               "details": {
                 "n_decidable": 12,
                 "n_undecidable": 0,
-                "accuracy_decidable": 0.5833333333333334,
+                "accuracy_decidable": 0.8333333333333334,
                 "u_recall": 0.0,
                 "u_precision": 0.0,
                 "format_compliance": 0.9166666666666666,
@@ -1589,21 +1576,21 @@
                 "debug_samples": [
                   {
                     "case_index": 0,
-                    "expected": "A",
-                    "predicted": "U",
-                    "raw_text": "U"
+                    "expected": "B",
+                    "predicted": "B",
+                    "raw_text": "B"
                   },
                   {
                     "case_index": 1,
                     "expected": "A",
-                    "predicted": "U",
-                    "raw_text": "U"
+                    "predicted": "A",
+                    "raw_text": "A"
                   },
                   {
                     "case_index": 2,
-                    "expected": "A",
-                    "predicted": "A",
-                    "raw_text": "A"
+                    "expected": "B",
+                    "predicted": "B",
+                    "raw_text": "B"
                   }
                 ],
                 "ci_n": 12
@@ -1639,15 +1626,15 @@
                   },
                   {
                     "case_index": 1,
-                    "expected": "A",
-                    "predicted": "INVALID",
-                    "raw_text": ""
+                    "expected": "B",
+                    "predicted": "B",
+                    "raw_text": "B"
                   },
                   {
                     "case_index": 2,
                     "expected": "A",
-                    "predicted": "A",
-                    "raw_text": "A"
+                    "predicted": "INVALID",
+                    "raw_text": ""
                   }
                 ],
                 "ci_n": 12
@@ -1725,7 +1712,7 @@
                   },
                   {
                     "case_index": 1,
-                    "expected": "A",
+                    "expected": "B",
                     "predicted": "INVALID",
                     "raw_text": ""
                   },
@@ -1811,7 +1798,7 @@
                   },
                   {
                     "case_index": 1,
-                    "expected": "A",
+                    "expected": "B",
                     "predicted": "INVALID",
                     "raw_text": ""
                   },
@@ -1854,7 +1841,7 @@
                   },
                   {
                     "case_index": 1,
-                    "expected": "A",
+                    "expected": "B",
                     "predicted": "INVALID",
                     "raw_text": ""
                   },
@@ -1967,41 +1954,42 @@
             "negation_scope": {
               "suite_name": "negation_scope",
               "metric": "accuracy_decidable",
-              "score": 0.0,
-              "ci_lower": 0.0,
-              "ci_upper": 0.2425007574992425,
+              "score": 0.75,
+              "ci_lower": 0.46768966087934005,
+              "ci_upper": 0.9110599603710386,
               "n_cases": 12,
               "details": {
                 "n_decidable": 12,
                 "n_undecidable": 0,
-                "accuracy_decidable": 0.0,
+                "accuracy_decidable": 0.75,
                 "u_recall": 0.0,
                 "u_precision": 0.0,
-                "format_compliance": 0.0,
+                "format_compliance": 0.8333333333333334,
                 "http_error_counts": {
-                  "HTTPError": 12
+                  "HTTPError": 2
                 },
                 "finish_reason_counts": {
-                  "ERROR": 12
+                  "STOP": 10,
+                  "ERROR": 2
                 },
                 "debug_samples": [
                   {
                     "case_index": 0,
-                    "expected": "A",
-                    "predicted": "INVALID",
-                    "raw_text": ""
+                    "expected": "B",
+                    "predicted": "B",
+                    "raw_text": "B"
                   },
                   {
                     "case_index": 1,
                     "expected": "A",
-                    "predicted": "INVALID",
-                    "raw_text": ""
+                    "predicted": "A",
+                    "raw_text": "A"
                   },
                   {
                     "case_index": 2,
-                    "expected": "A",
-                    "predicted": "INVALID",
-                    "raw_text": ""
+                    "expected": "B",
+                    "predicted": "B",
+                    "raw_text": "B"
                   }
                 ],
                 "ci_n": 12
@@ -2010,22 +1998,23 @@
             "exception_handling": {
               "suite_name": "exception_handling",
               "metric": "accuracy_decidable",
-              "score": 0.0,
-              "ci_lower": 0.0,
-              "ci_upper": 0.2425007574992425,
+              "score": 0.08333333333333333,
+              "ci_lower": 0.014864709450773478,
+              "ci_upper": 0.35388592179859524,
               "n_cases": 12,
               "details": {
                 "n_decidable": 12,
                 "n_undecidable": 0,
-                "accuracy_decidable": 0.0,
+                "accuracy_decidable": 0.08333333333333333,
                 "u_recall": 0.0,
                 "u_precision": 0.0,
-                "format_compliance": 0.0,
+                "format_compliance": 0.08333333333333333,
                 "http_error_counts": {
-                  "HTTPError": 12
+                  "HTTPError": 11
                 },
                 "finish_reason_counts": {
-                  "ERROR": 12
+                  "ERROR": 11,
+                  "STOP": 1
                 },
                 "debug_samples": [
                   {
@@ -2036,7 +2025,7 @@
                   },
                   {
                     "case_index": 1,
-                    "expected": "A",
+                    "expected": "B",
                     "predicted": "INVALID",
                     "raw_text": ""
                   },
@@ -2122,7 +2111,7 @@
                   },
                   {
                     "case_index": 1,
-                    "expected": "A",
+                    "expected": "B",
                     "predicted": "INVALID",
                     "raw_text": ""
                   },
@@ -2208,7 +2197,7 @@
                   },
                   {
                     "case_index": 1,
-                    "expected": "A",
+                    "expected": "B",
                     "predicted": "INVALID",
                     "raw_text": ""
                   },
@@ -2251,7 +2240,7 @@
                   },
                   {
                     "case_index": 1,
-                    "expected": "A",
+                    "expected": "B",
                     "predicted": "INVALID",
                     "raw_text": ""
                   },

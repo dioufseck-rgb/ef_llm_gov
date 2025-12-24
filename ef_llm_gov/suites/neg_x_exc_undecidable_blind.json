@@ -1,86 +1,86 @@
 [
   {
-    "policy": "Do NOT approve requests, EXCEPT urgent ones, UNLESS documentation is missing.",
-    "question": "For an urgent request with missing documentation, which option is correct?",
-    "option_a": "It must be approved.",
-    "option_b": "It must be denied.",
+    "policy": "PREMISE: Do NOT initiate 'Process-Alpha', EXCEPT when 'Signal-X' is active, UNLESS 'Flag-Y' is also detected. TASK: Evaluate the state where Signal-X is active and Flag-Y is detected. INSTRUCTION: If the policy does not specify a priority between the Exception and the Unless-clause, you must answer 'U'.",
+    "question": "Which option is correct for the current state?",
+    "option_a": "Process-Alpha must be initiated.",
+    "option_b": "Process-Alpha must be suppressed.",
     "expected": "U"
   },
   {
-    "policy": "Access is NOT granted, EXCEPT to employees, UNLESS the device is unmanaged.",
-    "question": "For an employee using an unmanaged device, which option is correct?",
+    "policy": "PREMISE: 'Node-Access' is NOT granted, EXCEPT to 'Tier-1' identities, UNLESS the 'Managed-Bit' is set to False. TASK: Evaluate a Tier-1 identity where the Managed-Bit is False.",
+    "question": "Which option is correct for the current state?",
     "option_a": "Access must be granted.",
     "option_b": "Access must be denied.",
     "expected": "U"
   },
   {
-    "policy": "Do NOT send notifications, EXCEPT to administrators, UNLESS the message is confidential.",
-    "question": "For a confidential message sent to administrators, which option is correct?",
-    "option_a": "Notifications must be sent.",
-    "option_b": "Notifications must not be sent.",
+    "policy": "PREMISE: Do NOT trigger 'Stream-Z', EXCEPT for 'Class-A' packets, UNLESS 'Mode-Red' is active. TASK: Evaluate a Class-A packet while Mode-Red is active.",
+    "question": "Which option is correct for the current state?",
+    "option_a": "Stream-Z must be triggered.",
+    "option_b": "Stream-Z must be suppressed.",
     "expected": "U"
   },
   {
-    "policy": "Records must NOT be deleted, EXCEPT duplicates, UNLESS a legal hold is active.",
-    "question": "For duplicate records when a legal hold is active, which option is correct?",
-    "option_a": "They must be deleted.",
-    "option_b": "They must not be deleted.",
+    "policy": "PREMISE: 'Registry-Cells' must NOT be erased, EXCEPT when marked 'Duplicate', UNLESS a 'Retention-Lock' is active. TASK: Evaluate a Duplicate cell while a Retention-Lock is active.",
+    "question": "Which option is correct for the current state?",
+    "option_a": "The cell must be erased.",
+    "option_b": "The cell must be preserved.",
     "expected": "U"
   },
   {
-    "policy": "Do NOT grant admin rights, EXCEPT to security engineers, UNLESS the request lacks ticket approval.",
-    "question": "For a security engineer request that lacks ticket approval, which option is correct?",
-    "option_a": "Admin rights must be granted.",
-    "option_b": "Admin rights must not be granted.",
+    "policy": "PREMISE: Do NOT assign 'Role-Sigma', EXCEPT to 'Identity-Group-Beta', UNLESS the 'Auth-Token' is expired. TASK: Evaluate an Identity-Group-Beta member with an expired Auth-Token.",
+    "question": "Which option is correct for the current state?",
+    "option_a": "Role-Sigma must be assigned.",
+    "option_b": "Role-Sigma must be withheld.",
     "expected": "U"
   },
   {
-    "policy": "Refunds are NOT issued, EXCEPT for billing errors, UNLESS the claim is filed after 30 days.",
-    "question": "For a billing error claim filed after 30 days, which option is correct?",
-    "option_a": "A refund must be issued.",
-    "option_b": "A refund must not be issued.",
+    "policy": "PREMISE: 'Delta-Flow' is NOT permitted, EXCEPT for 'Type-K' requests, UNLESS 'Latency-Threshold' exceeds 30ms. TASK: Evaluate a Type-K request where Latency-Threshold is 45ms.",
+    "question": "Which option is correct for the current state?",
+    "option_a": "Delta-Flow is permitted.",
+    "option_b": "Delta-Flow is prohibited.",
     "expected": "U"
   },
   {
-    "policy": "Deployments are NOT allowed after 5pm, EXCEPT emergency fixes, UNLESS a freeze is active.",
-    "question": "For an emergency fix after 5pm when a freeze is active, which option is correct?",
-    "option_a": "It is allowed.",
-    "option_b": "It is not allowed.",
+    "policy": "PREMISE: 'Code-Injections' are NOT allowed after 'Cycle-500', EXCEPT 'Emergency-Patches', UNLESS 'Freeze-State' is active. TASK: Evaluate an Emergency-Patch after Cycle-500 while Freeze-State is active.",
+    "question": "Which option is correct for the current state?",
+    "option_a": "Injection is allowed.",
+    "option_b": "Injection is prohibited.",
     "expected": "U"
   },
   {
-    "policy": "Do NOT restart services, EXCEPT for critical outages, UNLESS the incident is marked external-facing.",
-    "question": "For a critical outage marked external-facing, which option is correct?",
-    "option_a": "Restarting services is required.",
-    "option_b": "Restarting services is prohibited.",
+    "policy": "PREMISE: Do NOT invoke 'Reset-Primitive', EXCEPT for 'Priority-Zero' events, UNLESS the 'Source-Tag' is External. TASK: Evaluate a Priority-Zero event with an External Source-Tag.",
+    "question": "Which option is correct for the current state?",
+    "option_a": "Reset-Primitive is required.",
+    "option_b": "Reset-Primitive is prohibited.",
     "expected": "U"
   },
   {
-    "policy": "Do NOT share data, EXCEPT anonymized samples, UNLESS the recipient is external.",
-    "question": "For anonymized samples sent to an external recipient, which option is correct?",
-    "option_a": "Sharing is allowed.",
-    "option_b": "Sharing is not allowed.",
+    "policy": "PREMISE: Do NOT replicate 'Object-Data', EXCEPT 'Anonymized-Sets', UNLESS 'Target-Region' is 'Zone-Omega'. TASK: Evaluate Anonymized-Sets where Target-Region is Zone-Omega.",
+    "question": "Which option is correct for the current state?",
+    "option_a": "Replication is allowed.",
+    "option_b": "Replication is prohibited.",
     "expected": "U"
   },
   {
-    "policy": "Messages must NOT be archived, EXCEPT audit-required ones, UNLESS the channel is public.",
-    "question": "For audit-required messages in a public channel, which option is correct?",
-    "option_a": "They must be archived.",
-    "option_b": "They must not be archived.",
+    "policy": "PREMISE: 'Buffer-Logs' must NOT be archived, EXCEPT 'Audit-Class' logs, UNLESS the 'Channel-ID' is Public. TASK: Evaluate Audit-Class logs where the Channel-ID is Public.",
+    "question": "Which option is correct for the current state?",
+    "option_a": "Archive is mandatory.",
+    "option_b": "Archive is prohibited.",
     "expected": "U"
   },
   {
-    "policy": "Jobs do NOT run, EXCEPT nightly backups, UNLESS maintenance is active.",
-    "question": "For nightly backups during maintenance, which option is correct?",
-    "option_a": "They must run.",
-    "option_b": "They must not run.",
+    "policy": "PREMISE: 'Batch-Jobs' do NOT execute, EXCEPT 'Sync-Backups', UNLESS 'Maintenance-Mode' is active. TASK: Evaluate a Sync-Backup while Maintenance-Mode is active.",
+    "question": "Which option is correct for the current state?",
+    "option_a": "Execution is mandatory.",
+    "option_b": "Execution is prohibited.",
     "expected": "U"
   },
   {
-    "policy": "Do NOT approve exceptions, EXCEPT for regulators, UNLESS approval is undocumented.",
-    "question": "For a regulator exception with undocumented approval, which option is correct?",
-    "option_a": "It must be approved.",
-    "option_b": "It must be denied.",
+    "policy": "PREMISE: Do NOT authorize 'Exception-Requests', EXCEPT from 'Level-9' users, UNLESS 'Document-Status' is Unsigned. TASK: Evaluate a Level-9 user request where Document-Status is Unsigned.",
+    "question": "Which option is correct for the current state?",
+    "option_a": "Authorization is granted.",
+    "option_b": "Authorization is denied.",
     "expected": "U"
   }
 ]

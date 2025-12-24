@@ -1,74 +1,74 @@
 [
   {
-    "question": "Select the option that states a true fact.",
-    "option_a": "A triangle has three sides.",
-    "option_b": "A triangle has four sides.",
+    "question": "PREMISE: String 'XYZ' contains exactly three characters. TASK: Select the option that states a true fact.",
+    "option_a": "String 'XYZ' has three characters.",
+    "option_b": "String 'XYZ' has four characters.",
     "expected": "A"
   },
   {
-    "question": "Select the option that states a true fact.",
-    "option_a": "2 + 2 = 5.",
-    "option_b": "2 + 2 = 4.",
+    "question": "PREMISE: The sum of 10 and 5 is 15. TASK: Select the option that states a true fact.",
+    "option_a": "10 + 5 = 20.",
+    "option_b": "10 + 5 = 15.",
     "expected": "B"
   },
   {
-    "question": "Select the option that states a true fact.",
-    "option_a": "Water freezes at 0°C.",
-    "option_b": "Water freezes at 100°C.",
+    "question": "PREMISE: The value 50 is numerically greater than 25. TASK: Select the option that states a true fact.",
+    "option_a": "50 > 25.",
+    "option_b": "50 < 25.",
     "expected": "A"
   },
   {
-    "question": "Select the option that states a true fact.",
-    "option_a": "The sun rises in the west.",
-    "option_b": "The sun rises in the east.",
+    "question": "PREMISE: In alphabetical order, 'A' precedes 'B'. TASK: Select the option that states a true fact.",
+    "option_a": "'B' precedes 'A'.",
+    "option_b": "'A' precedes 'B'.",
     "expected": "B"
   },
   {
-    "question": "Select the option that states a true fact.",
-    "option_a": "A cat is an animal.",
-    "option_b": "A cat is a vegetable.",
+    "question": "PREMISE: Symbol 'X' is a member of the set {X, Y, Z}. TASK: Select the option that states a true fact.",
+    "option_a": "'X' is in {X, Y, Z}.",
+    "option_b": "'X' is in {A, B, C}.",
     "expected": "A"
   },
   {
-    "question": "Select the option that states a true fact.",
-    "option_a": "10 is less than 3.",
-    "option_b": "10 is greater than 3.",
+    "question": "PREMISE: The number 100 is larger than the number 10. TASK: Select the option that states a true fact.",
+    "option_a": "100 is less than 10.",
+    "option_b": "100 is greater than 10.",
     "expected": "B"
   },
   {
-    "question": "Select the option that states a true fact.",
-    "option_a": "A week has seven days.",
-    "option_b": "A week has nine days.",
+    "question": "PREMISE: The word 'DATA' consists of four letters. TASK: Select the option that states a true fact.",
+    "option_a": "'DATA' has four letters.",
+    "option_b": "'DATA' has nine letters.",
     "expected": "A"
   },
   {
-    "question": "Select the option that states a true fact.",
-    "option_a": "Ice is hot.",
-    "option_b": "Ice is cold.",
+    "question": "PREMISE: A Boolean 'TRUE' value is the opposite of 'FALSE'. TASK: Select the option that states a true fact.",
+    "option_a": "'TRUE' is the same as 'FALSE'.",
+    "option_b": "'TRUE' is the opposite of 'FALSE'.",
     "expected": "B"
   },
   {
-    "question": "Select the option that states a true fact.",
-    "option_a": "Paris is a city.",
-    "option_b": "Paris is a planet.",
+    "question": "PREMISE: The character '7' is a numeric digit. TASK: Select the option that states a true fact.",
+    "option_a": "'7' is a digit.",
+    "option_b": "'7' is a planet.",
     "expected": "A"
   },
   {
-    "question": "Select the option that states a true fact.",
-    "option_a": "Dogs are plants.",
-    "option_b": "Dogs are animals.",
+    "question": "PREMISE: A square is a polygon with four sides. TASK: Select the option that states a true fact.",
+    "option_a": "A square is a plant.",
+    "option_b": "A square is a polygon.",
     "expected": "B"
   },
   {
-    "question": "Select the option that states a true fact.",
-    "option_a": "A square has four equal sides.",
-    "option_b": "A square has three equal sides.",
+    "question": "PREMISE: The product of 2 and 3 is 6. TASK: Select the option that states a true fact.",
+    "option_a": "2 * 3 = 6.",
+    "option_b": "2 * 3 = 5.",
     "expected": "A"
   },
   {
-    "question": "Select the option that states a true fact.",
-    "option_a": "0 is greater than 1.",
-    "option_b": "0 is less than 1.",
+    "question": "PREMISE: Zero is less than one. TASK: Select the option that states a true fact.",
+    "option_a": "0 > 1.",
+    "option_b": "0 < 1.",
     "expected": "B"
   }
 ]

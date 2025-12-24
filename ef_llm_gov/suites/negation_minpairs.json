@@ -1,74 +1,74 @@
 [
   {
-    "question": "Which option correctly applies the instruction?",
-    "option_a": "The request must be rejected if approval has not been granted.",
-    "option_b": "The request must be approved if approval has not been granted.",
+    "question": "PREMISE: 'Process-X' is rejected if 'Auth-Flag' is not set to TRUE. TASK: Which option correctly rephrases this requirement?",
+    "option_a": "Process-X must be approved if Auth-Flag is not set to TRUE.",
+    "option_b": "Process-X must be rejected if Auth-Flag is not set to TRUE.",
+    "expected": "B"
+  },
+  {
+    "question": "PREMISE: 'Node-Access' is restricted if 'Subject-Type' is NOT 'Group-Alpha'. TASK: Which choice is logically consistent with the premise?",
+    "option_a": "Subjects NOT in Group-Alpha are restricted from Node-Access.",
+    "option_b": "Subjects in Group-Alpha are restricted from Node-Access.",
     "expected": "A"
   },
   {
-    "question": "Which option is consistent with the policy?",
-    "option_a": "Access is denied to users who are not members of the admin group.",
-    "option_b": "Access is denied to users who are members of the admin group.",
+    "question": "PREMISE: 'State-Sigma' remains 'INACTIVE' until 'Recovery-Task' reaches 'COMPLETE'. TASK: Which option correctly follows this rule?",
+    "option_a": "State-Sigma becomes ACTIVE before Recovery-Task is COMPLETE.",
+    "option_b": "State-Sigma remains INACTIVE until Recovery-Task is COMPLETE.",
+    "expected": "B"
+  },
+  {
+    "question": "PREMISE: 'Output-Stream' triggers only if 'Input-Packet' is NOT 'CORRUPT'. TASK: Which option preserves the negation?",
+    "option_a": "Output-Stream triggers only if Input-Packet is NOT CORRUPT.",
+    "option_b": "Output-Stream triggers only if Input-Packet is CORRUPT.",
     "expected": "A"
   },
   {
-    "question": "Which option correctly follows the rule?",
-    "option_a": "The system remains unavailable until recovery is complete.",
-    "option_b": "The system becomes available before recovery is complete.",
+    "question": "PREMISE: 'Value-Y' must not be cached unless 'Secure-Bit' is TRUE. TASK: Which choice correctly interprets this constraint?",
+    "option_a": "Value-Y may be cached unless Secure-Bit is TRUE.",
+    "option_b": "Value-Y must not be cached unless Secure-Bit is TRUE.",
+    "expected": "B"
+  },
+  {
+    "question": "PREMISE: Cease 'Cycle-Alpha' if 'Step-Omega' is not 'SUCCESS'. TASK: Which option matches the requirement?",
+    "option_a": "Do not proceed with Cycle-Alpha if Step-Omega is not SUCCESS.",
+    "option_b": "Proceed with Cycle-Alpha if Step-Omega is not SUCCESS.",
     "expected": "A"
   },
   {
-    "question": "Which option preserves the negation?",
-    "option_a": "A response should be sent only if the request is not invalid.",
-    "option_b": "A response should be sent only if the request is invalid.",
+    "question": "PREMISE: 'Subtask-D' runs only if 'Parent-Job' has NOT already transitioned to 'TERMINATED'. TASK: Which option correctly applies the rule?",
+    "option_a": "Subtask-D runs only if Parent-Job has already transitioned to TERMINATED.",
+    "option_b": "Subtask-D runs only if Parent-Job has NOT already transitioned to TERMINATED.",
+    "expected": "B"
+  },
+  {
+    "question": "PREMISE: 'Object-K' is marked 'INVALID' if 'Attribute-J' is absent from the metadata. TASK: Which choice correctly captures the negation?",
+    "option_a": "Object-K is marked INVALID if Attribute-J is absent.",
+    "option_b": "Object-K is marked VALID if Attribute-J is absent.",
     "expected": "A"
   },
   {
-    "question": "Which option correctly interprets the constraint?",
-    "option_a": "Passwords may not be stored unless they are hashed.",
-    "option_b": "Passwords may be stored unless they are hashed.",
+    "question": "PREMISE: 'Sync-Task' is blocked if 'Status-Code' is NOT 'ZERO'. TASK: Which option is logically consistent?",
+    "option_a": "Sync-Task is blocked if Status-Code is NOT ZERO.",
+    "option_b": "Sync-Task is allowed if Status-Code is NOT ZERO.",
     "expected": "A"
   },
   {
-    "question": "Which option matches the requirement?",
-    "option_a": "Do not proceed when the verification step has failed.",
-    "option_b": "Proceed when the verification step has failed.",
+    "question": "PREMISE: 'Primitive-R' does not execute while 'Flag-Gamma' is 'SET'. TASK: Which option preserves the negation?",
+    "option_a": "Primitive-R does not execute while Flag-Gamma is SET.",
+    "option_b": "Primitive-R executes while Flag-Gamma is SET.",
     "expected": "A"
   },
   {
-    "question": "Which option correctly applies the rule?",
-    "option_a": "The task should run only if the job has not already completed.",
-    "option_b": "The task should run only if the job has already completed.",
-    "expected": "A"
+    "question": "PREMISE: If 'Checksum-Verification' is not 'TRUE', the 'Data-Burst' is rejected. TASK: Which option correctly applies the condition?",
+    "option_a": "If Checksum-Verification is not TRUE, the Data-Burst is accepted.",
+    "option_b": "If Checksum-Verification is not TRUE, the Data-Burst is rejected.",
+    "expected": "B"
   },
   {
-    "question": "Which option correctly captures the negation?",
-    "option_a": "The report is considered invalid if required fields are missing.",
-    "option_b": "The report is considered valid if required fields are missing.",
-    "expected": "A"
-  },
-  {
-    "question": "Which option is logically consistent?",
-    "option_a": "Deployment must be blocked when tests do not pass.",
-    "option_b": "Deployment must be allowed when tests do not pass.",
-    "expected": "A"
-  },
-  {
-    "question": "Which option preserves the negation?",
-    "option_a": "The service should not restart while maintenance is ongoing.",
-    "option_b": "The service should restart while maintenance is ongoing.",
-    "expected": "A"
-  },
-  {
-    "question": "Which option correctly applies the condition?",
-    "option_a": "If validation is not successful, the request is rejected.",
-    "option_b": "If validation is not successful, the request is accepted.",
-    "expected": "A"
-  },
-  {
-    "question": "Which option correctly matches the rule?",
-    "option_a": "A user is denied access unless authentication succeeds.",
-    "option_b": "A user is granted access unless authentication succeeds.",
+    "question": "PREMISE: 'User-ID-9' is denied unless 'Credential-Match' is 'TRUE'. TASK: Which option correctly matches the rule?",
+    "option_a": "User-ID-9 is denied unless Credential-Match is TRUE.",
+    "option_b": "User-ID-9 is granted unless Credential-Match is TRUE.",
     "expected": "A"
   }
 ]
