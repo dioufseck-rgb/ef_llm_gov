@@ -1,0 +1,74 @@
+[
+  {
+    "question": "PREMISE: 'Rule-7' specifies that approval requires a 'Stability-Score' strictly GREATER than 500. TASK: A node has a Stability-Score of exactly 500. Which option is correct?",
+    "option_a": "Approval is prohibited.",
+    "option_b": "Approval is permitted.",
+    "expected": "A"
+  },
+  {
+    "question": "PREMISE: 'Constraint-Delta' specifies that 'Latency' must NOT exceed 30ms (it must be 30ms or less). TASK: Current Latency is measured at exactly 30ms. Is the constraint violated?",
+    "option_a": "Yes, the constraint is violated.",
+    "option_b": "No, the constraint is satisfied.",
+    "expected": "B"
+  },
+  {
+    "question": "PREMISE: 'Policy-K' requires a 'Deposit-Ratio' of at LEAST 20.0%. TASK: The applicant has a Deposit-Ratio of exactly 20.0%. Which option is correct?",
+    "option_a": "The requirement is met.",
+    "option_b": "The requirement is not met.",
+    "expected": "A"
+  },
+  {
+    "question": "PREMISE: 'Standard-X' prohibits 'Packet-Loss' if it is above 0.5%. TASK: Current Packet-Loss is exactly 0.5%. Is it prohibited?",
+    "option_a": "It is prohibited.",
+    "option_b": "It is not prohibited.",
+    "expected": "B"
+  },
+  {
+    "question": "PREMISE: 'Rule-A' permits 'Flow-Rate' if it is strictly LESS than 100 units. TASK: 'Flow-Rate' is measured at exactly 100 units. Which is correct?",
+    "option_a": "Flow-Rate is permitted.",
+    "option_b": "Flow-Rate is prohibited.",
+    "expected": "B"
+  },
+  {
+    "question": "PREMISE: 'Protocol-Beta' allows 'Retry-Counts' of 3 or fewer. TASK: Current 'Retry-Count' is 3. Is the action allowed?",
+    "option_a": "Yes, it is allowed.",
+    "option_b": "No, it is prohibited.",
+    "expected": "A"
+  },
+  {
+    "question": "PREMISE: 'Safety-Check' requires 'Temp-Index' to be strictly BELOW 0.0. TASK: 'Temp-Index' is exactly 0.0. Which is correct?",
+    "option_a": "The safety check fails.",
+    "option_b": "The safety check passes.",
+    "expected": "A"
+  },
+  {
+    "question": "PREMISE: 'Volume-Limit' specifies that 'Data-Burst' size must be 1024 KB or higher. TASK: A burst is exactly 1024 KB. Which is correct?",
+    "option_a": "The burst is permitted.",
+    "option_b": "The burst is prohibited.",
+    "expected": "A"
+  },
+  {
+    "question": "PREMISE: 'Auth-Standard' requires 'Key-Length' to be greater than or equal to 256 bits. TASK: Key-Length is exactly 255 bits. Which is correct?",
+    "option_a": "The requirement is satisfied.",
+    "option_b": "The requirement is not satisfied.",
+    "expected": "B"
+  },
+  {
+    "question": "PREMISE: 'Covenant-Alpha' triggers if 'Debt-Ratio' is strictly ABOVE 40.0%. TASK: 'Debt-Ratio' is exactly 40.0%. Does the covenant trigger?",
+    "option_a": "Yes, it triggers.",
+    "option_b": "No, it does not trigger.",
+    "expected": "B"
+  },
+  {
+    "question": "PREMISE: 'Registry-Rule' permits 'Entry-ID' values starting from 1000 and upwards. TASK: An ID is exactly 999. Which is correct?",
+    "option_a": "The ID is permitted.",
+    "option_b": "The ID is prohibited.",
+    "expected": "B"
+  },
+  {
+    "question": "PREMISE: 'Sync-Window' allows operations only if 'Lag-Time' is LESS than 15ms. TASK: 'Lag-Time' is 14.9ms. Which is correct?",
+    "option_a": "The operation is permitted.",
+    "option_b": "The operation is prohibited.",
+    "expected": "A"
+  }
+]

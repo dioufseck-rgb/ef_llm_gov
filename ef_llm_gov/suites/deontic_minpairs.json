@@ -1,0 +1,74 @@
+[
+  {
+    "question": "PREMISE: 'Protocol-X' specifies that 'Node-Sync' is prohibited unless 'Flag-Alpha' is SET. If 'Flag-Alpha' is SET, the prohibition is lifted. TASK: Evaluate a state where 'Flag-Alpha' is SET. Which option is uniquely determined?",
+    "option_a": "Node-Sync must be executed immediately.",
+    "option_b": "Node-Sync is permitted, but not mandatory.",
+    "expected": "B"
+  },
+  {
+    "question": "PREMISE: 'Policy-9' states: 'It is not mandatory to archive Log-7 unless an Audit-Trigger occurs.' TASK: An Audit-Trigger has NOT occurred. Which option is correct?",
+    "option_a": "Log-7 must not be archived.",
+    "option_b": "Log-7 is not required to be archived.",
+    "expected": "B"
+  },
+  {
+    "question": "PREMISE: 'Rule-Z' states: 'Access is restricted EXCEPT for Tier-1 users.' TASK: The user is Tier-1. Does the rule require granting access?",
+    "option_a": "The rule permits access, but does not mandate it.",
+    "option_b": "The rule mandates that access be granted.",
+    "expected": "A"
+  },
+  {
+    "question": "PREMISE: 'Condition-K' specifies: 'Refunds are prohibited unless a Billing-Error is verified.' TASK: A Billing-Error is verified. Which choice correctly captures the state?",
+    "option_a": "A refund is now permitted.",
+    "option_b": "A refund is now required.",
+    "expected": "A"
+  },
+  {
+    "question": "PREMISE: 'Standard-Alpha' states: 'Encryption of 'Field-X' is optional unless 'Security-Level' is High.' TASK: 'Security-Level' is LOW. Which option is correct?",
+    "option_a": "Encryption of 'Field-X' is prohibited.",
+    "option_b": "Encryption of 'Field-X' is not required.",
+    "expected": "B"
+  },
+  {
+    "question": "PREMISE: 'Bylaw-3' states: 'Nodes MAY initiate a reset during 'Phase-Delta'.' TASK: The system is in 'Phase-Delta'. Is a reset required?",
+    "option_a": "The reset is a permitted action.",
+    "option_b": "The reset is an obligatory action.",
+    "expected": "A"
+  },
+  {
+    "question": "PREMISE: 'Constraint-Y' states: 'It is forbidden to NOT disclose 'Parameter-Z' during a 'Compliance-Check'.' TASK: A 'Compliance-Check' is active. Which option is correct?",
+    "option_a": "Disclosure of 'Parameter-Z' is permitted.",
+    "option_b": "Disclosure of 'Parameter-Z' is mandatory.",
+    "expected": "B"
+  },
+  {
+    "question": "PREMISE: 'Logic-Gate-7' states: 'Stream-Alpha' is prohibited unless 'Buffer-Status' is 'CLEARED'. If 'Buffer-Status' is 'CLEARED', 'Stream-Alpha' is no longer prohibited. TASK: 'Buffer-Status' is 'CLEARED'. Which is uniquely determined?",
+    "option_a": "Stream-Alpha is permitted.",
+    "option_b": "Stream-Alpha is required.",
+    "expected": "A"
+  },
+  {
+    "question": "PREMISE: 'Policy-B' states: 'No 'Tier-2' requests shall be processed unless 'Manager-Auth' is True.' TASK: 'Manager-Auth' is True. Which is correct?",
+    "option_a": "The request must be processed.",
+    "option_b": "The request is now eligible for processing.",
+    "expected": "B"
+  },
+  {
+    "question": "PREMISE: 'Rule-99' states: 'Staff members are NOT required to attend 'Cycle-Meetings'.' TASK: A 'Cycle-Meeting' is starting. Which option is correct?",
+    "option_a": "Attendance is prohibited.",
+    "option_b": "Attendance is non-mandatory.",
+    "expected": "B"
+  },
+  {
+    "question": "PREMISE: 'Security-Code' states: 'It is not permitted to NOT use a VPN for 'Remote-Session' nodes.' TASK: A user is initiating a 'Remote-Session'. Which option is correct?",
+    "option_a": "VPN usage is mandatory.",
+    "option_b": "VPN usage is optional.",
+    "expected": "A"
+  },
+  {
+    "question": "PREMISE: 'Archive-Standard' states: 'Logs are permitted to be deleted after 'Epoch-5'.' TASK: Current time is after 'Epoch-5'. Is deletion required?",
+    "option_a": "Deletion is permitted but not mandatory.",
+    "option_b": "Deletion is mandatory.",
+    "expected": "A"
+  }
+]
